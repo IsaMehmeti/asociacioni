@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function admin()
+    {
+        $this->middleware('auth');
+        return view('admin.home');
+    }
 }

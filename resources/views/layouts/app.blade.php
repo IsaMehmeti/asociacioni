@@ -62,7 +62,8 @@
 		</div>
 
 		 @include('layouts.header')
-					<div >
+		 @include('layouts.notifications')
+					<div>
 						@yield('content')
 					</div>
 			 @include('layouts.footer')
