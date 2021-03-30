@@ -7,9 +7,9 @@
                 </div>
             @endif
             @if (session('error'))
-                <div class="alert alert-danger text-center">
+                    <div class="alert alert-danger" role="alert">
                     {{session('error')}}
-                </div>
+                    </div>
             @endif
             @if (session('danger'))
                 <div class="alert alert-danger text-center">

@@ -49,7 +49,7 @@
 
 		<!-- Head Libs -->
 		<script src="{{asset('vendor/modernizr/modernizr.js')}}"></script>
-
+        @yield('custom_header')
 	</head>
 
 	<body class="alternative-font-4 loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 100}">
@@ -80,9 +80,9 @@
 		<script src="{{asset('vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
 		<script src="{{asset('vendor/jquery-placeholder/jquery.placeholder.js')}}"></script>
 
-		<!-- Specific Page Vendor -->
-		@yield('custom_footer')
-		<script src="{{asset('vendor/jquery-appear/jquery.appear.js')}}"></script>
+        <!-- Specific Page Vendor -->
+
+        <script src="{{asset('vendor/jquery-appear/jquery.appear.js')}}"></script>
 		<script src="{{asset('vendor/owl.carousel/owl.carousel.js')}}"></script>
 
 
@@ -98,6 +98,7 @@
 		<!-- Theme Initialization Files -->
 		<script src="{{asset('js/theme.init.js')}}"></script>
 
+        @yield('custom_footer')
 
 	</body>
 </html>

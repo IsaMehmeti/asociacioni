@@ -47,14 +47,14 @@
 
     <!-- Head Libs -->
     <script src="{{asset('vendor/modernizr/modernizr.js')}}"></script>
-
+    @yield('custom_header')
 </head>
 
 <body>
 <section class="body">
 
     @include('layouts.admin.header')
-
+    @include('layouts.notifications')
     <div class="inner-wrapper">
 
         @include('layouts.admin.sidebar')
@@ -66,10 +66,12 @@
             <!-- start: page -->
                 @yield('content')
             <!-- end: page -->
+
         </section>
     </div>
 
 </section>
+{{--@include('layouts.footer')--}}
 
 <!-- Vendor -->
 <script src="{{asset('vendor/jquery/jquery.js')}}"></script>
@@ -124,6 +126,7 @@
 <script src="{{asset('js/theme.init.js')}}"></script>
 <!-- Examples -->
 <script src="{{asset('js/examples/examples.dashboard.js')}}"></script>
+@yield('custom_footer')
 
 </body>
 </html>
