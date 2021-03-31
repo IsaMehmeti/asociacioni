@@ -17,11 +17,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//dashboard - home.blade.php
 Route::get('/', 'HomeController@index');
-Route::post('/sendmail', 'MailController@sendMailToOneUser')->name('sendmail');
-Route::get('/mail', 'MailController@index');
 
-Route::get('/admin', 'HomeController@admin');
-Route::view('/test', 'test');
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+//user needs to be logged in routes
+Route::group(['middleware' => 'auth'], function(){
+
+    //mail routes
+    Route::get('/mail', 'MailController@index');
+    Route::post('/sendmail', 'MailController@sendMailToOneUser')->name('sendmail');
+
+
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+});
 Auth::routes();

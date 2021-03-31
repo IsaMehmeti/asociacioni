@@ -51,12 +51,12 @@
 <body>
 <section class="body">
 
-   @include('layouts.admin.header')
+   @include('layouts.header')
 
     <!-- end: header -->
 
     <div class="inner-wrapper">
-      @include('layouts.admin.sidebar')
+      @include('layouts.sidebar')
 
         <section role="main" class="content-body">
             <header class="page-header">

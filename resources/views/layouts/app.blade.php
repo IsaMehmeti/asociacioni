@@ -1,104 +1,137 @@
 <!doctype html>
 <html class="landing simple-sticky-header-enabled">
-	<head>
-		<!-- Basic -->
-		<meta charset="UTF-8">
+<head>
 
-		 <title>@yield('page_name')</title>
-		<meta name="keywords" content="HTML5 Admin Template" />
-		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
-		<meta name="author" content="okler.net">
+    <!-- Basic -->
+    <meta charset="UTF-8">
 
-		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@yield('page_name')</title>
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
 
-				<!-- Web Fonts  -->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7COpen+Sans:400,700,800" rel="stylesheet" type="text/css">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css')}}" />
-		<link rel="stylesheet" href="{{ asset('vendor/animate/animate.css')}}">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,800,900|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
-		<link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/all.min.css')}}" />
-		<link rel="stylesheet" href="{{ asset('vendor/magnific-popup/magnific-popup.css')}}" />
-		<link rel="stylesheet" href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}"/>
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/animate/animate.css">
 
-		<!-- Specific Page Vendor CSS -->
-		@yield('custom_header')
-		<link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.carousel.css')}}" />
-		<link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.theme.default.css')}}" />
+    <link rel="stylesheet" href="vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
 
-		<!--(remove-empty-lines-end)-->
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="vendor/summernote/summernote-bs4.css" />
 
-		<!-- Theme CSS -->
-		<link rel="stylesheet" href="{{asset('css/theme.css')}}" />
+    <!--(remove-empty-lines-end)-->
 
-		 <!-- Scripts -->
-    	<script src="{{ asset('js/app.js') }}" defer></script>
-
-		<!--(remove-empty-lines-end)-->
-
-<!-- Landing Page CSS -->
-		<link rel="stylesheet" href="{{asset('css/landing.css')}}" />
-
-		<!-- Skin CSS -->
-		<link rel="stylesheet" href="{{asset('css/skins/default.css')}}" />
-
-		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="{{asset('css/custom.css')}}">
-
-		<!-- Head Libs -->
-		<script src="{{asset('vendor/modernizr/modernizr.js')}}"></script>
-        @yield('custom_header')
-	</head>
-
-	<body class="alternative-font-4 loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 100}">
-		<div class="loading-overlay">
-			<div class="bounce-loader">
-				<div class="bounce1"></div>
-				<div class="bounce2"></div>
-				<div class="bounce3"></div>
-			</div>
-		</div>
-
-		 @include('layouts.header')
-		 @include('layouts.notifications')
-					<div>
-						@yield('content')
-					</div>
-			 @include('layouts.footer')
-		</div>
-
-		<!-- Vendor -->
-		<script src="{{asset('vendor/jquery/jquery.js')}}"></script>
-		<script src="{{asset('vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
-		<script src="{{asset('vendor/popper/umd/popper.min.js')}}"></script>
-		<script src="{{asset('vendor/bootstrap/js/bootstrap.js')}}"></script>
-		<script src="{{asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
-		<script src="{{asset('vendor/common/common.js')}}"></script>
-		<script src="{{asset('vendor/nanoscroller/nanoscroller.js')}}"></script>
-		<script src="{{asset('vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
-		<script src="{{asset('vendor/jquery-placeholder/jquery.placeholder.js')}}"></script>
-
-        <!-- Specific Page Vendor -->
-
-        <script src="{{asset('vendor/jquery-appear/jquery.appear.js')}}"></script>
-		<script src="{{asset('vendor/owl.carousel/owl.carousel.js')}}"></script>
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="css/theme.css" />
 
 
-		<script src="{{asset('vendor/jquery.lazyload/jquery.lazyload.js')}}"></script>
-		<!--(remove-empty-lines-end)-->
+    <!--(remove-empty-lines-end)-->
 
-		<!-- Theme Base, Components and Settings -->
-		<script src="{{asset('js/theme.js')}}"></script>
 
-		<!-- Theme Custom -->
-		<script src="{{asset('js/custom.js')}}"></script>
 
-		<!-- Theme Initialization Files -->
-		<script src="{{asset('js/theme.init.js')}}"></script>
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="css/skins/default.css" />
 
-        @yield('custom_footer')
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
 
-	</body>
+    <!-- Head Libs -->
+    <script src="vendor/modernizr/modernizr.js"></script>
+
+</head>
+
+<body>
+<section class="body">
+
+    <!--  Header located: layouts>header.blade.php  -->
+    @include('layouts.header')
+
+    <!--  Notifications-alerts..etc. located: layouts>notifications.blade.php  -->
+
+    <div class="inner-wrapper">
+
+        <!--  Sidebar located: layouts>sidebar.blade.php  -->
+        @include('layouts.sidebar')
+
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2>@yield('page_name')</h2>
+            </header>
+
+        @include('layouts.notifications')
+            <!-- start: page -->
+        @yield('content')
+        <!-- end: page -->
+
+        </section>
+    </div>
+
+</section>
+{{--@include('layouts.footer')--}}
+
+<!-- Vendor -->
+<script src="{{asset('vendor/jquery/jquery.js')}}"></script>
+<script src="{{asset('vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
+<script src="{{asset('vendor/popper/umd/popper.min.js')}}"></script>
+<script src="{{asset('vendor/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('vendor/common/common.js')}}"></script>
+<script src="{{asset('vendor/nanoscroller/nanoscroller.js')}}"></script>
+<script src="{{asset('vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
+<script src="{{asset('vendor/jquery-placeholder/jquery.placeholder.js')}}"></script>
+
+<!-- Specific Page Vendor -->
+@yield('custom_footer')
+<!-- Specific Page Vendor -->
+<script src="{{asset('vendor/jquery-ui/jquery-ui.js')}}"></script>
+<script src="{{asset('vendor/jqueryui-touch-punch/jquery.ui.touch-punch.js')}}"></script>
+<script src="{{asset('vendor/jquery-appear/jquery.appear.js')}}"></script>
+<script src="{{asset('vendor/bootstrap-multiselect/js/bootstrap-multiselect.js')}}"></script>
+<script src="{{asset('vendor/jquery.easy-pie-chart/jquery.easypiechart.js')}}"></script>
+<script src="{{asset('vendor/flot/jquery.flot.js')}}"></script>
+<script src="{{asset('vendor/flot.tooltip/jquery.flot.tooltip.js')}}"></script>
+<script src="{{asset('vendor/flot/jquery.flot.pie.js')}}"></script>
+<script src="{{asset('vendor/flot/jquery.flot.categories.js')}}"></script>
+<script src="{{asset('vendor/flot/jquery.flot.resize.js')}}"></script>
+<script src="{{asset('vendor/jquery-sparkline/jquery.sparkline.js')}}"></script>
+<script src="{{asset('vendor/raphael/raphael.js')}}"></script>
+<script src="{{asset('vendor/morris/morris.js')}}"></script>
+<script src="{{asset('vendor/gauge/gauge.js')}}"></script>
+<script src="{{asset('vendor/snap.svg/snap.svg.js')}}"></script>
+<script src="{{asset('vendor/liquid-meter/liquid.meter.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/jquery.vmap.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/data/jquery.vmap.sampledata.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/jquery.vmap.world.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/continents/jquery.vmap.africa.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/continents/jquery.vmap.asia.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/continents/jquery.vmap.australia.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/continents/jquery.vmap.europe.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/continents/jquery.vmap.north-america.js')}}"></script>
+<script src="{{asset('vendor/jqvmap/maps/continents/jquery.vmap.south-america.js')}}"></script>
+
+
+<!--(remove-empty-lines-end)-->
+
+<!-- Theme Base, Components and Settings -->
+<script src="{{asset('js/theme.js')}}"></script>
+
+<!-- Theme Custom -->
+<script src="{{asset('js/custom.js')}}"></script>
+
+<!-- Theme Initialization Files -->
+<script src="{{asset('js/theme.init.js')}}"></script>
+<!-- Examples -->
+<script src="{{asset('js/examples/examples.dashboard.js')}}"></script>
+@yield('custom_footer')
+
+</body>
 </html>
