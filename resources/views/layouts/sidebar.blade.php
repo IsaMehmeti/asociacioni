@@ -16,10 +16,35 @@
                     <li>
                         <a class="nav-link" href="layouts-default.html">
                             <i class="fas fa-home" aria-hidden="true"></i>
-                            <span>Dashboard</span>
+                            <span>{{__('Dashboard')}}</span>
                         </a>
                     </li>
-                    <li class="nav-parent">
+                    <li>
+                        <a class="nav-link" href="layouts-default.html">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>{{__('City')}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="layouts-default.html">
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            <span>{{__('Collegiums')}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="mailbox-folder.html">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span>{{__('Mailbox')}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="layouts-default.html">
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                            <span>{{__('Register')}}</span>
+                        </a>
+                    </li>
+                   
+                    <li class="nav-parent"><!-- 
                         <a class="nav-link" href="#">
                             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                             <span>eCommerce</span>
@@ -81,15 +106,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="mailbox-folder.html">
-                            <span class="float-right badge badge-primary">182</span>
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <span>Mailbox</span>
-                        </a>
-                    </li>
-                    <li class="nav-parent //nav-expanded nav-active">
+                     </li>-->
+                    
+                    <!--<li class="nav-parent //nav-expanded nav-active"> 
                         <a class="nav-link" href="#">
                             <i class="fas fa-columns" aria-hidden="true"></i>
                             <span>Layouts</span>
@@ -258,7 +277,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                     --></li>
                 </ul>
             </nav>
 

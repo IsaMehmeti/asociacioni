@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 //dashboard - home.blade.php
 Route::get('/', 'HomeController@index');
+Route::get('city', 'CityController@index');
 
 //user needs to be logged in routes
 Route::group(['middleware' => 'auth'], function(){
