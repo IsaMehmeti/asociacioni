@@ -14,13 +14,13 @@
 
                 <ul class="nav nav-main">
                     <li>
-                        <a class="nav-link" href="layouts-default.html">
+                        <a class="nav-link" href="/">
                             <i class="fas fa-home" aria-hidden="true"></i>
                             <span>{{__('Dashboard')}}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="layouts-default.html">
+                        <a class="nav-link" href="/city">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <span>{{__('City')}}</span>
                         </a>
@@ -32,22 +32,28 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="mailbox-folder.html">
+                        <a class="nav-link" href="/registercollegiums">
+                            {{__('Add collegiums')}}
+                        </a>
+                    </li>
+                     
+                    <li>
+                        <a class="nav-link" href="/mail">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                             <span>{{__('Mailbox')}}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="layouts-default.html">
+                        <a class="nav-link" href="/register">
                             <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                             <span>{{__('Register')}}</span>
                         </a>
                     </li>
                    
-                    <li class="nav-parent"><!-- 
+                    <!-- <li class="nav-parent"> 
                         <a class="nav-link" href="#">
-                            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                            <span>eCommerce</span>
+                            <i class="fas fa-tasks" aria-hidden="false"></i>
+                            <span>{{__('Collegiums')}}</span>
                         </a>
                         <ul class="nav nav-children">
                             <li>
@@ -55,7 +61,9 @@
                                     Dashboard
                                 </a>
                             </li>
-                            <li>
+                        </ul> -->
+
+                            <!--<li>
                                 <a class="nav-link" href="ecommerce-products-list.html">
                                     Products List
                                 </a>

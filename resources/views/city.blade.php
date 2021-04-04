@@ -3,24 +3,48 @@
 @section('page_name', __('Home'))
 
 @section('content')
-    <h1>City</h1>
+    
 
-
-
-
-
-
-<div class="widget-summary-col">
-	<div class="summary">
-		<h4 class="title">Support Questions</h4>
-		<div class="info">
-			<strong class="amount">1281</strong>
-			<span class="text-primary">(14 unread)</span>
+<div class="container">
+<div class="row">
+	<div class="col-lg-4">
+	<section class="card card-featured-left card-featured-primary ">
+		<div class="card-body">
+			<h4 class="title">Support Questions</h4>
 		</div>
+	</section>
 	</div>
-	<div class="summary-footer">
-		<a class="text-muted text-uppercase">(view all)</a>
+
+	<div class="col-lg-4">
+	<section class="card card-featured-left card-featured-primary ">
+			<!-- <i class="fas fa-life-ring"></i> -->
+		<div class="card-body">
+			<h4 class="title"> Support Questions</h4>
+		</div>
+	</section>
 	</div>
+
+	<div class="col-lg-4">
+	<section class="card card-featured-left card-featured-primary ">
+		<div class="card-body">
+			<h4 class="title">Support Questions</h4>
+		</div>
+	</section>
+	</div>
+	
+	<div class="col-lg-4">
+	<section class="card card-featured-left card-featured-primary ">
+		<div class="card-body">
+			<h4 class="title">Support Questions</h4>
+		</div>
+	</section>
+	</div>
+
+
+
 </div>
+
+</div>
+
 
 @endsection
