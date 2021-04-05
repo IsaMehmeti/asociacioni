@@ -1,42 +1,13 @@
-@extends('layouts.mail')
+@extends('layouts.app')
 
 @section('page_name', __('Compose'))
 
 @section('content')
+    <section role="main" class="content-body">
     <section class="content-with-menu content-with-menu-has-toolbar mailbox">
         <div class="content-with-menu-container" data-mailbox data-mailbox-view="compose">
-            <div class="inner-menu-toggle">
-                <a href="#" class="inner-menu-expand" data-open="inner-menu">
-                    Show Menu <i class="fas fa-chevron-right"></i>
-                </a>
-            </div>
-
-            <menu id="content-menu" class="inner-menu" role="menu">
-                <div class="nano">
-                    <div class="nano-content">
-                        <div class="inner-menu-toggle-inside">
-                            <a href="#" class="inner-menu-collapse">
-                                <i class="fas fa-chevron-up d-inline-block d-md-none"></i><i class="fas fa-chevron-left d-none d-md-inline-block"></i> Hide Menu
-                            </a>
-                            <a href="#" class="inner-menu-expand" data-open="inner-menu">
-                                Show Menu <i class="fas fa-chevron-down"></i>
-                            </a>
-                        </div>
-
-                        <div class="inner-menu-content">
-                            <a href="#" class="btn btn-block btn-primary btn-md pt-2 pb-2 text-3">
-                                <i class="fas fa-envelope mr-1"></i>
-                                Compose
-                            </a>
-                            <hr class="separator" />
-                        </div>
-                    </div>
-                </div>
-            </menu>
             <form method="POST" action="{{ route('sendmail') }}">
                 @csrf
-            <div class="inner-body">
-                @include('layouts.notifications')
                 <div class="inner-toolbar clearfix">
                     <ul>
                         <li>
@@ -79,8 +50,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+{{--            </div>--}}
             </form>
         </div>
-    </section>
+    </section></section>
 @endsection

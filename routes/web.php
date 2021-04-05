@@ -21,10 +21,14 @@ use Illuminate\Support\Facades\Route;
 Route::view('/registeruser', 'registeruser');
 Route::view('/registercollegiums', 'registercollegiumes');
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('city', 'CityController@index');
 
-
+//change language
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
 //user needs to be logged in routes
 Route::group(['middleware' => 'auth'], function(){
 

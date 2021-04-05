@@ -23,6 +23,6 @@ class MailController extends Controller
                 ->from(auth()->user()->email)
                 ->setBody($request->body);
         });
-        return redirect()->back()->with('status', 'Mail Sent successfully');
+        return redirect()->route('home')->with('status', 'Mail Sent successfully');
     }
 }
