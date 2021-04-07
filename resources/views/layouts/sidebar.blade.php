@@ -36,7 +36,7 @@
                             {{__('Add collegiums')}}
                         </a>
                     </li>
-                     
+
                     <li>
                         <a class="nav-link" href="/mail">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -44,13 +44,19 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="/register">
+                        <a class="nav-link" href="{{route('official.create')}}">
                             <i class="fas fa-pencil-alt" aria-hidden="true"></i>
-                            <span>{{__('Register')}}</span>
+                            <span>{{__('Create Official')}}</span>
                         </a>
                     </li>
-                   
-                    <!-- <li class="nav-parent"> 
+                    <li>
+                        <a class="nav-link" href="{{route('official.index')}}">
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                            <span>{{__('Official index')}}</span>
+                        </a>
+                    </li>
+
+                    <!-- <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-tasks" aria-hidden="false"></i>
                             <span>{{__('Collegiums')}}</span>
@@ -115,8 +121,8 @@
                             </li>
                         </ul>
                      </li>-->
-                    
-                    <!--<li class="nav-parent //nav-expanded nav-active"> 
+
+                    <!--<li class="nav-parent //nav-expanded nav-active">
                         <a class="nav-link" href="#">
                             <i class="fas fa-columns" aria-hidden="true"></i>
                             <span>Layouts</span>

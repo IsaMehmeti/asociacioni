@@ -61,7 +61,12 @@
             </div>
         </div>
 
-        <p class="text-center text-muted mt-3 mb-3">&copy; Copyright 2017. All Rights Reserved.</p>
+        <p class="text-center text-muted mt-3 mb-3">@lang('messages.Copyright') &copy; <span id="date"></span> - @lang('messages.All Rights Reserved')</p>
+
+        <script>
+            var date = new Date().getFullYear();
+            document.getElementById('date').innerHTML = date;
+        </script>
     </div>
 </section>
 <!-- end: page -->

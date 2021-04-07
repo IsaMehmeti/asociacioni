@@ -1,5 +1,5 @@
 @extends('layouts.auth.app')
-@section('page_name',  __('Log in'))
+@section('page_name',  __('messages.Sign In'))
 
 @section('content')
     <form method="POST" action="{{ route('login') }}">
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col-sm-4 text-right">
-                <button type="submit" class="btn btn-primary mt-2">Sign In</button>
+                <button type="submit" class="btn btn-primary mt-2"> {{__('messages.Sign In')}} </button>
             </div>
         </div>
 

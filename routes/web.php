@@ -36,7 +36,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/mail', 'MailController@index');
     Route::post('/sendmail', 'MailController@sendMailToOneUser')->name('sendmail');
 
+    //zyrtaret
+    Route::resource('/official', 'OfficialController');
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 });
 Auth::routes();

@@ -15,7 +15,6 @@ class MailController extends Controller
     }
     public function sendMailToOneUser(Request $request)
     {
-
         $user = User::findOrFail($request->user_id);
         Mail::send([], [], function ($message) use($user, $request) {
             $message->to($user->email)
