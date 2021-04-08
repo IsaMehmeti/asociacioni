@@ -49,7 +49,7 @@
 <section class="body-sign">
     <div class="center-sign">
         <a href="/" class="logo float-left">
-            <img src="img/logo.png" height="54" alt="Porto Admin" />
+            <img src="img/logo.png" alt="Porto Admin" / style="margin-top: 20px;">
         </a>
 
         <div class="panel card-sign">
