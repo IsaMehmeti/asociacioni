@@ -22,11 +22,11 @@ selector:focus {outline: none;}
 <div class="row">
 	
 	<div class="col-lg-4" style="margin-bottom: 20px;">
-	<section class="card card-featured-left card-featured-primary ">
+	<a href="/decani" style="text-decoration: none; color: black;"><section class="card card-featured-left card-featured-primary ">
 		<div class="card-body">
-			<h3 class="title"><button type="button"  data-toggle="modal" data-target="#Deçan" class="butoni">Deçan</button></h3>
+			<h3 class="title">Deçan</h3>
 		</div>
-	</section>
+	</section></a>
 	</div>
 <!-- Modal -->
 <div class="modal fade" id="Deçan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

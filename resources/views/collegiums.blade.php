@@ -61,7 +61,10 @@ selector:focus {outline: none;}
 											</div>
 											<footer class="card-footer">
 												<div class="row">
-													<div class="col-md-12 center">
+													<div class="col-md-6 center">
+														<button type="button" class="btn btn-info" style="align-items: center;">Shfaq Me Shume</button>
+													</div>
+													<div class="col-md-6 center">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal" style="align-items: center;">Mbyll</button>
 													</div>
 												</div>

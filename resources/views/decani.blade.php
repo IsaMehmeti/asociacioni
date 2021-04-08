@@ -18,7 +18,7 @@
   <div class="col-md-6"><h3 class="modal-title" id="exampleModalCenterTitle" style="align-items: center;">Deçan</h3></div>
   <div class="col-md-6" style="margin: 15px 0px 0px"><form action="pages-search-results.html" class="search nav-form">
             <div class="input-group">
-                <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
+                <input type="text" class="form-control" name="q" id="q" placeholder="Kerkoni...">
                 <span class="input-group-append">
 								<button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
 							</span>

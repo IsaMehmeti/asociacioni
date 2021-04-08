@@ -15,38 +15,40 @@
                 <ul class="nav nav-main">
                     <li>
                         <a class="nav-link" href="/">
-                            <i class="fas fa-home" aria-hidden="true"></i>
-                            <span>{{__('Dashboard')}}</span>
+                            <i class="fas fa-columns"></i>
+                            <span>{{__('Ballina')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="/city">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <span>{{__('City')}}</span>
+                            <span>{{__('Qytetet')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="/collegiums">
                             <i class="fas fa-tasks" aria-hidden="true"></i>
-                            <span>{{__('Collegiums')}}</span>
+                            <span>{{__('Kolegjiumet')}}</span>
                         </a>
                     </li>
                     <li>
+
                         <a class="nav-link" href="/registercollegiums">
-                            {{__('Add collegiums')}}
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                            {{__('Shto Kolegjium')}}
                         </a>
                     </li>
 
                     <li>
                         <a class="nav-link" href="/mail">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <span>{{__('Mailbox')}}</span>
+                            <span>{{__('Dërgo Email')}}</span>
                         </a>
                     </li>
                     <li>
                         <a class="nav-link" href="{{route('official.create')}}">
                             <i class="fas fa-pencil-alt" aria-hidden="true"></i>
-                            <span>{{__('Create Official')}}</span>
+                            <span>{{__('Krijo Zyrtarë')}}</span>
                         </a>
                     </li>
                     <li>

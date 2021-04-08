@@ -2,7 +2,7 @@
 	
 	@extends('layouts.app')
 
-@section('page_name', __('Home'))
+@section('page_name', __('Regjistro nje kolegjium'))
 
 @section('content')
     <div class="row">

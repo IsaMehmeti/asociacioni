@@ -51,3 +51,6 @@ Route::get('/decani', function() {
 Route::get('/collegiums', function() {
 	return view ('collegiums');
 });
+Route::get('/collegiumpage', function() {
+	return view ('collegiumpage');
+});
