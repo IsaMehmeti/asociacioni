@@ -35,6 +35,7 @@ class OfficialController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->name);
         $offical_data = [
             'en' => [
                 'name'       => 'name',

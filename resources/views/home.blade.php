@@ -2,6 +2,14 @@
 
 @section('page_name', __('Home'))
 
+@section('custom_header')
+
+@endsection
+
 @section('content')
-    <h1>@lang('messages.Hello')</h1>
+    <h1>Home</h1>
+@endsection
+
+@section('custom_footer')
+
 @endsection

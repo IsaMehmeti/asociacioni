@@ -29,13 +29,8 @@ Theme Version: 	3.0.0
 		ev.preventDefault();
 		var validated = $('#w1 form').valid();
 		if ( validated ) {
-			new PNotify({
-				title: 'Congratulations',
-				text: 'You completed the wizard form.',
-				type: 'custom',
-				addclass: 'notification-success',
-				icon: 'fas fa-check'
-			});
+		    console.log('working');
+            $( "#myForm" ).submit();
 		}
 	});
 
@@ -86,19 +81,19 @@ Theme Version: 	3.0.0
 		}
 	});
 
-	$w2finish.on('click', function( ev ) {
-		ev.preventDefault();
-		var validated = $('#w2 form').valid();
-		if ( validated ) {
-			new PNotify({
-				title: 'Congratulations',
-				text: 'You completed the wizard form.',
-				type: 'custom',
-				addclass: 'notification-success',
-				icon: 'fas fa-check'
-			});
-		}
-	});
+	// $w2finish.on('click', function( ev ) {
+	// 	ev.preventDefault();
+	// 	var validated = $('#w2 form').valid();
+	// 	if ( validated ) {
+	// 		new PNotify({
+	// 			title: 'Congratulations',
+	// 			text: 'You completed the wizard form.',
+	// 			type: 'custom',
+	// 			addclass: 'notification-success',
+	// 			icon: 'fas fa-check'
+	// 		});
+	// 	}
+	// });
 
 	$('#w2').bootstrapWizard({
 		tabClass: 'wizard-steps',
@@ -146,19 +141,19 @@ Theme Version: 	3.0.0
 		}
 	});
 
-	$w3finish.on('click', function( ev ) {
-		ev.preventDefault();
-		var validated = $('#w3 form').valid();
-		if ( validated ) {
-			new PNotify({
-				title: 'Congratulations',
-				text: 'You completed the wizard form.',
-				type: 'custom',
-				addclass: 'notification-success',
-				icon: 'fas fa-check'
-			});
-		}
-	});
+	// $w3finish.on('click', function( ev ) {
+	// 	ev.preventDefault();
+	// 	var validated = $('#w3 form').valid();
+	// 	if ( validated ) {
+	// 		new PNotify({
+	// 			title: 'Congratulations',
+	// 			text: 'You completed the wizard form.',
+	// 			type: 'custom',
+	// 			addclass: 'notification-success',
+	// 			icon: 'fas fa-check'
+	// 		});
+	// 	}
+	// });
 
 	$('#w3').bootstrapWizard({
 		tabClass: 'wizard-steps',
@@ -263,7 +258,7 @@ Theme Version: 	3.0.0
 			var $total = navigation.find('li').length - 1;
 			var $current = index;
 			var $percent = Math.floor(( $current / $total ) * 100);
-			
+
 			navigation.find('li').removeClass('active');
 			navigation.find('li').eq( $current ).addClass('active');
 

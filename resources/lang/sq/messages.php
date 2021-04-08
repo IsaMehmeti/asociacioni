@@ -4,4 +4,5 @@ return [
     'Copyright' => "Te Drejtat e Autorit",
     'All Rights Reserved' => "Te Gjitha te drejtat te rezervuara",
     'Sign In' => 'Kyçu',
+    'word' => 'shqip',
 ];
