@@ -48,3 +48,6 @@ Auth::routes();
 Route::get('/decani', function() {
 	return view ('decani');
 });
+Route::get('/collegiums', function() {
+	return view ('collegiums');
+});
