@@ -1,7 +1,11 @@
 <?php
 return [
     'Hello' => "Zdravo",
-    'Copyright' => "Serbian",
-    'All Rights Reserved' => "Te Gjitha te drejtat te rezervuara",
+    'Copyright' => "Autorska prava",
+    'All Rights Reserved' => "Sva prava zadržana",
+    'Sign In' => 'Upiši se',
     'Created Successfully' => 'Uspešno kreirano',
+    'Sorry, No Record to show' => 'Žao mi je, nema zapisa za prikazivanje',
+    'Want to add' => 'Hoćeš da dodaš',
+    'some?' => 'Neki?'
 ];

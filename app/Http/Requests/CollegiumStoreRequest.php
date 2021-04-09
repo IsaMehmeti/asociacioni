@@ -13,7 +13,7 @@ class CollegiumStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class CollegiumStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'en_title' => 'required',
+            'en_description' => 'required',
+            'sq_title' => 'required',
+            'sq_description' => 'required',
+            'sr_title' => 'required',
+            'sr_description' => 'required',
         ];
     }
 }

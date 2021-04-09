@@ -5,6 +5,6 @@
 @section('content')
 
     @foreach($officials as $official)
-        <h1>{{$official->translate('en')->name}}</h1>
+        <p>Emri: {{$official->name}} {{$official->last_name}}, Kolegjiumi: {{$official->collegium->title}}, Qyteti: {{$official->municipality}} </p>
     @endforeach
 @endsection

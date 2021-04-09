@@ -15,6 +15,10 @@ class CreateOfficialsTable extends Migration
     {
         Schema::create('officials', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->unsignedBigInteger('collegium_id');
             $table->timestamps();
         });
     }

@@ -21,9 +21,9 @@ class CreateOfficialTranslationsTable extends Migration
             $table->unsignedBigInteger('official_id');
             $table->unique(['official_id', 'locale']);
             $table->foreign('official_id')->on('officials')->references('id')->onDelete('cascade');
-            // Actual fields you want to translate
-            $table->string('name');
-//            $table->longText('full_text');
+
+            //fields to be translated
+            $table->string('municipality');
         });
     }
 

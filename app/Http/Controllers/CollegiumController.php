@@ -2,40 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CollegiumStoreRequest;
 use App\Models\Collegium;
 use Illuminate\Http\Request;
 
 class CollegiumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('collegium.index')->with(['collegiums' => Collegium::all()]);
+        $collegiums = Collegium::all();
+        return view('collegium.index', compact('collegiums'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('collegium.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(CollegiumStoreRequest $request)
     {
-
         Collegium::create([
             'en' => [
                 'title'       => $request->en_title,
@@ -50,16 +35,9 @@ class CollegiumController extends Controller
                 'description'       => $request->sr_description
             ],
         ]);
-        return redirect()->route('collegium.index')->with(['status'=> __('messages.Created Successfully')]);
+        return redirect()->route('collegium.index')->with(['status' => __('messages.Created Successfully')]);
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Collegium  $collegium
-     * @return \Illuminate\Http\Response
-     */
     public function show(Collegium $collegium)
     {
         //

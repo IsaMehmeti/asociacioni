@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class OfficialTranslation extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['municipality'];
     public $timestamps = false;
 }

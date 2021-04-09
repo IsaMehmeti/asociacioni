@@ -36,7 +36,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -46,7 +46,7 @@ selector:focus {outline: none;}
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
 
-									
+
 										<section class="card">
 											<div class="card-body text-center">
 												<div class="modal-wrapper">
@@ -67,7 +67,7 @@ selector:focus {outline: none;}
 												</div>
 											</footer>
 										</section>
-									
+
     </div>
   </div>
 </div>
@@ -89,7 +89,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -109,7 +109,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -129,7 +129,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -149,7 +149,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -169,7 +169,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -189,7 +189,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -209,7 +209,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>
@@ -229,7 +229,7 @@ selector:focus {outline: none;}
 														<span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
 													</div>
 												</div>
-												
+
 											</div>
 										</div>
 									</div></button>

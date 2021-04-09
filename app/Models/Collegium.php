@@ -11,5 +11,10 @@ class Collegium extends Model implements TranslatableContract
     use Translatable;
     protected $table = 'collegiums';
 
-    public $translatedAttributes = ['title, description'];
+    public $translatedAttributes = ['title', 'description'];
+
+    public function official()
+    {
+        return $this->hasMany('App\Models\Official');
+    }
 }

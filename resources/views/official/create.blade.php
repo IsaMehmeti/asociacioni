@@ -76,9 +76,14 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium (EN)</label>
+                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium </label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="en_collegium" id="w1-last-name" disabled="">
+                                <select id="company" name="collegium_id" class="form-control valid" required="" aria-invalid="false">
+                                    <option value="" disabled selected>Choose a Collegium</option>
+                                    @foreach($collegiums as $collegium)
+                                        <option value="{{$collegium->id}}">{{$collegium->title}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -95,12 +100,12 @@
                                 <label id="company-error" class="error" for="company"></label>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium (SQ)</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="sq_collegium" id="w1-last-name" required="">
-                            </div>
-                        </div>
+{{--                        <div class="form-group row">--}}
+{{--                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium (SQ)</label>--}}
+{{--                            <div class="col-sm-8">--}}
+{{--                                <input type="text" class="form-control" name="sq_collegium" id="w1-last-name" required="">--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                     <?php
                     $cities_serbisht = array('DEÇAN', 'DRAGASH', 'UROSEVAC', 'GJAKOVË', 'GJILAN', 'DRENAS', 'ISTOG', 'KAÇANIK', 'KAMENICË', 'NOVOBËRDË', 'KLINË', 'JUNIK', 'LIPJAN', 'MALISHEVË', 'MITROVICË', 'OBILIQ', 'PEJË', 'PODUJEVË', 'PRISHTINË', 'RAHOVEC', 'PRIZREN', 'SHTËRPCE', 'SKENDERAJ', 'PARTESH', 'RANILLUG', 'KLLOKOT', 'GRAÇANIC'
@@ -119,12 +124,12 @@
                                 <label id="company-error" class="error" for="company"></label>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium (SR)</label>
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" name="sr_collegium" id="w1-last-name" >
-                            </div>
-                        </div>
+{{--                        <div class="form-group row">--}}
+{{--                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium (SR)</label>--}}
+{{--                            <div class="col-sm-8">--}}
+{{--                                <input type="text" class="form-control" name="sr_collegium" id="w1-last-name" >--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </form>

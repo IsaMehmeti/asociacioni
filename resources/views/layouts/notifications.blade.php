@@ -3,22 +3,22 @@
         <div class="col-md-12">
             @if (session('status'))
                 <div class="alert alert-success text-center">
-                    {{session('status')}}
+                    <strong>{{session('status')}}</strong>
                 </div>
             @endif
             @if (session('error'))
                     <div class="alert alert-danger" role="alert">
-                    {{session('error')}}
+                        <strong>{{session('error')}}</strong>
                     </div>
             @endif
             @if (session('danger'))
                 <div class="alert alert-danger text-center">
-                    {{session('danger')}}
+                    <strong> {{session('danger')}}</strong>
                 </div>
             @endif
             @if (session('info'))
                 <div class="alert alert-info">
-                    {{session('info')}}
+                    <strong> {{session('info')}}</strong>
                 </div>
             @endif
             @if (session('alert-info'))

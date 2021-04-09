@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collegium;
 use App\Models\Official;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class OfficialController extends Controller
      */
     public function create()
     {
-        return view('official.create');
+        $collegiums = Collegium::all();
+        return view('official.create', compact('collegiums'));
     }
     /**
      * Store a newly created resource in storage.
@@ -35,19 +37,18 @@ class OfficialController extends Controller
      */
     public function store(Request $request)
     {
-        $offical_data = [
-            'en' => [
-                'name'       => 'name',
-            ],
-            'sq' => [
-                'name'       => 'emri',
-            ],
-            'sr' => [
-                'name'       => 'serbian',
-            ],
-        ];
-        Official::create($offical_data);
-        return redirect()->back();
+//        dd($request->sr_municipality);
+        Official::create([
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'collegium_id' => $request->collegium_id,
+            'en' => ['municipality'=>$request->en_municipality],
+            'sq' => ['municipality'=> $request->sq_municipality],
+            'sr' => ['municipality'=> $request->sr_municipality],
+        ]);
+
+        return redirect()->back()->with(['status' => __('messages.Created Successfully')]);;
     }
 
     /**

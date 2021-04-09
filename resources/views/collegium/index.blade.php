@@ -23,8 +23,8 @@
     </style>
     <!-- <h1>Home</h1> -->
     <div class="row">
-        <?php  $locale = config('app.locale') ?>
-        @foreach($collegiums as $collegium)
+
+        @forelse($collegiums as $collegium)
         <div class="col-md-4">
             <section class="card card-featured-left card-featured-primary mb-4">
                 <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">
@@ -37,9 +37,10 @@
                             </div>
                             <div class="widget-summary-col">
                                 <div>
-                                    <h3 class="title" style="float: left;  margin-left: 3px;">{{$collegium->translate($locale)->title}}</h3><br>
+                                    <h3 class="title" style="float: left;  margin-left: 3px;">{{$collegium->title}}</h3><br>
+                                    <hr>
                                     <div style="float: left;">
-                                        <span>{{$collegium->translate($locale)->description}} adasdasdasd</span>
+                                        <span>{{$collegium->description}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -48,198 +49,205 @@
                 </button>
             </section>
         </div>
-        @endforeach
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
-{{--        <div class="col-md-4">--}}
-{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
-{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="widget-summary widget-summary-xlg">--}}
-{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
-{{--                                <div class="summary-icon bg-primary">--}}
-{{--                                    <i class="fas fa-life-ring"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget-summary-col">--}}
-{{--                                <div>--}}
-{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
-{{--                                    <div style="float: left;">--}}
-{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </button>--}}
-{{--            </section>--}}
-{{--        </div>--}}
+        @empty
+            <div class="col-md-12">
+            <div class="alert alert-danger text-center">
+                <strong>{{__('messages.Sorry, No Record to show')}}. {{__('messages.Want to add')}} <a href="{{route('collegium.create')}}">{{__('messages.some?')}}</a></strong>
+            </div>
+            </div>
+        @endforelse
     </div>
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+{{--        <div class="col-md-4">--}}
+{{--            <section class="card card-featured-left card-featured-primary mb-4">--}}
+{{--                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="widget-summary widget-summary-xlg">--}}
+{{--                            <div class="widget-summary-col widget-summary-col-icon">--}}
+{{--                                <div class="summary-icon bg-primary">--}}
+{{--                                    <i class="fas fa-life-ring"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="widget-summary-col">--}}
+{{--                                <div>--}}
+{{--                                    <h3 class="title" style="float: left;  margin-left: 3px;">Kolegjiumi Nr.1</h3><br>--}}
+{{--                                    <div style="float: left;">--}}
+{{--                                        <span style="float: left;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </button>--}}
+{{--            </section>--}}
+{{--        </div>--}}
+
 
 
 
