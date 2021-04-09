@@ -26,14 +26,14 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="/collegiums">
+                        <a class="nav-link" href="{{ route('collegium.index') }}">
                             <i class="fas fa-tasks" aria-hidden="true"></i>
                             <span>{{__('Kolegjiumet')}}</span>
                         </a>
                     </li>
                     <li>
 
-                        <a class="nav-link" href="/registercollegiums">
+                        <a class="nav-link" href="/collegium/create">
                             <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                             {{__('Shto Kolegjium')}}
                         </a>

@@ -5,4 +5,5 @@ return [
     'All Rights Reserved' => "All Rights Reserved",
     'Sign In' => 'Sign in',
     'word' => 'english',
+    'Created Successfully' => 'Created Successfully'
     ];

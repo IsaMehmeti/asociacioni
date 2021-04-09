@@ -39,6 +39,9 @@ Route::group(['middleware' => 'auth'], function(){
     //zyrtaret
     Route::resource('/official', 'OfficialController');
 
+    //kolegjiumet
+    Route::resource('/collegium', 'CollegiumController');
+
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 });
@@ -48,9 +51,7 @@ Auth::routes();
 Route::get('/decani', function() {
 	return view ('decani');
 });
-Route::get('/collegiums', function() {
-	return view ('collegiums');
-});
+
 Route::get('/collegiumpage', function() {
 	return view ('collegiumpage');
 });

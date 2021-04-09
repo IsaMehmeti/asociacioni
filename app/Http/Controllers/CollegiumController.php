@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Official;
+use App\Models\Collegium;
 use Illuminate\Http\Request;
 
-class OfficialController extends Controller
+class CollegiumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class OfficialController extends Controller
      */
     public function index()
     {
-        $officials = Official::all();
-        return view('official.index', compact('officials'));
+        return view('collegium.index')->with(['collegiums' => Collegium::all()]);
     }
 
     /**
@@ -25,8 +24,9 @@ class OfficialController extends Controller
      */
     public function create()
     {
-        return view('official.create');
+        return view('collegium.create');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,28 +35,32 @@ class OfficialController extends Controller
      */
     public function store(Request $request)
     {
-        $offical_data = [
+
+        Collegium::create([
             'en' => [
-                'name'       => 'name',
+                'title'       => $request->en_title,
+                'description'       => $request->en_description
             ],
             'sq' => [
-                'name'       => 'emri',
+                'title'       => $request->sq_title,
+                'description'       => $request->sq_description
             ],
             'sr' => [
-                'name'       => 'serbian',
+                'title'       => $request->sr_title,
+                'description'       => $request->sr_description
             ],
-        ];
-        Official::create($offical_data);
-        return redirect()->back();
+        ]);
+        return redirect()->route('collegium.index')->with(['status'=> __('messages.Created Successfully')]);
     }
+
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Collegium $collegium)
     {
         //
     }
@@ -64,10 +68,10 @@ class OfficialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Collegium $collegium)
     {
         //
     }
@@ -76,10 +80,10 @@ class OfficialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Collegium $collegium)
     {
         //
     }
@@ -87,10 +91,10 @@ class OfficialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Collegium $collegium)
     {
         //
     }

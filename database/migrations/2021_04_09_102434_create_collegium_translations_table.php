@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOfficialTranslationsTable extends Migration
+class CreateCollegiumTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,16 @@ class CreateOfficialTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('official_translations', function (Blueprint $table) {
-            $table->id();
+        Schema::create('collegium_translations', function (Blueprint $table) {            $table->id();
             $table->string('locale')->index();
 
             // Foreign key to the main model
-            $table->unsignedBigInteger('official_id');
-            $table->unique(['official_id', 'locale']);
-            $table->foreign('official_id')->on('officials')->references('id')->onDelete('cascade');
+            $table->unsignedBigInteger('collegium_id');
+            $table->unique(['collegium_id', 'locale']);
+            $table->foreign('collegium_id')->on('collegiums')->references('id')->onDelete('cascade');
             // Actual fields you want to translate
-            $table->string('name');
-//            $table->longText('full_text');
+            $table->string('title');
+            $table->longText('description');
         });
     }
 
@@ -34,6 +33,6 @@ class CreateOfficialTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('official_translations');
+        Schema::dropIfExists('collegium_translations');
     }
 }

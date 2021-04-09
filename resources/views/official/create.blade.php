@@ -151,7 +151,26 @@
 
 @endsection
 @section('custom_footer')
+    <script>
+        $( document ).ready(function() {
+            var locale = '{{ config('app.locale') }}';
+            var message = "This field is required."
+            var email = 'Please enter a valid email address.';
+            console.log(locale);
+            if (locale == 'sq'){
+                message = "Kjo fushe nuk mund te jete e zbrazet";
+                email = 'Ju lutem shtypni nje email valide.';
 
+            }else if(locale == 'sr'){
+                message = "Ovo polje je obavezno.";
+                email = 'Unesite važeću e-adresu.';
+            }
+            $.extend($.validator.messages, {
+                required: message,
+                email: email,
+            });
+        });
+    </script>
 <script src="{{asset('vendor/jquery-validation/jquery.validate.js')}}"></script>
 <script src="{{asset('vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
