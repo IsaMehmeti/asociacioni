@@ -21,6 +21,16 @@ class CollegiumController extends Controller
 
     public function store(CollegiumStoreRequest $request)
     {
+        $img = $request->file('image');
+        $directoryName ='files/collegium';
+                 if (!is_dir($directoryName)) {
+                    mkdir($directoryName, 0700, true);
+                 }
+                 $file_name = uniqid().'-'.time().'.'.$img->getClientOriginalExtension();
+                 $file_type = $img->getClientOriginalExtension();
+                 $file_size = $img->getSize();
+                 $file_path = 'files/collegium/'.$file_name;
+                 $request->file('image')->move('files/collegium', $file_name);
         Collegium::create([
             'en' => [
                 'title'       => $request->en_title,
@@ -34,6 +44,11 @@ class CollegiumController extends Controller
                 'title'       => $request->sr_title,
                 'description'       => $request->sr_description
             ],
+            'filename' => $file_name,
+            'filetype' => $file_type,
+            'filesize' => $file_size,
+            'filepath' => $directoryName,
+            'image' => $file_path
         ]);
         return redirect()->route('collegium.index')->with(['status' => __('messages.Created Successfully')]);
     }

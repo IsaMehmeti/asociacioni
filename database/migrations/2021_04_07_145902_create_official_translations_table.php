@@ -23,7 +23,7 @@ class CreateOfficialTranslationsTable extends Migration
             $table->foreign('official_id')->on('officials')->references('id')->onDelete('cascade');
 
             //fields to be translated
-            $table->string('municipality');
+            // $table->string('municipality');
         });
     }
 

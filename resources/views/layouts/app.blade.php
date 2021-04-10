@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
 
     <!-- Specific Page Vendor CSS -->
+    @yield('custom_header')
     <!--(remove-empty-lines-end)-->
 
     <!-- Theme CSS -->

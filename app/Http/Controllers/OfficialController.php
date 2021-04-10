@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Collegium;
 use App\Models\Official;
+use App\Models\Municipality;
 use Illuminate\Http\Request;
 
 class OfficialController extends Controller
@@ -27,7 +28,8 @@ class OfficialController extends Controller
     public function create()
     {
         $collegiums = Collegium::all();
-        return view('official.create', compact('collegiums'));
+        $cities = Municipality::all();
+        return view('official.create', compact(['collegiums', 'cities']));
     }
     /**
      * Store a newly created resource in storage.
@@ -43,9 +45,7 @@ class OfficialController extends Controller
             'last_name' => $request->last_name,
             'email' => $request->email,
             'collegium_id' => $request->collegium_id,
-            'en' => ['municipality'=>$request->en_municipality],
-            'sq' => ['municipality'=> $request->sq_municipality],
-            'sr' => ['municipality'=> $request->sr_municipality],
+            'municipality_id'=>$request->municipality_id,
         ]);
 
         return redirect()->back()->with(['status' => __('messages.Created Successfully')]);;
@@ -57,9 +57,10 @@ class OfficialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showByCity($city)
     {
-        //
+        $city = Municipality::whereTranslation('name', $city)->firstOrFail();
+        return view('showCity', compact('city'));
     }
 
     /**

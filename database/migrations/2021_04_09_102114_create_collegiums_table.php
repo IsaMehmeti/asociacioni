@@ -15,6 +15,11 @@ class CreateCollegiumsTable extends Migration
     {
         Schema::create('collegiums', function (Blueprint $table) {
             $table->id();
+            $table->string('filename');
+            $table->string('filetype');
+            $table->string('filesize');
+            $table->string('filepath');
+            $table->string('image');
             $table->timestamps();
         });
     }

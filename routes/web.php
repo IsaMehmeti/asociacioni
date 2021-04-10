@@ -22,7 +22,7 @@ Route::view('/registeruser', 'registeruser');
 Route::view('/registercollegiums', 'registercollegiumes');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('city', 'CityController@index');
+// Route::get('city', 'CityController@index');
 
 //change language
 Route::get('locale/{locale}', function ($locale){
@@ -37,12 +37,17 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/sendmail', 'MailController@sendMailToOneUser')->name('sendmail');
 
     //zyrtaret
+    Route::get('/officials/{city}', 'OfficialController@showByCity');
+
     Route::resource('/official', 'OfficialController');
 
     //kolegjiumet
     Route::resource('/collegium', 'CollegiumController');
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+    //komunat
+    Route::get('/municipalities', 'MunicipalityController@index');
 
 });
 Auth::routes();

@@ -3,17 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
-use Astrotomic\Translatable\Translatable;
 
-class Official extends Model implements TranslatableContract
+
+class Official extends Model 
 {
-    use Translatable;
-    protected $fillable = ['name', 'last_name', 'email', 'collegium_id'];
-    public $translatedAttributes = ['municipality'];
+    protected $fillable = ['name', 'last_name', 'email', 'collegium_id', 'municipality_id'];
 
     public function collegium()
     {
         return $this->belongsTo('App\Models\Collegium');
+    }
+    public function municipality()
+    {
+        return $this->belongsTo('App\Models\Municipality');
     }
 }

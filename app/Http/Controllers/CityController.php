@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Official;
 
 class CityController extends Controller
 {
@@ -12,17 +13,29 @@ class CityController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('city');    }
+    {   
+      
+        $lang = app()->getLocale();
+        $cities = array(
+        'DEÇAN', 'DRAGASH', 'FERIZAJ', 'GJAKOVË', 'GJILAN', 'DRENAS', 'ISTOG', 'KAÇANIK', 'KAMENICË', 'NOVOBËRDË', 'KLINË', 'JUNIK', 'LIPJAN', 'MALISHEVË', 'MITROVICË', 'OBILIQ', 'PEJË', 'PODUJEVË', 'PRISHTINË', 'RAHOVEC', 'PRIZREN', 'SHTËRPCE', 'SKENDERAJ', 'PARTESH', 'RANILLUG', 'KLLOKOT', 'GRAÇANIC','MITROVICA E VERIUT');
+          if ($lang == 'sr'){
+
+            $cities = array(
+        'DEÇAN', 'DRAGASH', 'UROSEVAC', 'GJAKOVË', 'GJILAN', 'DRENAS', 'ISTOG', 'KAÇANIK', 'KAMENICË', 'NOVOBËRDË', 'KLINË', 'JUNIK', 'LIPJAN', 'MALISHEVË', 'MITROVICË', 'OBILIQ', 'PEJË', 'PODUJEVË', 'PRISHTINË', 'RAHOVEC', 'PRIZREN', 'SHTËRPCE', 'SKENDERAJ', 'PARTESH', 'RANILLUG', 'KLLOKOT', 'GRAÇANIC','MITROVICA E VERIUT');
+        }
+
+        return view('city', compact('cities'));    
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function showofficials($city)
     {
-        //
+        $officials = Official::whereTranslation('municipality', $city)->get();
+        return view('showCity', compact(['officials', 'city']));
     }
 
     /**

@@ -20,7 +20,7 @@ class CreateCollegiumTranslationsTable extends Migration
             $table->unsignedBigInteger('collegium_id');
             $table->unique(['collegium_id', 'locale']);
             $table->foreign('collegium_id')->on('collegiums')->references('id')->onDelete('cascade');
-            // Actual fields you want to translate
+            //fields to be translated
             $table->string('title');
             $table->longText('description');
         });

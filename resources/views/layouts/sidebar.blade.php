@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="/city">
+                        <a class="nav-link" href="/municipalities">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <span>{{__('Qytetet')}}</span>
                         </a>
@@ -124,7 +124,7 @@
                         </ul>
                      </li>-->
 
-                    <!--<li class="nav-parent //nav-expanded nav-active">
+                   <li class="nav-parent //nav-expanded nav-active">
                         <a class="nav-link" href="#">
                             <i class="fas fa-columns" aria-hidden="true"></i>
                             <span>Layouts</span>
@@ -157,28 +157,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-parent">
-                                <a>
-                                    Horizontal Menu Header
-                                </a>
-                                <ul class="nav nav-children">
-                                    <li>
-                                        <a class="nav-link" href="layouts-header-menu.html">
-                                            Pills
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="layouts-header-menu-stripe.html">
-                                            Stripe
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="layouts-header-menu-top-line.html">
-                                            Top Line
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
                             <li>
                                 <a class="nav-link" href="layouts-dark.html">
                                     Dark
@@ -194,6 +172,7 @@
                                     Two Navigations
                                 </a>
                             </li>
+                             <!--
                             <li class="nav-parent">
                                 <a>
                                     Tab Navigation

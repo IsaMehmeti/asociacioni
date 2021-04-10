@@ -31,8 +31,8 @@
                     <div class="card-body">
                         <div class="widget-summary widget-summary-xlg">
                             <div class="widget-summary-col widget-summary-col-icon">
-                                <div class="summary-icon bg-primary">
-                                    <i class="fas fa-life-ring"></i>
+                                <div>
+                                    <i class=""><img src="{{asset($collegium->image)}}" width="100" style="padding: 10px;"></i>
                                 </div>
                             </div>
                             <div class="widget-summary-col">

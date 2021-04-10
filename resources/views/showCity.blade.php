@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Decani'))
+@section('page_name', ucfirst($city->name))
 
 @section('content')
     <!-- Modal -->
@@ -27,7 +27,7 @@
     
       <div class="row" style=" padding: 12px;">
       	
-  <div class="col-md-6"><h3 class="modal-title" id="exampleModalCenterTitle" style="align-items: center;">Deçan</h3></div>
+  <div class="col-md-6"><h3 class="modal-title" id="exampleModalCenterTitle" style="align-items: center;">{{ucfirst($city->name)}}</h3></div>
   <div class="col-md-6" style="margin: 15px 0px 0px"><form action="pages-search-results.html" class="search nav-form">
             <div class="input-group">
                 <input type="text" class="form-control" name="q" id="q" placeholder="Kerkoni...">
@@ -37,9 +37,6 @@
             </div>
         </form>
 </div>
-        
-        
-    
       </div>
       <div class="modal-body">
 
@@ -48,30 +45,23 @@
     <tr>
       <th scope="col">Kolegjiumi</th>
       <th scope="col">Zyrtari Komunal</th>
-      <th scope="col">Informata</th>
-      <th scope="col">Nenshkimet</th>
+      <th scope="col">E-mail</th>
     </tr>
   </thead>
   <tbody>
+    @forelse($city->officials as $official)
     <tr>
-      <td>Mbeturina</td>
-      <td>Filan Fisteku</td>
-      <td><a href="#Deçan" data-toggle="modal" data-target="#Deçan">Me shum info</a></td>
-      <td>ehajdini</td>
+      <td>{{$official->collegium->title}}</td>
+      <td>{{$official->name}} {{$official->last_name}}</td>
+      <td>{{$official->email}}</td>
     </tr>
+    @empty
     <tr>
-      <td>Mbeturina</td>
-      <td>Filan Fisteku</td>
-      <td><a href="#Deçan" data-toggle="modal" data-target="#Deçan">Me shum info</a></td>
-      <td>imehmeti</td>
-    </tr>
-    <tr>
-      <td>Mbeturina</td>
-      <td>Filan Fisteku</td>
-      <td><a href="#Deçan" data-toggle="modal" data-target="#Deçan">Me shum info</a></td>
-      <td>pbafit</td>
-    </tr>
-
+      <th>
+          <strong>{{__('messages.Sorry, No Record to show')}}. {{__('messages.Want to add')}} <a href="{{route('official.create')}}">{{__('messages.some?')}}</a></strong>
+        </th>
+      </tr>
+        @endforelse
   </tbody>
 </table>
 

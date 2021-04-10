@@ -2,6 +2,11 @@
 
 @section('page_name', __('Create Collegium'))
 
+@section('custom_header')
+    <link rel="stylesheet" href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('vendor/bootstrap-fileupload/bootstrap-fileupload.min.css')}}" />
+@endsection
+
 @section('content')
 
     <div class="col-lg-6 m-auto">
@@ -37,7 +42,7 @@
                         </li>
                     </ul>
                 </div>
-                <form id="myForm" class="form-horizontal" method="POST" action="{{route('collegium.store')}}">
+                <form id="myForm" class="form-horizontal" method="POST" action="{{route('collegium.store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="tab-content">
                         <div id="w1-account" class="tab-pane p-3 active">
@@ -53,6 +58,25 @@
                                     <input type="text" class="form-control" name="en_description" id="w1-username" required="" value="{{ old('en_description') }}">
                                 </div>
                             </div>
+                             <div class="form-group row">
+                                                <label class="col-lg-4 control-label text-lg-right pt-1">File Upload</label>
+                                                <div class="col-lg-8">
+                                                    <div class="fileupload fileupload-new"  data-provides="fileupload"><input type="hidden" >
+                                                        <div class="input-append">
+                                                            <div class="uneditable-input">
+                                                                <i class="fas fa-file fileupload-exists"></i>
+                                                                <span class="fileupload-preview"></span>
+                                                            </div>
+                                                            <span class="btn btn-default btn-file">
+                                                                <span class="fileupload-exists">Change</span>
+                                                                <span class="fileupload-new">Select file</span>
+                                                                <input type="file" name="image">
+                                                            </span>
+                                                            <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                </div>
                         </div>
                         <div id="w1-profile" class="tab-pane p-3">
                             <div class="form-group row">
@@ -81,6 +105,7 @@
                                     <input type="text" class="form-control" name="sr_description" id="w1-username" required="" value="{{ old('sr_description') }}">
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </form>
@@ -111,7 +136,6 @@
         $( document ).ready(function() {
             var locale = '{{ config('app.locale') }}';
             var message = "This field is required."
-            console.log(locale);
             if (locale == 'sq'){
                  message = "Kjo fushe nuk mund te jete e zbrazet";
             }else if(locale == 'sr'){
@@ -122,8 +146,11 @@
             });
         });
     </script>
+    <script src="{{asset('vendor/autosize/autosize.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap-fileupload/bootstrap-fileupload.min.js')}}"></script>
     <script src="{{asset('vendor/jquery-validation/jquery.validate.js')}}"></script>
     <script src="{{asset('vendor/pnotify/pnotify.custom.js')}}"></script>
     <script src="{{asset('vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
     <script src="{{asset('js/examples/examples.wizard.js')}}"></script>
+
 @endsection
