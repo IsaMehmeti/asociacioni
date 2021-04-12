@@ -11,7 +11,7 @@ class Collegium extends Model implements TranslatableContract
     use Translatable;
     protected $table = 'collegiums';
     protected $fillable = ['filename', 'filetype', 'filesize', 'filepath', 'image'];
- public $translatedAttributes = ['title', 'description'];
+    public $translatedAttributes = ['title', 'description'];
 
     public function official()
     {

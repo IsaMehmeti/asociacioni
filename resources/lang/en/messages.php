@@ -8,5 +8,6 @@ return [
     'Created Successfully' => 'Created Successfully',
     'Sorry, No Record to show' => 'Sorry, No Record to show',
     'Want to add' => 'Want to add',
-    'some?' => 'some?'
+    'some?' => 'some?',
+    'No description for this collegium' => 'No description for this collegium',
     ];

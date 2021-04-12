@@ -7,5 +7,6 @@ return [
     'Created Successfully' => 'Uspešno kreirano',
     'Sorry, No Record to show' => 'Žao mi je, nema zapisa za prikazivanje',
     'Want to add' => 'Hoćeš da dodaš',
-    'some?' => 'Neki?'
+    'some?' => 'Neki?',
+    'No description for this collegium' => 'Nema opisa za ovaj kolegijum',
 ];

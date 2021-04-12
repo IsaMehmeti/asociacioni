@@ -47,7 +47,9 @@
                     <div class="tab-content">
                         <div id="w1-account" class="tab-pane p-3 active">
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (EN)</label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (EN)
+                                    <span class="required">*</span></label>
+
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="en_title" id="w1-username" required value="{{ old('en_title') }}">
                                 </div>
@@ -55,11 +57,11 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Description (EN)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="en_description" id="w1-username" required="" value="{{ old('en_description') }}">
+                                    <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;" name="en_description" id="w1-username" value="{{ old('en_description') }}"></textarea>
                                 </div>
                             </div>
                              <div class="form-group row">
-                                                <label class="col-lg-4 control-label text-lg-right pt-1">File Upload</label>
+                                                <label class="col-lg-4 control-label text-lg-right pt-1">File Upload <span class="required">*</span></label>
                                                 <div class="col-lg-8">
                                                     <div class="fileupload fileupload-new"  data-provides="fileupload"><input type="hidden" >
                                                         <div class="input-append">
@@ -70,7 +72,7 @@
                                                             <span class="btn btn-default btn-file">
                                                                 <span class="fileupload-exists">Change</span>
                                                                 <span class="fileupload-new">Select file</span>
-                                                                <input type="file" name="image">
+                                                                <input type="file" name="image" required>
                                                             </span>
                                                             <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
                                                         </div>
@@ -80,7 +82,7 @@
                         </div>
                         <div id="w1-profile" class="tab-pane p-3">
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (SQ)</label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (SQ) <span class="required">*</span></label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="sq_title" id="w1-username" required="" value="{{ old('sq_title') }}">
                                 </div>
@@ -88,13 +90,13 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Description (SQ)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="sq_description" id="w1-username" required="" value="{{ old('sq_description') }}">
+                                    <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"  name="sq_description" id="w1-username" value="{{ old('sq_description') }}"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div id="w1-confirm" class="tab-pane p-3" id="last">
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (SR)</label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (SR) <span class="required">*</span></label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="sr_title" id="w1-username" required="" value="{{ old('sr_title') }}">
                                 </div>
@@ -102,7 +104,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Description (SR)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="sr_description" id="w1-username" required="" value="{{ old('sr_description') }}">
+                                    <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"  name="sr_description" id="w1-username"  value="{{ old('sr_description') }}"></textarea>
                                 </div>
                             </div>
 

@@ -25,12 +25,9 @@ class CollegiumStoreRequest extends FormRequest
     {
         return [
             'en_title' => 'required',
-            'en_description' => 'required',
             'sq_title' => 'required',
-            'sq_description' => 'required',
             'sr_title' => 'required',
-            'sr_description' => 'required',
-            'image' => 'mimes:jpeg,jpg,png,gif|max:2048',
+            'image' => 'required|mimes:jpeg,jpg,png,gif|max:2048',
         ];
     }
 }

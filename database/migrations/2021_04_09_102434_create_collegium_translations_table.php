@@ -22,7 +22,7 @@ class CreateCollegiumTranslationsTable extends Migration
             $table->foreign('collegium_id')->on('collegiums')->references('id')->onDelete('cascade');
             //fields to be translated
             $table->string('title');
-            $table->longText('description');
+            $table->longText('description')->nullable();
         });
     }
 
