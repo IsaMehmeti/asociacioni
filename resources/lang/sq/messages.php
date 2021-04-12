@@ -10,4 +10,13 @@ return [
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',
     'No description for this collegium' => 'Ska përshkrim per kete kolegjium',
+
+    //sidebar translations
+    'Dashboard' => 'Ballina',
+    'Municipalities' => 'Komunat',
+    'Send Email' => 'Dërgo Email',
+    'Collegiums' => 'Kolegjiumet',
+    'Create Collegium' => 'Krijo Kolegjiumin',
+    'Officials' => 'Zyrëtaret',
+    'Create Official' => 'Krijo Zyrëtarin',
 ];

@@ -3,107 +3,56 @@
 @section('page_name', __('Collegiums'))
 
 @section('custom_header')
-
+    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
+    <link rel="stylesheet" href="{{asset('vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('vendor/datatables/media/css/dataTables.bootstrap4.css')}}" />
 @endsection
 
 @section('content')
-    <style type="text/css">
-        .butoni {
-            padding: 0;
-            border: none;
-            background: none;
-            outline: none;
-            border-color: white;
-            font-size: 100%;
-        }
+        <section class="card">
 
-        selector:focus {
-            outline: none;
-        }
+            <header class="card-header">
+                <div class="card-actions">
+                    <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                </div>
 
-    </style>
-    <div class="row">
+                <h2 class="card-title">Default</h2>
+            </header>
+            <div class="card-body">
 
-        @forelse($collegiums as $collegium)
-        <div class="col-md-4">
-            <section class="card card-featured-left card-featured-primary mb-4">
-                <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">
-                    <div class="card-body">
-                        <div class="widget-summary widget-summary-xlg">
-                            <div class="widget-summary-col widget-summary-col-icon">
-                                <div>
-                                    <i class=""><img src="{{asset($collegium->image)}}" width="100" style="padding: 10px;"></i>
-                                </div>
-                            </div>
-                            <div class="widget-summary-col">
-                                <div>
-                                    <h3 class="title" style="float: left;  margin-left: 3px;">{{$collegium->title}}</h3><br>
-                                    <hr>
-                                    <div style="float: left;">
-                                        @if($collegium->description != null)
-                                        <span>{{$collegium->description}}</span>
-                                        @else
-                                            <span disabled>{{__('messages.No description for this collegium')}}</span>
-                                            @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </button>
-            </section>
-        </div>
-        @empty
-            <div class="col-md-12">
-            <div class="alert alert-danger text-center">
-                <strong>{{__('messages.Sorry, No Record to show')}}. {{__('messages.Want to add')}} <a href="{{route('collegium.create')}}">{{__('messages.some?')}}</a></strong>
+                <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                    <thead>
+                    <tr>
+                        <th>{{__('Logo')}}</th>
+                        <th>{{__('Kolegjiumi')}}</th>
+                        <th>{{__('Description')}}</th>
+                        <th>{{__('Actions')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @forelse($collegiums as $collegium)
+                        <tr data-item-id="{{$collegium->id}}" role="row" class="odd">
+                        <td class="sorting_1"><img src="{{asset($collegium->image)}}" width="20" height="20"</td>
+                        <td>{{$collegium->title}}</td>
+                        <td>{{$collegium->description}}</td>
+                        <td class="actions">
+                        </td>
+                    </tr>
+                    @empty
+                        <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr>
+                        @endforelse
+                    </tbody>
+                </table>
             </div>
-            </div>
-        @endforelse
-    </div>
-{{--    <!-- Modal -->--}}
-{{--    <div class="modal fade" id="Deçan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"--}}
-{{--         aria-hidden="true">--}}
-{{--        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">--}}
-{{--            <div class="modal-content">--}}
-{{--                <section class="card">--}}
-{{--                    <div class="card-body text-center">--}}
-{{--                        <div class="modal-wrapper">--}}
-{{--                            <div class="modal-icon center">--}}
-{{--                                <i class="fas fa-life-ring"></i>--}}
-{{--                            </div>--}}
-{{--                            <div class="modal-text">--}}
-{{--                                <h2>Kolegjiumi Nr.1</h2><br><br>--}}
-{{--                                <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem--}}
-{{--                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an--}}
-{{--                                    unknown printer took a galley of type and scrambled it to make a type specimen--}}
-{{--                                    book. It has survived not only five centuries, but also the leap into electronic--}}
-{{--                                    typesetting, remaining essentially unchanged. It was popularised in the 1960s--}}
-{{--                                    with the release of Letraset sheets containing Lorem Ipsum passages, and more--}}
-{{--                                    recently with desktop publishing software like Aldus PageMaker including--}}
-{{--                                    versions of Lorem Ipsum.?</h4>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <footer class="card-footer">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-md-6 center">--}}
-{{--                                <a href="/collegiumpage" class="btn btn-info">Shfaq me shume</a>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-md-6 center">--}}
-{{--                                <button type="button" class="btn btn-secondary" data-dismiss="modal"--}}
-{{--                                        style="align-items: center;">Mbyll--}}
-{{--                                </button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </footer>--}}
-{{--                </section>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- end modal -->--}}
+
+        </section>
 @endsection
 
 @section('custom_footer')
+    <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
+    <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
 
 @endsection

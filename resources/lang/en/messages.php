@@ -10,4 +10,14 @@ return [
     'Want to add' => 'Want to add',
     'some?' => 'some?',
     'No description for this collegium' => 'No description for this collegium',
+    'Dashboard',
+
+    //sidebar translations
+    'Dashboard' => 'Dashboard',
+    'Municipalities' => 'Municipalities',
+    'Send Email' => 'Send Email',
+    'Collegiums' => 'Collegiums',
+    'Create Collegium' => 'Create Collegium',
+    'Officials' => 'Officials',
+    'Create Official' => 'Create Official',
     ];
