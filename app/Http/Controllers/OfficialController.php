@@ -74,6 +74,11 @@ class OfficialController extends Controller
         //
     }
 
+    public function archive($id)
+    {
+        dd('22');
+    }
+
     /**
      * Update the specified resource in storage.
      *

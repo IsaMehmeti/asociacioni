@@ -36,8 +36,9 @@
                         <td>{{$official->name}} {{$official->last_name}}</td>
                         <td>{{$official->collegium->title}}</td>
                         <td>{{$official->municipality->name}}</td>
-                        <td class="actions">
-                        </td>
+                            <td class="actions">
+                                Archive: <a href="/official/archive/{{$official->id}}"><i class="fa fa-archive"></i></a>
+                            </td>
                     </tr>
                     @empty
                         <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr>

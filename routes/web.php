@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/officials/{city}', 'OfficialController@showByCity');
 
     Route::resource('/official', 'OfficialController');
+//    Route::resource('/official/{id}/archive', 'OfficialController@archive');
+
 
     //kolegjiumet
     Route::resource('/collegium', 'CollegiumController');

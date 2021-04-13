@@ -3,10 +3,9 @@
 @section('page_name', __('Compose'))
 
 @section('content')
-    <section role="main" class="content-body">
     <section class="content-with-menu content-with-menu-has-toolbar mailbox">
         <div class="content-with-menu-container" data-mailbox data-mailbox-view="compose">
-            <form method="POST" action="{{ route('sendmail') }}">
+            <form method="POST" action="{{ route('sendmail') }}" class="col-md-12">
                 @csrf
                 <div class="inner-toolbar clearfix">
                     <ul>
@@ -18,13 +17,13 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mailbox-compose">
+                <div class="mailbox-compose ">
                     <div class="form-horizontal form-bordered form-bordered">
 
                         <div class="form-group form-group-invisible">
                             <label for="to" class="control-label-invisible">To:</label>
                             <div class="col-md-12 mailbox-compose-field">
-                                <input id="to" type="text" class="form-control form-control-invisible" data-role="tagsinput" data-tag-class="badge badge-primary">
+                                <input disabled id="to" type="text" class="form-control form-control-invisible" data-role="tagsinput" data-tag-class="badge badge-primary">
                                 <select class="form-control" name="user_id">
                                     @foreach($users as $user)
                                     <option value="{{$user->id}}">{{$user->email}}</option>
@@ -53,5 +52,5 @@
 {{--            </div>--}}
             </form>
         </div>
-    </section></section>
+    </section>
 @endsection
