@@ -38,7 +38,7 @@
                                 <div class="widget-summary-col">
                                     <div>
                                         <h3 class="title" style="float: left;  margin-left: 3px;">{{$collegium->title}}</h3><br>
-                                        <hr>
+                                        <hr style="opacity: 0%;">
                                         <div style="float: left;">
                                             @if($collegium->description != null)
                                                 <span>{{$collegium->description}}</span>

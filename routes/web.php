@@ -60,3 +60,7 @@ Route::get('/decani', function() {
 Route::get('/collegiumpage', function() {
 	return view ('collegiumpage');
 });
+
+Route::get('/showcity', function() {
+	return view ('showcity');
+});

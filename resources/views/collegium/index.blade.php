@@ -44,6 +44,7 @@
                         @endforelse
                     </tbody>
                 </table>
+                <button onclick="makePdf()" class="btn btn-Primary">Printo Listen</button>
             </div>
 
         </section>
@@ -56,3 +57,15 @@
     <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
 
 @endsection
+
+<script type="text/javascript">
+  function makePdf(){
+    var printMe = document.getElementById('datatable-editable');
+    var wme = window.open("","","width:700,height:900");
+    wme.document.write(printMe.outerHTML);
+    wme.document.close();
+    wme.focus();
+    wme.print();
+   setTimeout(() => {  wme.close(); }, 2000);
+  }
+</script>

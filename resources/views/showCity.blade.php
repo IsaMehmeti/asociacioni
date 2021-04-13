@@ -1,100 +1,70 @@
+
+
+
 @extends('layouts.app')
 
 @section('page_name', ucfirst($city->name))
 
+@section('custom_header')
+    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
+    <link rel="stylesheet" href="{{asset('vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('vendor/datatables/media/css/dataTables.bootstrap4.css')}}" />
+@endsection
+
 @section('content')
-    <!-- Modal -->
+        <section class="card">
 
-  <style type="text/css">
-    .modali {
-      border-style: solid;
-      border-width: 1px;
-      background-color: white;
-    }
+            <header class="card-header">
+                <div class="card-actions">
+                    <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                    <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                </div>
 
-    .container {  
-    display: grid;  
-    grid-template-columns: 200px 200px 200px;  
-    align-items: center;
+                <h2 class="card-title" style="text-transform: capitalize;">{{$city->name}}</h2>
+            </header>
+            <div class="card-body">
 
-}
-  </style>
-
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-    
-      <div class="row" style=" padding: 12px;">
-      	
-  <div class="col-md-6"><h3 class="modal-title" id="exampleModalCenterTitle" style="align-items: center;">{{ucfirst($city->name)}}</h3></div>
-  <div class="col-md-6" style="margin: 15px 0px 0px"><form action="pages-search-results.html" class="search nav-form">
-            <div class="input-group">
-                <input type="text" class="form-control" name="q" id="q" placeholder="Kerkoni...">
-                <span class="input-group-append">
-								<button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
-							</span>
-            </div>
-        </form>
-</div>
-      </div>
-      <div class="modal-body">
-
-        <table class="table table-striped" id="tabela">
-  <thead>
-    <tr>
-      <th scope="col">Kolegjiumi</th>
-      <th scope="col">Zyrtari Komunal</th>
-      <th scope="col">E-mail</th>
-    </tr>
-  </thead>
-  <tbody>
-    @forelse($city->officials as $official)
-    <tr>
-      <td>{{$official->collegium->title}}</td>
+                <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                    <thead>
+                    <tr>
+                        <th>{{__('Kolegjiumi')}}</th>
+                        <th>{{__('Zyrtari Komunal')}}</th>
+                        <th>{{__('Email')}}</th>
+                         <th>{{__('Actions')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @forelse($city->officials as $official)
+                        <tr data-item-id="{{$official->id}}" role="row" class="odd">
+                        <td>{{$official->collegium->title}}</td>
       <td>{{$official->name}} {{$official->last_name}}</td>
       <td>{{$official->email}}</td>
-    </tr>
-    @empty
-    <tr>
-      <th>
-          <strong>{{__('messages.Sorry, No Record to show')}}. {{__('messages.Want to add')}} <a href="{{route('official.create')}}">{{__('messages.some?')}}</a></strong>
-        </th>
-      </tr>
-        @endforelse
-  </tbody>
-</table>
+                        <td class="actions">
+                        </td>
+                    </tr>
+                    @empty
+                        <strong>{{__('messages.Sorry, No Record to show')}}. {{__('messages.Want to add')}} <a href="{{route('official.create')}}">{{__('messages.some?')}}</a></strong>
+                        @endforelse
+                    </tbody>
+                </table>
+                <button onclick="makePdf()" class="btn btn-Primary">Printo Listen</button>
+            </div>
 
-<button onclick="makePdf()" class="btn btn-info">Printo Listen</button>
+        </section>
+@endsection
 
-      	
-      </div>
+@section('custom_footer')
+    <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
+    <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
+
+@endsection
 
 
-      <div class="modal fade" id="Deçan" tabindex="-1" role="dialog" aria-labelledby="#Deçan" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalCenterTitle" style="align-items: center;">Te dhenat e zyrtarit</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Kolegjiumi: <b>Mbeturina</b><br>
-        Emri Mbiemri: <b>Bashkim Ramosaj</b><br>Nr i telefonit: <b>0390/361-100</b>
-            <br>Nr i fax: <b>0390/361-785</b><br>Emaili: <b>bashkim.ramosaj@rks-gov.net</b>
-      </div>
-      <div class="modal-footer center" style="float: right;">
-        <button type="button" class="btn btn-info" style="float: left;">Dergo email zyrtarit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 <script type="text/javascript">
   function makePdf(){
-    var printMe = document.getElementById('tabela');
+    var printMe = document.getElementById('datatable-editable');
     var wme = window.open("","","width:700,height:900");
     wme.document.write(printMe.outerHTML);
     wme.document.close();
@@ -103,7 +73,3 @@
    setTimeout(() => {  wme.close(); }, 2000);
   }
 </script>
-      
-    
-
-@endsection
