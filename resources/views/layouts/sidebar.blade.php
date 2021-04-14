@@ -14,56 +14,61 @@
 
 
                 <ul class="nav nav-main">
-                    <li>
+                    <li class="{{ Request::is('/') ? 'nav-active' : '' }}">
                         <a class="nav-link" href="/">
                             <i class="fas fa-columns"></i>
                             <span>{{__('messages.Dashboard')}}</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ Request::is('municipalities') ? 'nav-active' : '' }}">
                         <a class="nav-link" href="{{url('/municipalities')}}">
                             <i class="far fa-building"></i>
                             <span>{{__('messages.Municipalities')}}</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="{{ Request::is('mail') ? 'nav-active' : '' }}">
                         <a class="nav-link" href="{{url('/mail')}}">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                             <span>{{__('messages.Send Email')}}</span>
                         </a>
                     </li>
-                    <li class="nav-parent">
+                    <li class="nav-parent {{ Request::is('collegium*') ? 'nav-expanded nav-active' : '' }}">
                         <a class="nav-link" href="#">
                             <i class="fas fa-industry" aria-hidden="true"></i>
                             <span>{{__('messages.Collegiums')}}</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li>
+                            <li class="{{ Request::is('collegium') ? 'nav-active' : '' }}">
                                 <a class="nav-link" href="{{route('collegium.index')}}">
                                     {{__('messages.Collegiums')}}
                                 </a>
                             </li>
-                            <li class="nav-active">
+                            <li class="{{ Request::is('collegium/create') ? 'nav-active' : '' }}">
                                 <a class="nav-link" href="{{route('collegium.create')}}">
                                     {{__('messages.Create Collegium')}}
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-parent">
+                    <li class="nav-parent {{ Request::is('official*') ? 'nav-expanded nav-active' : '' }}">
                         <a class="nav-link" href="#">
                             <i class="fas fa-user-tie"></i>
                             <span> {{__('messages.Officials')}}</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li>
+                            <li class="{{ Request::is('official') ? 'nav-active' : '' }}">
                                 <a class="nav-link" href="{{route('official.index')}}">
                                     {{__('messages.Officials')}}
                                 </a>
                             </li>
-                            <li>
+                            <li class="{{ Request::is('official/create') ? 'nav-active' : '' }}">
                                 <a class="nav-link" href="{{route('official.create')}}">
                                     {{__('messages.Create Official')}}
+                                </a>
+                            </li>
+                            <li class="{{ Request::is('official/archive') ? 'nav-active' : '' }}">
+                                <a class="nav-link" href="{{route('archive')}}">
+                                    {{__('messages.Archive')}}
                                 </a>
                             </li>
                         </ul>

@@ -20,4 +20,5 @@ return [
     'Create Collegium' => 'Kreiraj kolegijumi',
     'Officials' => 'Zvaničnici',
     'Create Official' => 'Kreiraj zvanično',
+    'Archive' => 'Arhive',
 ];

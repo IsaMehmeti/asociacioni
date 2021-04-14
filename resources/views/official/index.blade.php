@@ -32,13 +32,13 @@
                     </thead>
                     <tbody>
                     @forelse($officials as $official)
-                        <tr data-item-id="{{$official->id}}" role="row" class="odd">
-                        <td>{{$official->name}} {{$official->last_name}}</td>
-                        <td>{{$official->collegium->title}}</td>
-                        <td>{{$official->municipality->name}}</td>
-                            <td class="actions"> Archive:<a href="#" id="archive" value="{{$official->id}}"><i class="fa fa-archive"></i></a>
-                            </td>
-                    </tr>
+                        <tr id="row{{$official->id}}" data-item-id="{{$official->id}}" role="row" class="odd">
+                            <td>{{$official->name}} {{$official->last_name}}</td>
+                            <td>{{$official->collegium->title}}</td>
+                            <td>{{$official->municipality->name}}</td>
+                                <td class="actions"> Archive:    <a href="#" id="archive" value="{{$official->id}}"><i class="fa fa-archive"></i></a>
+                                </td>
+                        </tr>
                     @empty
                         <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr>
                         @endforelse
@@ -55,34 +55,42 @@
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
+
     <script>
         $( "#archive" ).on( "click", function() {
+            deleteUser($('#archive').attr('value'));
+        });
+        function deleteUser(id){
+            var url = '/official/'+id+'/archive';
             $.ajax({
-                url: '{{route('official.index' )}}/'+$('#archive').attr('value'),
-                type: 'DELETE',
+                url: url,
+                type: 'POST',
                 data: {
                     "_token": "{{ csrf_token() }}",
                 },
-                success: function(data){
-                    if(data.success) {
-                        location.reload();
-                    }
-                    },
-                error: function() {}
+                cache: false,
+                dataType: 'json',
+                success: function(data) {
+                    $( "#row"+id ).remove();
+                },
+                error: function(error) {
+                    console.log(error);
+                }
             });
-        });
+        }
         </script>
 @endsection
-
 <script type="text/javascript">
-  function makePdf(){
-    var printMe = document.getElementById('datatable-editable');
-    var wme = window.open("","","width:700,height:900");
-    wme.document.write(printMe.outerHTML);
-    wme.document.close();
-    wme.focus();
-    wme.print();
-   setTimeout(() => {  wme.close(); }, 2000);
-  }
+    function makePdf(){
+        var printMe = document.getElementById('datatable-editable');
+        var wme = window.open("","","width:700,height:900");
+        wme.document.write(printMe.outerHTML);
+        wme.document.close();
+        wme.focus();
+        wme.print();
+        setTimeout(() => {  wme.close(); }, 2000);
+    }
 </script>
+
+
 

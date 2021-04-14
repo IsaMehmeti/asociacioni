@@ -43,7 +43,6 @@
                         </td>
                     </tr>
                     @empty
-                        <strong>{{__('messages.Sorry, No Record to show')}}. {{__('messages.Want to add')}} <a href="{{route('official.create')}}">{{__('messages.some?')}}</a></strong>
                         @endforelse
                     </tbody>
                 </table>

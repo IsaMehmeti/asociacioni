@@ -21,4 +21,5 @@ return [
     'Create Collegium' => 'Create Collegium',
     'Officials' => 'Officials',
     'Create Official' => 'Create Official',
+    'Archive' => 'Archive',
     ];

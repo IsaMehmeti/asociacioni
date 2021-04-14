@@ -37,7 +37,8 @@ Route::group(['middleware' => 'auth'], function(){
     //zyrtaret
     Route::get('/officials/{city}', 'OfficialController@showByCity');
 
-//    Route::delete('/official/{id}/archive', 'OfficialController@archive')->name('officalArchive');
+    Route::get('/official/archive', 'OfficialController@archiveIndex')->name('archive');
+    Route::post('/official/{id}/archive', 'OfficialController@archive');
     Route::resource('/official', 'OfficialController');
 
     //kolegjiumet

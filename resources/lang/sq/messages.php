@@ -20,4 +20,5 @@ return [
     'Create Collegium' => 'Krijo Kolegjiumin',
     'Officials' => 'Zyrëtaret',
     'Create Official' => 'Krijo Zyrëtarin',
+    'Archive' => 'Arkiva',
 ];

@@ -63,33 +63,28 @@ class OfficialController extends Controller
         return view('showCity', compact('city'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
+    public function archiveIndex()
+    {
+        $officials = Official::withTrashed()->get();
+        return view('official.archive', compact('officials'));
+    }
+
     public function archive($id)
     {
-
+        $official = Official::findOrFail($id);
+        $official->delete();
+        return response()->json(['status'=>'success']);
     }
 
     public function update(Request $request, $id)
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $official = Official::findOrFail($id);
