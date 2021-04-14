@@ -36,8 +36,7 @@
                         <td>{{$official->name}} {{$official->last_name}}</td>
                         <td>{{$official->collegium->title}}</td>
                         <td>{{$official->municipality->name}}</td>
-                            <td class="actions">
-                                Archive: <a href="/official/archive/{{$official->id}}"><i class="fa fa-archive"></i></a>
+                            <td class="actions"> Archive:<a href="#" id="archive" value="{{$official->id}}"><i class="fa fa-archive"></i></a>
                             </td>
                     </tr>
                     @empty
@@ -56,7 +55,23 @@
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
-
+    <script>
+        $( "#archive" ).on( "click", function() {
+            $.ajax({
+                url: '{{route('official.index' )}}/'+$('#archive').attr('value'),
+                type: 'DELETE',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                },
+                success: function(data){
+                    if(data.success) {
+                        location.reload();
+                    }
+                    },
+                error: function() {}
+            });
+        });
+        </script>
 @endsection
 
 <script type="text/javascript">

@@ -37,15 +37,13 @@ Route::group(['middleware' => 'auth'], function(){
     //zyrtaret
     Route::get('/officials/{city}', 'OfficialController@showByCity');
 
+//    Route::delete('/official/{id}/archive', 'OfficialController@archive')->name('officalArchive');
     Route::resource('/official', 'OfficialController');
-    //    Route::resource('/official/{id}/archive', 'OfficialController@archive');
 
     //kolegjiumet
     Route::resource('/collegium', 'CollegiumController');
     //komunat
     Route::get('/municipalities', 'MunicipalityController@index');
-
-
 
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -48,7 +48,7 @@ class OfficialController extends Controller
             'municipality_id'=>$request->municipality_id,
         ]);
 
-        return redirect()->back()->with(['status' => __('messages.Created Successfully')]);;
+        return redirect()->back()->with(['status' => __('messages.Created Successfully')]);
     }
 
     /**
@@ -76,16 +76,9 @@ class OfficialController extends Controller
 
     public function archive($id)
     {
-        dd('22');
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
@@ -99,6 +92,8 @@ class OfficialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $official = Official::findOrFail($id);
+        $official->delete();
+        return redirect()->back()->with(['danger' => __('messages.Deleted Successfully')]);
     }
 }

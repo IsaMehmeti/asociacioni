@@ -6,6 +6,7 @@ return [
     'Sign In' => 'Sign in',
     'word' => 'english',
     'Created Successfully' => 'Created Successfully',
+    'Deleted Successfully' => 'Deleted Successfully',
     'Sorry, No Record to show' => 'Sorry, No Record to show',
     'Want to add' => 'Want to add',
     'some?' => 'some?',

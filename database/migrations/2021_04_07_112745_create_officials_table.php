@@ -20,6 +20,7 @@ class CreateOfficialsTable extends Migration
             $table->string('email');
             $table->unsignedBigInteger('collegium_id');
             $table->unsignedBigInteger('municipality_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

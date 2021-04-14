@@ -6,6 +6,7 @@ return [
     'Sign In' => 'Kyçu',
     'word' => 'shqip',
     'Created Successfully' => 'U krijua me sukses',
+    'Deleted Successfully' => 'U fshi me sukses',
     'Sorry, No Record to show' => 'Na vjen keq, ska të dhëna për të shfaqur',
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',
