@@ -18,8 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 //dashboard - home.blade.php
-Route::view('/registeruser', 'registeruser');
-Route::view('/registercollegiums', 'registercollegiumes');
 
 Route::get('/', 'HomeController@index')->name('home');
 // Route::get('city', 'CityController@index');
@@ -40,29 +38,17 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/officials/{city}', 'OfficialController@showByCity');
 
     Route::resource('/official', 'OfficialController');
-//    Route::resource('/official/{id}/archive', 'OfficialController@archive');
-
+    //    Route::resource('/official/{id}/archive', 'OfficialController@archive');
 
     //kolegjiumet
     Route::resource('/collegium', 'CollegiumController');
-
-    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
     //komunat
     Route::get('/municipalities', 'MunicipalityController@index');
 
+
+
+
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
 Auth::routes();
 
-
-Route::get('/decani', function() {
-	return view ('decani');
-});
-
-Route::get('/collegiumpage', function() {
-	return view ('collegiumpage');
-});
-
-Route::get('/showcity', function() {
-	return view ('showcity');
-});

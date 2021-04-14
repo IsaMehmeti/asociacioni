@@ -37,8 +37,8 @@
                     @forelse($city->officials as $official)
                         <tr data-item-id="{{$official->id}}" role="row" class="odd">
                         <td>{{$official->collegium->title}}</td>
-      <td>{{$official->name}} {{$official->last_name}}</td>
-      <td>{{$official->email}}</td>
+                        <td>{{$official->name}} {{$official->last_name}}</td>
+                        <td>{{$official->email}}</td>
                         <td class="actions">
                         </td>
                     </tr>

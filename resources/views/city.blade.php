@@ -3,7 +3,7 @@
 @section('page_name', __('Qytetet'))
 
 @section('content')
-    
+
 
     <style type="text/css">
     	.butoni {
@@ -23,7 +23,8 @@ selector:focus {outline: none;}
 
 	@foreach($cities as $city)
   <div class="col-lg-4" style="margin-bottom: 20px;">
-	<a href="{{url('/officials/'.$city->name.'')}}" style="text-decoration: none; color: black;"><section class="card card-featured-left card-featured-primary ">
+	<a href="{{url('/officials/'.$city->name.'')}}" style="text-decoration: none; color: black;">
+        <section class="card card-featured-left card-featured-primary ">
 		<div class="card-body">
 			<h3 class="title">{{ucfirst($city->name)}}</h3>
 		</div>

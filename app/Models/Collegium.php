@@ -13,7 +13,7 @@ class Collegium extends Model implements TranslatableContract
     protected $fillable = ['filename', 'filetype', 'filesize', 'filepath', 'image'];
     public $translatedAttributes = ['title', 'description'];
 
-    public function official()
+    public function officials()
     {
         return $this->hasMany('App\Models\Official');
     }

@@ -53,9 +53,10 @@ class CollegiumController extends Controller
         return redirect()->route('collegium.index')->with(['status' => __('messages.Created Successfully')]);
     }
 
-    public function show(Collegium $collegium)
+    public function show($id)
     {
-        //
+        $collegium = Collegium::findOrFail($id);
+        return view('collegium.show', compact('collegium'));
     }
 
     /**

@@ -27,7 +27,7 @@
         @forelse($collegiums as $collegium)
             <div class="col-md-4">
                 <section class="card card-featured-left card-featured-primary mb-4">
-                    <button type="button" data-toggle="modal" data-target="#Deçan" class="butoni">
+                    <a href="{{route('collegium.show', $collegium->id)}}" style="text-decoration: none; color: black;">
                         <div class="card-body">
                             <div class="widget-summary widget-summary-xlg">
                                 <div class="widget-summary-col widget-summary-col-icon">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                    </button>
+                    </a>
                 </section>
             </div>
         @empty
