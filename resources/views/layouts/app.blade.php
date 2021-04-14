@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="landing simple-sticky-header-enabled">
+<html lang="{{ config('app.locale') }}">
 <head>
 
     <!-- Basic -->

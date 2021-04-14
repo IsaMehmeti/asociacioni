@@ -32,11 +32,16 @@
                     </thead>
                     <tbody>
                     @forelse($officials as $official)
-                        <tr id="row{{$official->id}}" data-item-id="{{$official->id}}" role="row" class="odd">
+                        <tr data-item-id="{{$official->id}}" role="row" class="odd">
                             <td>{{$official->name}} {{$official->last_name}}</td>
                             <td>{{$official->collegium->title}}</td>
                             <td>{{$official->municipality->name}}</td>
-                                <td class="actions"> Archive:    <a href="#" id="archive" value="{{$official->id}}"><i class="fa fa-archive"></i></a>
+                            <td class="actions">
+                                <form method="POST" action="{{route('official.destroy', $official->id)}}">
+                                    @csrf
+                                    @method('delete')
+                                <input type="submit" class="btn btn-success" value="{{__('messages.Archive')}}"/>
+                                </form>
                                 </td>
                         </tr>
                     @empty
@@ -48,37 +53,17 @@
             </div>
 
         </section>
+
 @endsection
 
 @section('custom_footer')
+
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
 
-    <script>
-        $( "#archive" ).on( "click", function() {
-            deleteUser($('#archive').attr('value'));
-        });
-        function deleteUser(id){
-            var url = '/official/'+id+'/archive';
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                },
-                cache: false,
-                dataType: 'json',
-                success: function(data) {
-                    $( "#row"+id ).remove();
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
-        }
-        </script>
+
 @endsection
 <script type="text/javascript">
     function makePdf(){

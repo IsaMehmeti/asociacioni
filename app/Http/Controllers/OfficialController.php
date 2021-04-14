@@ -74,12 +74,12 @@ class OfficialController extends Controller
         return view('official.archive', compact('officials'));
     }
 
-    public function archive($id)
-    {
-        $official = Official::findOrFail($id);
-        $official->delete();
-        return response()->json(['status'=>'success']);
-    }
+//    public function archive($id)
+//    {
+//        $official = Official::findOrFail($id);
+//        $official->delete();
+//        return redirect()->back();
+//    }
 
     public function update(Request $request, $id)
     {
@@ -89,6 +89,6 @@ class OfficialController extends Controller
     {
         $official = Official::findOrFail($id);
         $official->delete();
-        return redirect()->back()->with(['danger' => __('messages.Deleted Successfully')]);
+        return redirect()->back()->with(['danger' => __('messages.Archived Successfully')]);
     }
 }

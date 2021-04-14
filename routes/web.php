@@ -38,7 +38,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/officials/{city}', 'OfficialController@showByCity');
 
     Route::get('/official/archive', 'OfficialController@archiveIndex')->name('archive');
-    Route::post('/official/{id}/archive', 'OfficialController@archive');
     Route::resource('/official', 'OfficialController');
 
     //kolegjiumet
