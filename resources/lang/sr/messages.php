@@ -10,6 +10,7 @@ return [
     'Want to add' => 'Hoćeš da dodaš',
     'some?' => 'Neki?',
     'No description for this collegium' => 'Nema opisa za ovaj kolegijum',
+    'Old Password didn\'t match' => 'Stara lozinka se nije podudarala',
 
 
     //sidebar
@@ -21,4 +22,12 @@ return [
     'Officials' => 'Zvaničnici',
     'Create Official' => 'Kreiraj zvanično',
     'Archive' => 'Arhive',
+
+    //user profile
+    'User Profile' => 'Korisnički profil',
+    'infoUserEdit' => 'Akreditive možete promeniti ovde.',
+
+    //404 Error
+    'sorry' => 'Žao nam je, ali stranica koju ste tražili ne postoji.',
+    'useful' => 'Evo nekoliko korisnih linkova',
 ];

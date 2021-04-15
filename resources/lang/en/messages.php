@@ -12,6 +12,7 @@ return [
     'some?' => 'some?',
     'No description for this collegium' => 'No description for this collegium',
     'Dashboard',
+    'Old Password didn\'t match' => 'Old Password didn\'t match',
 
     //sidebar translations
     'Dashboard' => 'Dashboard',
@@ -22,4 +23,13 @@ return [
     'Officials' => 'Officials',
     'Create Official' => 'Create Official',
     'Archive' => 'Archive',
+
+    //user profile
+    'User Profile' => 'User Profile',
+    'infoUserEdit' => 'You can change your credentials here.',
+
+
+    //404Error
+    'sorry' => 'We\'re sorry, but the page you were looking for doesn\'t exist.',
+    'useful' => 'Here are some useful links',
     ];

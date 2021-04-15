@@ -58,11 +58,11 @@
             @endif
             @if ($errors->any())
                 <div class="alert alert-danger text-center">
-                    <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            <strong>{{ $error }}</strong>
+                        @if($errors->count() > 1)<br>
+                        @endif
                         @endforeach
-                    </ul>
                 </div>
             @endif
         </div>

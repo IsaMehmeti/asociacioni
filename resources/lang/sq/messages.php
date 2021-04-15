@@ -11,6 +11,7 @@ return [
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',
     'No description for this collegium' => 'Ska përshkrim per kete kolegjium',
+    'Old Password didn\'t match' => 'Passwordi i vjeter nuk perputhet',
 
     //sidebar translations
     'Dashboard' => 'Ballina',
@@ -21,4 +22,13 @@ return [
     'Officials' => 'Zyrëtaret',
     'Create Official' => 'Krijo Zyrëtarin',
     'Archive' => 'Arkivë',
+
+    //user profile
+    'User Profile' => 'Profili i përdoruesit',
+    'infoUserEdit' => 'Këtu mund të ndryshoni të dhënat tuaja.',
+
+    //404Error
+    'sorry' => 'Na vjen keq, mirëpo faqja qe ju po kërkoni nuk ekziston',
+    'useful' => 'Këtu janë disa faqe që do mund tu hynin në punë',
+
 ];
