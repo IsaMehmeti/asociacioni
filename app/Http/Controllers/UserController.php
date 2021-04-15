@@ -2,66 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Session\Store;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $user = auth()->user();
         return view('user.profile');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(StoreUserRequest  $request)
     {
-        //
+        $user = New User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect()->back()->with(['status'=> __('messages.Created Successfully')]);
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function edit($id)
-//    {
-//
-//    }
-
 
     public function update(UserUpdateRequest $request)
     {
@@ -82,7 +51,7 @@ class UserController extends Controller
             $user->password = bcrypt($request->password);
         }
         $user->save();
-        return redirect()->back()->with(['status'=>'Updated Successfully']);
+        return redirect()->back()->with(['status'=>__('messages.Updated Successfully')]);
     }
 
     public function destroy($id)

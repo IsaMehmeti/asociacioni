@@ -6,6 +6,7 @@ return [
     'Sign In' => 'Upiši se',
     'Created Successfully' => 'Uspešno kreirano',
     'Archived Successfully' => 'Uspešno arhive',
+    'Updated Successfully' => 'Uspešno ažurirano',
     'Sorry, No Record to show' => 'Žao mi je, nema zapisa za prikazivanje',
     'Want to add' => 'Hoćeš da dodaš',
     'some?' => 'Neki?',
@@ -22,6 +23,7 @@ return [
     'Officials' => 'Zvaničnici',
     'Create Official' => 'Kreiraj zvanično',
     'Archive' => 'Arhive',
+    'add user' => 'Dodavanje Korisnika',
 
     //user profile
     'User Profile' => 'Korisnički profil',

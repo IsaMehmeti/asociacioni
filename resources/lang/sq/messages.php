@@ -7,6 +7,7 @@ return [
     'word' => 'shqip',
     'Created Successfully' => 'U krijua me sukses',
     'Archived Successfully' => 'U arkivua me sukses',
+    'Updated Successfully' => 'U ndryshua me sukses',
     'Sorry, No Record to show' => 'Na vjen keq, ska të dhëna për të shfaqur',
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',
@@ -22,6 +23,7 @@ return [
     'Officials' => 'Zyrëtaret',
     'Create Official' => 'Krijo Zyrëtarin',
     'Archive' => 'Arkivë',
+    'add user' => 'Shto Përdorues',
 
     //user profile
     'User Profile' => 'Profili i përdoruesit',

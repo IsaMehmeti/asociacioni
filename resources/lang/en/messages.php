@@ -7,6 +7,7 @@ return [
     'word' => 'english',
     'Created Successfully' => 'Created Successfully',
     'Archived Successfully' => 'Archived Successfully',
+    'Updated Successfully' => 'Updated Successfully',
     'Sorry, No Record to show' => 'Sorry, No Record to show',
     'Want to add' => 'Want to add',
     'some?' => 'some?',
@@ -23,6 +24,7 @@ return [
     'Officials' => 'Officials',
     'Create Official' => 'Create Official',
     'Archive' => 'Archive',
+    'add user' => 'Add User',
 
     //user profile
     'User Profile' => 'User Profile',
