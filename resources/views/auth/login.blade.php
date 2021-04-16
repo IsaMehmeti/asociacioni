@@ -10,21 +10,22 @@
                 <input name="email" type="email" class="form-control form-control-lg" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
 
                 <span class="input-group-append">
-										<span class="input-group-text">
-											<i class="fas fa-user"></i>
-										</span>
-									</span>
+                    <span class="input-group-text">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </span>
+                </div>
             </div>
-        </div>
-        @error('email')
-        <div class="alert alert-danger" role="alert">
-            <strong>{{ $message }}</strong>
-        </div>
-        @enderror
+            @error('email')
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ $message }}</strong>
+            </div>
+            @enderror
 
         <div class="form-group mb-3">
             <div class="clearfix">
                 <label class="float-left">Password</label>
+                <a href="{{ route('password.request') }}" class="float-right">Lost Password?</a>
             </div>
             <div class="input-group">
                 <input class="form-control form-control-lg"  id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" />

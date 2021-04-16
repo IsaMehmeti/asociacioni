@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.auth.verify')
+@section('page_name',  __('Confirm'))
 
 @section('content')
 <div class="container">

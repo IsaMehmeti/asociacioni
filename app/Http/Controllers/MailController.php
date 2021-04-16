@@ -11,17 +11,17 @@ class MailController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::where('id', '!=' , auth()->user()->id)->get();
         return view('mail', compact('users'));
     }
     public function sendMailToOneUser(Request $request)
     {
         $user = User::findOrFail($request->user_id);
-                $data = ['subject' => $request->subject,
-                         'from' => auth()->user()->email,
-                         'body' => $request->body,
-                         'user_name' => $user->name
-                    ];
+        $data = ['subject' => $request->subject,
+                 'from' => auth()->user()->email,
+                 'body' => $request->body,
+                 'user_name' => $user->name
+                ];
         try {
         Mail::to($user->email)->send(new NewUser($data));
         return redirect()->route('home')->with('status', 'Mail Sent successfully');
@@ -29,10 +29,5 @@ class MailController extends Controller
             report($e);
             return false;
         }
-    }
-
-    public function test(Request $request)
-    {
-
     }
 }

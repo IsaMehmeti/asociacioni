@@ -1,9 +1,5 @@
 <?php
 
-use App\Mail\NewMail;
-use App\Mail\SendMail;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,7 +41,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/municipalities', 'MunicipalityController@index');
 
     //perdoruesit
-        Route::resource('/user', 'UserController');
+    Route::resource('/user', 'UserController');
 
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
