@@ -7,6 +7,8 @@
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
+        <link rel="icon" href="https://komunat-ks.net/wp-content/uploads/2018/09/cropped-asociacioni_komunat1-1-32x32.jpg" sizes="32x32">
+
 		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<!-- Web Fonts  -->

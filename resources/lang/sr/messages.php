@@ -12,6 +12,7 @@ return [
     'some?' => 'Neki?',
     'No description for this collegium' => 'Nema opisa za ovaj kolegijum',
     'Old Password didn\'t match' => 'Stara lozinka se nije podudarala',
+    'Komunat' => 'Opštine',
 
 
     //sidebar
@@ -26,6 +27,7 @@ return [
     'add user' => 'Dodavanje Korisnika',
 
     //user profile
+    'My Profile' => 'Moj profil',
     'User Profile' => 'Korisnički profil',
     'infoUserEdit' => 'Akreditive možete promeniti ovde.',
 

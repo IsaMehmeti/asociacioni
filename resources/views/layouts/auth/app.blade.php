@@ -8,7 +8,7 @@
     <meta name="keywords" content="HTML5 Admin Template" />
     <meta name="description" content="Porto Admin - Responsive HTML5 Template">
     <meta name="author" content="okler.net">
-
+    <link rel="icon" href="https://komunat-ks.net/wp-content/uploads/2018/09/cropped-asociacioni_komunat1-1-32x32.jpg" sizes="32x32">
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <p class="text-center text-muted mt-3 mb-3">@lang('messages.Copyright') &copy; <span id="date"></span> - @lang('messages.All Rights Reserved')</p>
+        <p class="text-center text-muted mt-3 mb-3">&copy; <span id="date"></span> @lang('messages.Copyright')  <a href="https://tagdigitals.com/en/" target="blank">TAG Digitals</a>  - @lang('messages.All Rights Reserved')</p>
 
         <script>
             var date = new Date().getFullYear();

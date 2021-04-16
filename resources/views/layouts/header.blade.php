@@ -12,14 +12,7 @@
     <!-- start: search & user box -->
 
     <div class="header-right">
-        <form action="pages-search-results.html" class="search nav-form">
-            <div class="input-group">
-                <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-                <span class="input-group-append">
-								<button class="btn btn-default" type="submit"><i class="fas fa-search"></i></button>
-							</span>
-            </div>
-        </form>
+
 
         <span class="separator"></span>
 
@@ -47,6 +40,16 @@
                     <div class="content">
                         <ul>
                             <li>
+                                <a href="/locale/sq" class="clearfix">
+                                    <div class="image">
+                                        <i class="h1">SQ</i>
+                                    </div>
+                                    <span class="title">Shqip</span>
+                                    <span class="message">Albanski / Albanian</span>
+                                </a>
+                            </li>
+                            <hr>
+                            <li>
                                 <a href="/locale/sr" class="clearfix">
                                     <div class="image">
                                         <i class="h1">SR</i>
@@ -65,16 +68,7 @@
                                     <span class="message">Engleski / Anglisht</span>
                                 </a>
                             </li>
-                            <hr>
-                            <li>
-                                <a href="/locale/sq" class="clearfix">
-                                    <div class="image">
-                                        <i class="h1">SQ</i>
-                                    </div>
-                                    <span class="title">Shqip</span>
-                                    <span class="message">Albanski / Albanian</span>
-                                </a>
-                            </li>
+
                         </ul>
 
 
@@ -95,7 +89,7 @@
 
                 <div class="profile-info" >
                     <span class="name">{{auth()->user()->name}}</span>
-                    <span class="role">Administrator</span>
+                    <span class="role">Admin</span>
                 </div>
                 <i class="fa custom-caret"></i>
 
@@ -105,7 +99,7 @@
                 <ul class="list-unstyled mb-2">
                     <li class="divider"></li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="{{route('user.index')}}"><i class="fas fa-user"></i> My Profile</a>
+                        <a role="menuitem" tabindex="-1" href="{{route('user.index')}}"><i class="fas fa-user"></i> {{__('messages.My Profile')}}</a>
                     </li>
                     <li>
                         <a role="menuitem" tabindex="-1" href="/logout"><i class="fas fa-power-off"></i> Logout</a>

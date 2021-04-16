@@ -13,6 +13,7 @@ return [
     'some?' => 'disa?',
     'No description for this collegium' => 'Ska përshkrim per kete kolegjium',
     'Old Password didn\'t match' => 'Passwordi i vjeter nuk perputhet',
+    'Komunat' => 'Komunat',
 
     //sidebar translations
     'Dashboard' => 'Ballina',
@@ -26,11 +27,16 @@ return [
     'add user' => 'Shto Përdorues',
 
     //user profile
+    'My Profile' => 'Profili im',
     'User Profile' => 'Profili i përdoruesit',
     'infoUserEdit' => 'Këtu mund të ndryshoni të dhënat tuaja.',
 
     //404Error
     'sorry' => 'Na vjen keq, mirëpo faqja qe ju po kërkoni nuk ekziston',
     'useful' => 'Këtu janë disa faqe që do mund tu hynin në punë',
+
+     //forgot password - mail notifications
+    'problems' => 'Nese keni probleme duke shtypur butonin \":actionText\" , kopjoni dhe paste URL meposhte \n',
+    'into your web browser:' => 'ne brouserin tuaj:'
 
 ];

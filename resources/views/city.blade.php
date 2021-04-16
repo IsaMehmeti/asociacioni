@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('page_name', __('Qytetet'))
+@section('page_name', __('messages.Municipalities'))
 
 @section('content')
-
-
     <style type="text/css">
     	.butoni {
     		padding: 0;

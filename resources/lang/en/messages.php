@@ -15,6 +15,7 @@ return [
     'Dashboard',
     'Old Password didn\'t match' => 'Old Password didn\'t match',
 
+
     //sidebar translations
     'Dashboard' => 'Dashboard',
     'Municipalities' => 'Municipalities',
@@ -27,6 +28,7 @@ return [
     'add user' => 'Add User',
 
     //user profile
+    'My Profile' => 'My Profile',
     'User Profile' => 'User Profile',
     'infoUserEdit' => 'You can change your credentials here.',
 
@@ -34,4 +36,8 @@ return [
     //404Error
     'sorry' => 'We\'re sorry, but the page you were looking for doesn\'t exist.',
     'useful' => 'Here are some useful links',
+
+//    //forgot password - mail notifications
+//    'problems' => 'If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n',
+//    'into your web browser:' => 'into your web browser:'
     ];

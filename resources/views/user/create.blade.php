@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Create User'))
+@section('page_name', __('messages.add user'))
 
 @section('custom_header')
     <link rel="stylesheet" href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" />
@@ -20,7 +20,7 @@
                             <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
                         </div>
 
-                        <h2 class="card-title">Create User</h2>
+                        <h2 class="card-title">{{__('messages.add user')}}</h2>
                         <p class="card-subtitle">
                             {{__('messages.infoUserEdit')}}
                         </p>
