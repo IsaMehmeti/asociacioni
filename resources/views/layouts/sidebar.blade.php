@@ -73,7 +73,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="{{ Request::is('/') ? 'nav-active' : '' }}">
+                    <li class="{{ Request::is('user/create') ? 'nav-active' : '' }}">
                         <a class="nav-link" href="{{route('user.create')}}">
                             <i class="fas fa-users"></i>
                             <span>{{__('messages.add user')}}</span>
