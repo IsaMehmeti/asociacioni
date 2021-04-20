@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Archived Officials'))
+@section('page_name', __('messages.Archived Officials'))
 
 @section('custom_header')
     <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
@@ -17,17 +17,17 @@
                 <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
             </div>
 
-            <h2 class="card-title">Officials</h2>
+            <h2 class="card-title">{{__('messages.Archived Officials')}}</h2>
         </header>
         <div class="card-body">
 
             <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                 <thead>
                 <tr>
-                    <th>{{__('Emri')}}</th>
-                    <th>{{__('Kolegjiumi')}}</th>
-                    <th>{{__('Qyteti')}}</th>
-                    <th>{{__('Data Arkivimit')}}</th>
+                    <th>{{__('messages.Emri')}}</th>
+                    <th>{{__('messages.Kolegjiumi')}}</th>
+                    <th>{{__('messages.Qyteti')}}</th>
+                    <th>{{__('messages.Data Arkivimit')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -41,11 +41,11 @@
                         <td>{{$dt->format('d-m-Y')}}</td>
                     </tr>
                 @empty
-                    <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr>
+                    <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">{{__('messages.No data available in table')}}</td></tr>
                 @endforelse
                 </tbody>
             </table>
-            <button onclick="makePdf()" class="btn btn-Primary">Printo Listen</button>
+            <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Printo Listen')}}</button>
         </div>
 
     </section>

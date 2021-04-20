@@ -17,17 +17,17 @@
                 <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
             </div>
 
-            <h2 class="card-title">Officials</h2>
+            <h2 class="card-title">{{__('messages.Officials')}}</h2>
         </header>
         <div class="card-body">
 
             <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                 <thead>
                 <tr>
-                    <th>{{__('Emri')}}</th>
-                    <th>{{__('Kolegjiumi')}}</th>
-                    <th>{{__('Qyteti')}}</th>
-                    <th>{{__('Actions')}}</th>
+                    <th>{{__('messages.Emri')}}</th>
+                    <th>{{__('messages.Kolegjiumi')}}</th>
+                    <th>{{__('messages.Qyteti')}}</th>
+                    <th>{{__('messages.Actions')}}</th>
                 </tr>
                 </thead>
                 <tbody>

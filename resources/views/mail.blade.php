@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Compose'))
+@section('page_name', __('messages.Compose'))
 
 @section('content')
     <section class="content-with-menu content-with-menu-has-toolbar mailbox">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Create Collegium'))
+@section('page_name', __('messages.Create Collegium'))
 
 @section('custom_header')
     <link rel="stylesheet" href="{{asset('vendor/boxicons/css/boxicons.min.css')}}" />
@@ -17,7 +17,7 @@
                     <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
                 </div>
 
-                <h2 class="card-title">Create Collegium</h2>
+                <h2 class="card-title">{{__('messages.Create Collegium')}}</h2>
             </header>
             <div class="card-body card-body-nopadding">
                 <div class="wizard-tabs">
@@ -25,19 +25,19 @@
                         <li class="nav-item active">
                             <a href="#w1-account" data-toggle="tab" class="nav-link text-center">
                                 <span class="badge">1</span>
-                                English
+                                {{__('messages.English')}}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#w1-profile" data-toggle="tab" class="nav-link text-center">
                                 <span class="badge">2</span>
-                                Albanian
+                                {{__('messages.Albanian')}}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#w1-confirm" data-toggle="tab" class="nav-link text-center">
                                 <span class="badge">3</span>
-                                Serbian
+                                {{__('messages.Serbian')}}
                             </a>
                         </li>
                     </ul>
@@ -47,7 +47,7 @@
                     <div class="tab-content">
                         <div id="w1-account" class="tab-pane p-3 active">
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (EN)
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">{{__('messages.Title (EN)')}}
                                     <span class="required">*</span></label>
 
                                 <div class="col-sm-8">
@@ -55,13 +55,13 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Description (EN)</label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Description (EN)')}}</label>
                                 <div class="col-sm-8">
                                     <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;" name="en_description" id="w1-username" value="{{ old('en_description') }}"></textarea>
                                 </div>
                             </div>
                              <div class="form-group row">
-                                                <label class="col-lg-4 control-label text-lg-right pt-1">File Upload <span class="required">*</span></label>
+                                                <label class="col-lg-4 control-label text-lg-right pt-1">{{__('messages.File Upload')}} <span class="required">*</span></label>
                                                 <div class="col-lg-8">
                                                     <div class="fileupload fileupload-new"  data-provides="fileupload"><input type="hidden" >
                                                         <div class="input-append">
@@ -70,11 +70,11 @@
                                                                 <span class="fileupload-preview"></span>
                                                             </div>
                                                             <span class="btn btn-default btn-file">
-                                                                <span class="fileupload-exists">Change</span>
-                                                                <span class="fileupload-new">Select file</span>
+                                                                <span class="fileupload-exists">{{__('messages.Change')}}</span>
+                                                                <span class="fileupload-new">{{__('messages.Select file')}}</span>
                                                                 <input type="file" name="image" required>
                                                             </span>
-                                                            <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                                            <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">{{__('messages.Remove')}}</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -82,13 +82,13 @@
                         </div>
                         <div id="w1-profile" class="tab-pane p-3">
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (SQ) <span class="required">*</span></label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">{{__('messages.Title (SQ) ')}}<span class="required">*</span></label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="sq_title" id="w1-username" required="" value="{{ old('sq_title') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Description (SQ)</label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Description (SQ)')}}</label>
                                 <div class="col-sm-8">
                                     <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"  name="sq_description" id="w1-username" value="{{ old('sq_description') }}"></textarea>
                                 </div>
@@ -96,13 +96,13 @@
                         </div>
                         <div id="w1-confirm" class="tab-pane p-3" id="last">
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">Title (SR) <span class="required">*</span></label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">{{__('messages.Title (SR) ')}} <span class="required">*</span></label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" name="sr_title" id="w1-username" required="" value="{{ old('sr_title') }}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Description (SR)</label>
+                                <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Description (SR)')}}</label>
                                 <div class="col-sm-8">
                                     <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"  name="sr_description" id="w1-username"  value="{{ old('sr_description') }}"></textarea>
                                 </div>
@@ -116,13 +116,13 @@
             <div class="card-footer">
                 <ul class="pager">
                     <li class="previous disabled">
-                        <a><i class="fas fa-angle-left"></i> Previous</a>
+                        <a><i class="fas fa-angle-left"></i> {{__('messages.Previous')}}</a>
                     </li>
                     <li class="finish hidden float-right">
-                        <button id="butoni" type="submit" class="btn btn-default">Finish</button>
+                        <button id="butoni" type="submit" class="btn btn-default">{{__('messages.Finish')}}</button>
                     </li>
                     <li class="next">
-                        <a id="next">Next <i class="fas fa-angle-right"></i></a>
+                        <a id="next">{{__('messages.Next')}} <i class="fas fa-angle-right"></i></a>
                     </li>
                 </ul>
             </div>

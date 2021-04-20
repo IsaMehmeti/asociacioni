@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Create Official'))
+@section('page_name', __('messages.Create Official'))
 
 @section('content')
 
@@ -12,7 +12,7 @@
                 <a href="#" class="card-action card-action-dismiss" data-card-dismiss=""></a>
             </div>
 
-            <h2 class="card-title">Create Official</h2>
+            <h2 class="card-title">{{__('messages.Create Official')}}</h2>
         </header>
         <div class="card-body card-body-nopadding">
             <div class="wizard-tabs">
@@ -23,13 +23,13 @@
                 <div class="tab-content">
                     <div id="w1-account" class="tab-pane p-3 active">
                         <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">First Name</label>
+                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">{{__('messages.First Name')}}</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="name" id="w1-username" required="" value="{{ old('email') }}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">Last name</label>
+                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Last Name')}}</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="last_name" id="w1-username" required="">
                             </div>
@@ -42,10 +42,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-first-name">Municipality </label>
+                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-first-name">{{__('messages.Municipality')}}</label>
                             <div class="col-sm-8">
                                 <select id="company" name="municipality_id" class="form-control valid" required="" aria-invalid="false">
-                                    <option value="" disabled selected>Choose a Municipality</option>
+                                    <option value="" disabled selected>{{__('messages.Choose a Municipality')}}</option>
                                     @foreach($cities as $city)
                                     <option value="{{$city->id}}">{{ucfirst($city->name)}}</option>
                                     @endforeach
@@ -54,10 +54,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">Collegium </label>
+                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-last-name">{{__('messages.Collegium')}}</label>
                             <div class="col-sm-8">
                                 <select id="company" name="collegium_id" class="form-control valid" required="" aria-invalid="false">
-                                    <option value="" disabled selected>Choose a Collegium</option>
+                                    <option value="" disabled selected>{{__('messages.Choose a Collegium')}}</option>
                                     @foreach($collegiums as $collegium)
                                         <option value="{{$collegium->id}}">{{$collegium->title}}</option>
                                     @endforeach
@@ -74,7 +74,7 @@
             <ul class="pager">
 
                 <li class="finish float-right">
-                    <button id="butoni" type="submit" class="btn btn-default">Finish</button>
+                    <button id="butoni" type="submit" class="btn btn-default">{{__('messages.Finish')}}</button>
                 </li>
 
             </ul>

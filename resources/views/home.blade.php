@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Dashboard'))
+@section('page_name', __('messages.Dashboard'))
 
 @section('custom_header')
 

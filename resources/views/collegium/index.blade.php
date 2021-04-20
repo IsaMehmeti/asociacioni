@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('page_name', __('Collegiums'))
+@section('page_name', __('messages.Collegiums'))
 
 @section('custom_header')
     <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
@@ -17,17 +17,17 @@
                     <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                 </div>
 
-                <h2 class="card-title">Collegiums</h2>
+                <h2 class="card-title">{{__('messages.Collegiums')}}</h2>
             </header>
             <div class="card-body">
 
                 <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                     <thead>
                     <tr>
-                        <th>{{__('Logo')}}</th>
-                        <th>{{__('Kolegjiumi')}}</th>
-                        <th>{{__('Description')}}</th>
-                        <th>{{__('Actions')}}</th>
+                        <th>Logo</th>
+                        <th>{{__('messages.Kolegjiumi')}}</th>
+                        <th>{{__('messages.Description')}}</th>
+                        <th>{{__('messages.Actions')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,11 +40,11 @@
                         </td>
                     </tr>
                     @empty
-                        <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr>
+                        <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">{{__('messages.No data available in table')}}</td></tr>
                         @endforelse
                     </tbody>
                 </table>
-                <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Print')}}</button>
+                <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Printo Listen')}}</button>
             </div>
 
         </section>

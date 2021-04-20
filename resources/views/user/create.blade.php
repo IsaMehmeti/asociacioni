@@ -27,13 +27,13 @@
                     </header>
                     <div class="card-body" style="display: block;">
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label text-sm-right pt-2">Full Name <span class="required">*</span></label>
+                            <label class="col-sm-3 control-label text-sm-right pt-2">{{__('messages.Full Name:')}}<span class="required">*</span></label>
                             <div class="col-sm-4">
-                                <input type="text" name="name" class="form-control" placeholder="Emri Mbiemri" required value="{{old('name')}}">
+                                <input type="text" name="name" class="form-control" placeholder="{{__('messages.Emri Mbiemri:')}}" required value="{{old('name')}}">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label text-sm-right pt-2">Email <span class="required">*</span></label>
+                            <label class="col-sm-3 control-label text-sm-right pt-2">E-mail: <span class="required">*</span></label>
                             <div class="col-sm-7">
                                 <div class="input-group">
 													<span class="input-group-prepend">
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 control-label text-sm-right pt-2">Password </label>
+                            <label class="col-sm-3 control-label text-sm-right pt-2">Password: </label>
                             <div class="col-sm-6">
                                 <input type="password" name="password" class="form-control">
                             </div>
@@ -58,8 +58,8 @@
                     <footer class="card-footer" style="display: block;">
                         <div class="row justify-content-end">
                             <div class="col-sm-9">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-primary">{{__('messages.Submit')}}</button>
+                                <button type="reset" class="btn btn-default">{{__('messages.Reset')}}</button>
                             </div>
                         </div>
                     </footer>
