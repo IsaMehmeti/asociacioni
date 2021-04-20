@@ -38,7 +38,14 @@
                         <td>{{ucfirst($official->municipality->name)}}</td>
                         <?php
                         $dt = new DateTime($official->deleted_at);?>
-                        <td>{{$dt->format('d-m-Y')}}</td>
+                        <td >
+                                <form method="POST" action="{{route('official.update', $official->id)}}">
+                                    {{$dt->format('d-m-Y')}}
+                                    @csrf
+                                    @method('Patch')
+                                <input type="submit" class="btn btn-warning" value="{{__('messages.Return')}}"/>
+                                </form></td>
+
                     </tr>
                 @empty
                     <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">{{__('messages.No data available in table')}}</td></tr>

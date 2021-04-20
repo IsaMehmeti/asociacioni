@@ -8,6 +8,9 @@ return [
     'Created Successfully' => 'U krijua me sukses',
     'Archived Successfully' => 'U arkivua me sukses',
     'Updated Successfully' => 'U ndryshua me sukses',
+    'Returned Successfully' => 'U rikthye me sukses',
+    'Mail Sent successfully' => 'E-maili u dergua me sukses',
+    'Something went wrong' => 'Diqka shkoi gabimisht',
     'Sorry, No Record to show' => 'Na vjen keq, ska të dhëna për të shfaqur',
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',
@@ -57,6 +60,7 @@ return [
     'Compose' => 'Dergo E-Mail',
     'Dashboard' => 'Ballina',
     'Emri Mbiemri:' => 'Emri Mbiemri:',
+    'Return' => 'Riktheje',
 
     //sidebar translations
     'Dashboard' => 'Ballina',

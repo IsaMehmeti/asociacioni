@@ -27,7 +27,7 @@
                         <th>Logo</th>
                         <th>{{__('messages.Kolegjiumi')}}</th>
                         <th>{{__('messages.Description')}}</th>
-                        <th>{{__('messages.Actions')}}</th>
+                        <th class="hidden">{{__('messages.Actions')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,7 @@
                         <td class="sorting_1"><img src="{{asset($collegium->image)}}" width="20" height="20"</td>
                         <td>{{$collegium->title}}</td>
                         <td>{{$collegium->description}}</td>
-                        <td class="actions">
+                        <td class="actions hidden">
                         </td>
                     </tr>
                     @empty

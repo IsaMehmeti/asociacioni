@@ -52,7 +52,7 @@
   text-overflow: ellipsis;
   max-width: 25ch;">{{$collegium->description}}</span>
                                             @else
-                                                <span disabled>{{__('messages.No description for this collegium')}}</span>
+                                                <span id="description{{$collegium->id}}" disabled>{{__('messages.No description for this collegium')}}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -107,8 +107,8 @@
 
     }
     // $("#collegium").on('click', function(){
-    
+
     // $("modal.title").
     // });
 </script>
-@endsection 
+@endsection

@@ -8,7 +8,10 @@ return [
     'Created Successfully' => 'Created Successfully',
     'Archived Successfully' => 'Archived Successfully',
     'Updated Successfully' => 'Updated Successfully',
+    'Returned Successfully' => 'Restored Successfully',
     'Sorry, No Record to show' => 'Sorry, No Record to show',
+    'Mail Sent successfully' => 'Mail Sent successfully',
+    'Something went wrong' => 'Something went wrong',
     'Want to add' => 'Want to add',
     'some?' => 'some?',
     'No description for this collegium' => 'No description for this collegium',
@@ -57,6 +60,7 @@ return [
     'Compose' => 'Send E-Mail',
     'Dashboard' => 'Dashboard',
     'Emri Mbiemri:' => 'Name and Surname:',
+    'Return' => 'Restore',
 
     //sidebar translations
     'Dashboard' => 'Dashboard',

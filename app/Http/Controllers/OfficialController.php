@@ -81,14 +81,15 @@ class OfficialController extends Controller
 //        return redirect()->back();
 //    }
 
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        Official::withTrashed()->findOrFail($id)->restore();
+        return redirect()->back()->with(['warning' => __('messages.Returned Successfully')]);
     }
     public function destroy($id)
     {
         $official = Official::findOrFail($id);
         $official->delete();
-        return redirect()->back()->with(['danger' => __('messages.Archived Successfully')]);
+        return redirect()->back()->with(['status' => __('messages.Archived Successfully')]);
     }
 }

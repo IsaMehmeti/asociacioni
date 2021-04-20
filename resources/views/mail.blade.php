@@ -35,16 +35,14 @@
                         <div class="form-group form-group-invisible">
                             <label for="subject" class="control-label-invisible">{{__('messages.Subject')}}:</label>
                             <div class="col-md-12 mailbox-compose-field">
-                                <input id="subject" type="text" class="form-control form-control-invisible" name="subject">
+                                <input required id="subject" type="text" class="form-control form-control-invisible" name="subject">
                             </div>
                         </div>
                         <div class="form-group">
 
                             <div class="compose">
                                 <label for="Body" class="control-label-invisible">{{__('messages.Body')}}: </label>
-
-{{--                                <input id="compose-field" class="compose-control" name="body">--}}
-                                <textarea name="body" class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"></textarea>
+                                <textarea required name="body" class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"></textarea>
                             </div>
                         </div>
                     </div>

@@ -7,6 +7,9 @@ return [
     'Created Successfully' => 'Uspešno kreirano',
     'Archived Successfully' => 'Uspešno arhive',
     'Updated Successfully' => 'Uspešno ažurirano',
+    'Returned Successfully' => 'Uspešno vraćeno',
+    'Mail Sent successfully' => 'Pošta uspešno poslata',
+    'Something went wrong' => 'Nešto je pošlo naopako',
     'Sorry, No Record to show' => 'Žao mi je, nema zapisa za prikazivanje',
     'Want to add' => 'Hoćeš da dodaš',
     'some?' => 'Neki?',
@@ -56,6 +59,7 @@ return [
     'Compose' => 'Slanje E-Pošte',
     'Dashboard' => 'Kontrolnu tablu',
     'Emri Mbiemri' => 'Prezime',
+    'Return' => 'Vratiti',
 
 
 

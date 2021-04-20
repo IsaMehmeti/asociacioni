@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SendMailRequest;
 use App\Mail\NewUser;
-use App\User;
 use App\Models\Official;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -15,7 +14,7 @@ class MailController extends Controller
         $users = Official::all();
         return view('mail', compact('users'));
     }
-    public function sendMailToOneUser(Request $request)
+    public function sendMailToOneUser(SendMailRequest $request)
     {
         $user = Official::findOrFail($request->user_id);
         $data = ['subject' => $request->subject,
@@ -25,10 +24,10 @@ class MailController extends Controller
                 ];
         try {
         Mail::to($user->email)->send(new NewUser($data));
-        return redirect()->route('home')->with('status', 'Mail Sent successfully');
+        return redirect()->route('home')->with('status', __('Mail Sent successfully'));
         }catch (\Exception $e) {
             report($e);
-        return redirect()->route('home')->with('danger', 'Something went wrong');
+        return redirect()->route('home')->with('danger', __('Something went wrong'));
 
         }
     }
