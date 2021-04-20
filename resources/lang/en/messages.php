@@ -26,6 +26,16 @@ return [
     'Create Official' => 'Create Official',
     'Archive' => 'Archive',
     'add user' => 'Add User',
+    'Logout' => 'Log Out',
+    'Seemore'=> 'See more',
+    'Close' => 'Close',
+    'Print' => 'Print the list',
+
+    'Send' => 'Send',
+    'Discard' => 'Discard',
+    'To' => 'To',
+    'Subject' => 'Subject',
+    'Body' => 'Body',
 
     //user profile
     'My Profile' => 'My Profile',

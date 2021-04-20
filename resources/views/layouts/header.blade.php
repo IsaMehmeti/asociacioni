@@ -102,7 +102,7 @@
                         <a role="menuitem" tabindex="-1" href="{{route('user.index')}}"><i class="fas fa-user"></i> {{__('messages.My Profile')}}</a>
                     </li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="/logout"><i class="fas fa-power-off"></i> Logout</a>
+                        <a role="menuitem" tabindex="-1" href="/logout"><i class="fas fa-power-off"></i>{{__('messages.Logout')}}</a>
                     </li>
                 </ul>
             </div>

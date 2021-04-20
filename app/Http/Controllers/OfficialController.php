@@ -70,7 +70,7 @@ class OfficialController extends Controller
 
     public function archiveIndex()
     {
-        $officials = Official::withTrashed()->get();
+        $officials = Official::onlyTrashed()->get();
         return view('official.archive', compact('officials'));
     }
 

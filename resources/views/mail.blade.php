@@ -10,10 +10,10 @@
                 <div class="inner-toolbar clearfix">
                     <ul>
                         <li>
-                            <button type="submit" class="btn btn-dark btn-md pt-2 pb-2 text-3" ><i class="far fa-paper-plane mr-2"></i> Send</button>
+                            <button type="submit" class="btn btn-dark btn-md pt-2 pb-2 text-3" ><i class="far fa-paper-plane mr-2"></i> {{__('messages.Send')}}</button>
                         </li>
                         <li>
-                            <a href="/"><i class="fas fa-times mr-2"></i> Discard</a>
+                            <a href="/"><i class="fas fa-times mr-2"></i> {{__('messages.Discard')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -21,7 +21,7 @@
                     <div class="form-horizontal form-bordered form-bordered">
 
                         <div class="form-group form-group-invisible">
-                            <label for="to" class="control-label-invisible">To:</label>
+                            <label for="to" class="control-label-invisible">{{__('Messages.To')}}:</label>
                             <div class="col-md-12 mailbox-compose-field">
                                 <input disabled id="to" type="text" class="form-control form-control-invisible" data-role="tagsinput" data-tag-class="badge badge-primary">
                                 <select class="form-control" name="user_id">
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group form-group-invisible">
-                            <label for="subject" class="control-label-invisible">Subject:</label>
+                            <label for="subject" class="control-label-invisible">{{__('messages.Subject')}}:</label>
                             <div class="col-md-12 mailbox-compose-field">
                                 <input id="subject" type="text" class="form-control form-control-invisible" name="subject">
                             </div>
@@ -41,7 +41,7 @@
                         <div class="form-group">
 
                             <div class="compose">
-                                <label for="Body" class="control-label-invisible">Body: </label>
+                                <label for="Body" class="control-label-invisible">{{__('messages.Body')}}: </label>
 
 {{--                                <input id="compose-field" class="compose-control" name="body">--}}
                                 <textarea name="body" class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"></textarea>

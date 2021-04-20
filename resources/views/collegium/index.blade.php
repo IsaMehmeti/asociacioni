@@ -17,7 +17,7 @@
                     <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                 </div>
 
-                <h2 class="card-title">Default</h2>
+                <h2 class="card-title">Collegiums</h2>
             </header>
             <div class="card-body">
 
@@ -44,7 +44,7 @@
                         @endforelse
                     </tbody>
                 </table>
-                <button onclick="makePdf()" class="btn btn-Primary">Printo Listen</button>
+                <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Print')}}</button>
             </div>
 
         </section>

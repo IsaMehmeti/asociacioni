@@ -46,7 +46,7 @@
                         @endforelse
                     </tbody>
                 </table>
-                <button onclick="makePdf()" class="btn btn-Primary">Printo Listen</button>
+                <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Print')}}</button>
             </div>
 
         </section>

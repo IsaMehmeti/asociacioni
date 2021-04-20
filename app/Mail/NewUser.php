@@ -28,7 +28,7 @@ class NewUser extends Mailable
      * @return $this
      */
     public function build()
-    {
+    {   
         return $this->from($this->data['from'])
                     ->subject($this->data['subject'])
                     ->view('auth.new-user')

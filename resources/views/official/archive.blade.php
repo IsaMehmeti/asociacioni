@@ -35,7 +35,7 @@
                     <tr id="row{{$official->id}}" data-item-id="{{$official->id}}" role="row" class="odd">
                         <td>{{$official->name}} {{$official->last_name}}</td>
                         <td>{{$official->collegium->title}}</td>
-                        <td>{{$official->municipality->name}}</td>
+                        <td>{{ucfirst($official->municipality->name)}}</td>
                         <?php
                         $dt = new DateTime($official->deleted_at);?>
                         <td>{{$dt->format('d-m-Y')}}</td>

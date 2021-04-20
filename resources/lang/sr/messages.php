@@ -25,6 +25,16 @@ return [
     'Create Official' => 'Kreiraj zvanično',
     'Archive' => 'Arhive',
     'add user' => 'Dodavanje Korisnika',
+    'Logout' =>'Odjavljivanje',
+    'Seemore'=> 'Pogledajte više',
+    'Close' => 'Zatvorite',
+    'Print' => 'Štampanje liste',
+
+    'Send' => 'Poљalji',
+    'Discard' => 'Odbaci',
+    'To' => 'Da',
+    'Subject' => 'Tema',
+    'Body' => 'Telo',
 
     //user profile
     'My Profile' => 'Moj profil',

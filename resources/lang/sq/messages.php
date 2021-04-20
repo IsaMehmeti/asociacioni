@@ -25,6 +25,16 @@ return [
     'Create Official' => 'Krijo Zyrëtarin',
     'Archive' => 'Arkivë',
     'add user' => 'Shto Përdorues',
+    'Logout' => 'Dil',
+    'Seemore'=> 'Shiko më shumë',
+    'Close' => 'Mbyll',
+    'Print' => 'Printo listën',
+
+    'Send' => 'Dërgo',
+    'Discard' => 'Anulo',
+    'Subject' => 'Subjekti',
+    'Body' => 'Përmbajtja',
+    'To' => 'Për',
 
     //user profile
     'My Profile' => 'Profili im',
