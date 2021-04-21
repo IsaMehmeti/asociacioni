@@ -27,7 +27,7 @@
                         <th>Logo</th>
                         <th>{{__('messages.Kolegjiumi')}}</th>
                         <th>{{__('messages.Description')}}</th>
-                        <th class="hidden">{{__('messages.Actions')}}</th>
+                        <th>{{__('messages.Actions')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -35,8 +35,15 @@
                         <tr data-item-id="{{$collegium->id}}" role="row" class="odd">
                         <td class="sorting_1"><img src="{{asset($collegium->image)}}" width="20" height="20"</td>
                         <td>{{$collegium->title}}</td>
-                        <td>{{$collegium->description}}</td>
-                        <td class="actions hidden">
+                        <td>{{Str::limit($collegium->description, 45)}}</td>
+                        <td class="actions">
+                            <form id="delete-form {{$collegium->id}}" class="hidden" action="{{route('collegium.destroy', $collegium->id)}}" method="POST">
+                                @csrf
+                                @method('Delete')
+                                <button type="submit" class="hidden" id="{{$collegium->id}}"></button>
+                            </form>
+                            <a href="{{route('collegium.edit', $collegium->id)}}" class="edit on-default"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="#" onclick="destroy({{$collegium->id}})" class="delete on-default"><i class="far fa-trash-alt"></i></a>
                         </td>
                     </tr>
                     @empty
@@ -55,6 +62,13 @@
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
+    <script>
+
+        function destroy(id){
+            $("#"+id).click();
+        }
+
+    </script>
 
 @endsection
 

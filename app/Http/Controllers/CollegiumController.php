@@ -65,9 +65,10 @@ class CollegiumController extends Controller
      * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function edit(Collegium $collegium)
+    public function edit($id)
     {
-        //
+        $collegium = Collegium::findOrFail($id);
+        return view('collegium.edit', compact('collegium'));
     }
 
     /**
@@ -77,9 +78,23 @@ class CollegiumController extends Controller
      * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Collegium $collegium)
+    public function update(Request $request, $id)
     {
-        //
+        Collegium::findOrFail($id)->update([
+            'en' => [
+                'title'       => $request->en_title,
+                'description'       => $request->en_description
+            ],
+            'sq' => [
+                'title'       => $request->sq_title,
+                'description'       => $request->sq_description
+            ],
+            'sr' => [
+                'title'       => $request->sr_title,
+                'description'       => $request->sr_description
+            ],
+        ]);
+        return redirect()->route('collegium.index')->with(['status' => __('messages.Updated Successfully')]);
     }
 
     /**
@@ -88,8 +103,9 @@ class CollegiumController extends Controller
      * @param  \App\Models\Collegium  $collegium
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Collegium $collegium)
+    public function destroy($id)
     {
-        //
+        Collegium::findOrFail($id)->delete();
+        return redirect()->route('collegium.index')->with(['danger' => __('messages.Deleted Successfully')]);
     }
 }

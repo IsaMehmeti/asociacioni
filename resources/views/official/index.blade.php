@@ -34,7 +34,12 @@
                     @forelse($officials as $official)
                         <tr data-item-id="{{$official->id}}" role="row" class="odd">
                             <td>{{$official->name}} {{$official->last_name}}</td>
-                            <td>{{$official->collegium->title}}</td>
+                            <td>@if(!$official->collegium)
+                                   <p style="color:red">Null</p>
+                                @else
+                                    {{$official->collegium->title}}
+                                @endif
+                            </td>
                             <td>{{ucfirst($official->municipality->name)}}</td>
                             <td class="actions">
                                 <form method="POST" action="{{route('official.destroy', $official->id)}}">
