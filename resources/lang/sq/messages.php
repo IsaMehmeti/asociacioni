@@ -82,6 +82,7 @@ return [
 
     'Send' => 'Dërgo',
     'Discard' => 'Anulo',
+    'Delete' => 'Fshij',
     'Subject' => 'Subjekti',
     'Body' => 'Përmbajtja',
     'To' => 'Për',
@@ -95,8 +96,15 @@ return [
     'sorry' => 'Na vjen keq, mirëpo faqja qe ju po kërkoni nuk ekziston',
     'useful' => 'Këtu janë disa faqe që do mund tu hynin në punë',
 
-     //forgot password - mail notifications
-    'problems' => 'Nese keni probleme duke shtypur butonin \":actionText\" , kopjoni dhe paste URL meposhte \n',
-    'into your web browser:' => 'ne brouserin tuaj:'
+     //forgot password - mail notifications didnt work
+//    'problems' => 'Nese keni probleme duke shtypur butonin \":actionText\" , kopjoni dhe paste URL meposhte \n',
+//    'into your web browser:' => 'ne brouserin tuaj:',
+
+    //fullcalendar
+    'Event Created Succesfully' => 'Eventi u krijua me sukses',
+    'message' => 'Mesazh',
+    'Event was Deleted Succesfully' => 'Event u fshi me sukses',
+    'Event Updated Succesfully' => 'Event u ndryshua me sukses',
+    'Are u sure u want to remove this?' => 'A jeni të sigurtë që doni ta fshini këtë?',
 
 ];

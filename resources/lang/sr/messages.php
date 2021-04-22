@@ -84,6 +84,7 @@ return [
 
     'Send' => 'Poљalji',
     'Discard' => 'Odbaci',
+    'Delete' => 'Izbrišete',
     'To' => 'Da',
     'Subject' => 'Tema',
     'Body' => 'Telo',
@@ -96,4 +97,12 @@ return [
     //404 Error
     'sorry' => 'Žao nam je, ali stranica koju ste tražili ne postoji.',
     'useful' => 'Evo nekoliko korisnih linkova',
+
+    //fullcalendar
+    'Event Created Succesfully' => 'Događaj kreiran u potpunosti',
+    'message' => 'Poruku',
+    'Event was Deleted Succesfully' => 'Događaj je izbrisan u potpunosti',
+    'Event Updated Succesfully' => 'Događaj je uređivao succesfully',
+    'Are u sure u want to remove this?' => 'Želite li zaista da uklonite ovo?',
+
 ];

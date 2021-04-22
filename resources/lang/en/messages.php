@@ -82,6 +82,7 @@ return [
 
     'Send' => 'Send',
     'Discard' => 'Discard',
+    'Delete' => 'Delete',
     'To' => 'To',
     'Subject' => 'Subject',
     'Body' => 'Body',
@@ -100,4 +101,12 @@ return [
 //    //forgot password - mail notifications
 //    'problems' => 'If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n',
 //    'into your web browser:' => 'into your web browser:'
+
+
+    //fullcalendar
+    'Event Created Succesfully' => 'Event Created Succesfully',
+    'message' => 'Mesazh',
+    'Event was Deleted Succesfully' => 'Event was Deleted Succesfully',
+    'Event Updated Succesfully' => 'Event was Edited Succesfully',
+    'Are u sure u want to remove this?' => 'Are u sure u want to remove this?',
     ];

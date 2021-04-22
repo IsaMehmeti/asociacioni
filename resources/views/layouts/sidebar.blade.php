@@ -79,6 +79,12 @@
                             <span>{{__('messages.add user')}}</span>
                         </a>
                     </li>
+                    <li class="{{ Request::is('/calendar') ? 'nav-active' : '' }}">
+                        <a class="nav-link" href="{{url('/calendar')}}">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>{{__('messages.Calendar')}}</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         <script>

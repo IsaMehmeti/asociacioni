@@ -29,20 +29,23 @@ Route::group(['middleware' => 'auth'], function(){
     //mail routes
     Route::get('/mail', 'MailController@index');
     Route::post('/sendmail', 'MailController@sendMailToOneUser')->name('sendmail');
-
     //zyrtaret
     Route::get('/officials/{city}', 'OfficialController@showByCity');
     Route::get('/official/archive', 'OfficialController@archiveIndex')->name('archive');
     Route::resource('/official', 'OfficialController');
-
     //kolegjiumet
     Route::resource('/collegium', 'CollegiumController');
     //komunat
     Route::get('/municipalities', 'MunicipalityController@index');
-
     //perdoruesit
     Route::resource('/user', 'UserController');
 
+    //calendar
+    Route::group(['prefix' => 'calendar/'], function () {
+        Route::get('/', 'CalendarController@index');
+        Route::post('/action', 'CalendarController@action');
+    });
+    Route::get('calendar/', 'CalendarController@index');
 
     Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
