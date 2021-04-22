@@ -17,6 +17,10 @@
         </div>
 
         <h2 class="card-title">{{__('Kryesia -')}} {{$headships->count()}}</h2>
+
+        @if($headships->count() == 0)
+        <p class="card-subtitle">{{__('messages.No data available in table')}}</p>
+        @endif
     </header>
     <div class="card-body">
         <table class="table table-responsive-md mb-0">

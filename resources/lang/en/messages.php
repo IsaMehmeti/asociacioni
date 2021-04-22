@@ -106,6 +106,10 @@ return [
     //fullcalendar
     'Event Created Succesfully' => 'Event Created Succesfully',
     'message' => 'Mesazh',
+    'Calendar' => 'Calendar',
+    'Future Events' => 'Future Events',
+    'View All' => 'View All',
+    'Add Event' => 'Add Event',
     'Event was Deleted Succesfully' => 'Event was Deleted Succesfully',
     'Event Updated Succesfully' => 'Event was Edited Succesfully',
     'Are u sure u want to remove this?' => 'Are u sure u want to remove this?',

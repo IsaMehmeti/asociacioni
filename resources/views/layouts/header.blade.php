@@ -2,24 +2,57 @@
 <header class="header">
     <div class="logo-container">
         <a href="../3.0.0" class="logo">
-            <img src="{{asset('img/logo.png')}}" width="204" height="44" alt="Porto Admin" />
+            <img src="{{asset('img/logo.png')}}" width="204" height="44" alt="Porto Admin"/>
         </a>
-        <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+        <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
+             data-fire-event="sidebar-left-opened">
             <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
         </div>
     </div>
 
     <!-- start: search & user box -->
-
     <div class="header-right">
 
-
         <span class="separator"></span>
-
-
         <?php $lang = app()->getLocale(); ?>
         <ul class="notifications">
+            <li>
+                <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="badge">{{$events->count()}}</span>
+                </a>
+                <div class="dropdown-menu notification-menu" style="">
+                    <div class="notification-title">
+                        <span class="float-right badge badge-default">{{$events->count()}}</span>
+                        {{__('messages.Future Events')}}
+                    </div>
+                    <div class="content">
+                        <ul>
+                            @foreach($events->take(5) as $event)
+                                <li>
+                                    <a href="{{url('/calendar')}}" class="clearfix">
+                                        <?php
+                                        $orgDate = $event->start;
+                                        $start = date("d-m-Y", strtotime($orgDate));?>
+                                        <span class="title">{{$event->title}}</span>
+                                        <span class="message">{{$start}}</span>
+                                    </a>
+                                    <hr>
+                                </li>
+                            @endforeach
+                        </ul>
 
+
+                        <div class="text-right">
+                            @if($events->count() > 0)
+                            <a href="{{url('/calendar')}}" class="view-more">{{__('messages.View All')}}</a>
+                            @else
+                            <a href="{{url('/calendar')}}" class="view-more">{{__('messages.Add Event')}}</a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </li>
             <li>
                 <a href="#" class="dropdown-toggle notification-icon" data-toggle="dropdown">
                     @if($lang == 'sq')
@@ -77,37 +110,36 @@
             </li>
         </ul>
 
-
-
-
-
-
         <span class="separator"></span>
 
-        <div class="userbox">
+        <div id="userbox" class="userbox">
             <a href="#" data-toggle="dropdown" aria-expanded="false">
-
-                <div class="profile-info" >
+                <figure class="profile-picture">
+                    <img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle"
+                         data-lock-picture="img/!logged-user.jpg">
+                </figure>
+                <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
                     <span class="name">{{auth()->user()->name}}</span>
                     <span class="role">Admin</span>
                 </div>
-                <i class="fa custom-caret"></i>
 
+                <i class="fa custom-caret"></i>
             </a>
 
             <div class="dropdown-menu" style="">
                 <ul class="list-unstyled mb-2">
                     <li class="divider"></li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="{{route('user.index')}}"><i class="fas fa-user"></i> {{__('messages.My Profile')}}</a>
+                        <a role="menuitem" tabindex="-1" href="{{route('user.index')}}"><i
+                                class="fas fa-user"></i> {{__('messages.My Profile')}}</a>
                     </li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="/logout"><i class="fas fa-power-off"></i>{{__('messages.Logout')}}</a>
+                        <a role="menuitem" tabindex="-1" href="/logout"><i
+                                class="fas fa-power-off"></i>{{__('messages.Logout')}}</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <!-- end: search & user box -->
     </div>
 </header>
 <!-- end: header -->

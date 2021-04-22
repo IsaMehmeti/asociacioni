@@ -103,6 +103,10 @@ return [
     //fullcalendar
     'Event Created Succesfully' => 'Eventi u krijua me sukses',
     'message' => 'Mesazh',
+    'Calendar' => 'Kalendari',
+    'Future Events' => 'Evente te ardhshme',
+    'View All' => 'Shiko te gjitha',
+    'Add Event' => 'Shto Eventin',
     'Event was Deleted Succesfully' => 'Event u fshi me sukses',
     'Event Updated Succesfully' => 'Event u ndryshua me sukses',
     'Are u sure u want to remove this?' => 'A jeni të sigurtë që doni ta fshini këtë?',

@@ -101,6 +101,10 @@ return [
     //fullcalendar
     'Event Created Succesfully' => 'Događaj kreiran u potpunosti',
     'message' => 'Poruku',
+    'Calendar' => 'Kalendar',
+    'Future Events' => 'Budući događaji',
+    'View All' => 'Prikaži sve',
+    'Add Event' => 'Dodaj događaj',
     'Event was Deleted Succesfully' => 'Događaj je izbrisan u potpunosti',
     'Event Updated Succesfully' => 'Događaj je uređivao succesfully',
     'Are u sure u want to remove this?' => 'Želite li zaista da uklonite ovo?',
