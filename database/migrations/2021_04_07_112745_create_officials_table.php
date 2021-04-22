@@ -18,6 +18,7 @@ class CreateOfficialsTable extends Migration
             $table->string('name');
             $table->string('last_name');
             $table->string('email');
+            $table->boolean('headship')->default(false);
             $table->unsignedBigInteger('collegium_id');
             $table->unsignedBigInteger('municipality_id');
             $table->softDeletes();

@@ -17,7 +17,8 @@ class OfficialController extends Controller
     public function index()
     {
         $officials = Official::all();
-        return view('official.index', compact('officials'));
+        $headships = Official::where('headship', true)->get();
+        return view('official.index', compact(['officials', 'headships']));
     }
 
     /**
@@ -74,12 +75,20 @@ class OfficialController extends Controller
         return view('official.archive', compact('officials'));
     }
 
-//    public function archive($id)
-//    {
-//        $official = Official::findOrFail($id);
-//        $official->delete();
-//        return redirect()->back();
-//    }
+    public function addToHeadShip($id)
+    {
+        $official = Official::findOrFail($id);
+        $official->headship = true;
+        $official->save();
+        return redirect()->back()->with(['status' => __('messages.Updated Successfully')]);
+    }
+    public function removeFromHeadship($id)
+    {
+        $official = Official::findOrFail($id);
+        $official->headship = false;
+        $official->save();
+        return redirect()->back()->with(['danger' => __('messages.Updated Successfully')]);
+    }
 
     public function update($id)
     {
@@ -89,6 +98,8 @@ class OfficialController extends Controller
     public function destroy($id)
     {
         $official = Official::findOrFail($id);
+        $official->headship = false;
+        $official->save();
         $official->delete();
         return redirect()->back()->with(['status' => __('messages.Archived Successfully')]);
     }

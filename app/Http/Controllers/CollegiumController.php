@@ -56,7 +56,8 @@ class CollegiumController extends Controller
     public function show($id)
     {
         $collegium = Collegium::findOrFail($id);
-        return view('collegium.show', compact('collegium'));
+        $headships = $collegium->officials->where('headship', true);
+        return view('collegium.show', compact(['collegium', 'headships']));
     }
 
     /**

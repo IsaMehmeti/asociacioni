@@ -20,7 +20,6 @@
                 <h2 class="card-title">{{__('messages.Collegiums')}}</h2>
             </header>
             <div class="card-body">
-
                 <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                     <thead>
                     <tr>

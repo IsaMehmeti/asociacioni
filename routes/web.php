@@ -33,6 +33,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/officials/{city}', 'OfficialController@showByCity');
     Route::get('/official/archive', 'OfficialController@archiveIndex')->name('archive');
     Route::resource('/official', 'OfficialController');
+    Route::patch('/official/{id}/headship', 'OfficialController@addToHeadShip')->name('addToHeadShip');
+    Route::patch('/official/{id}/headship/remove', 'OfficialController@removeFromHeadship')->name('removeFromHeadship');
     //kolegjiumet
     Route::resource('/collegium', 'CollegiumController');
     //komunat
@@ -45,9 +47,8 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/', 'CalendarController@index');
         Route::post('/action', 'CalendarController@action');
     });
-    Route::get('calendar/', 'CalendarController@index');
 
-    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+    Route::get('/logout', 'Auth\LoginController@logout');
 });
 Auth::routes();
 

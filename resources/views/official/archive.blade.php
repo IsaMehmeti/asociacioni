@@ -3,9 +3,9 @@
 @section('page_name', __('messages.Archived Officials'))
 
 @section('custom_header')
-    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
-    <link rel="stylesheet" href="{{asset('vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('vendor/datatables/media/css/dataTables.bootstrap4.css')}}" />
+    <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}"/>
+    <link rel="stylesheet" href="{{asset('vendor/select2-bootstrap-theme/select2-bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('vendor/datatables/media/css/dataTables.bootstrap4.css')}}"/>
 @endsection
 
 @section('content')
@@ -38,17 +38,26 @@
                         <td>{{ucfirst($official->municipality->name)}}</td>
                         <?php
                         $dt = new DateTime($official->deleted_at);?>
-                        <td >
-                                <form method="POST" action="{{route('official.update', $official->id)}}">
-                                    {{$dt->format('d-m-Y')}}
-                                    @csrf
-                                    @method('Patch')
-                                <input type="submit" class="btn btn-warning" value="{{__('messages.Return')}}"/>
-                                </form></td>
+                        <td>
+                            {{$dt->format('d-m-Y')}}
+                            <form id="head-form {{$official->id}}" class="hidden" method="POST"
+                                  action="{{route('official.update', $official->id)}}">
+                                @csrf
+                                @method('Patch')
+                                <button type="submit" class="hidden" id="{{$official->id}}"></button>
+                            </form>
+                            <a data-toggle="tooltip" title="" href="#" data-original-title="{{__('Riktheje')}}"
+                               onclick="restore({{$official->id}})" class="delete on-default"><i
+                                    class="fa fa-undo"></i></a>
+
+                        </td>
 
                     </tr>
                 @empty
-                    <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">{{__('messages.No data available in table')}}</td></tr>
+                    <tr class="odd">
+                        <td valign="top" colspan="4"
+                            class="dataTables_empty">{{__('messages.No data available in table')}}</td>
+                    </tr>
                 @endforelse
                 </tbody>
             </table>
@@ -64,16 +73,23 @@
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
+    <script>
+        function restore(id) {
+            $("#" + id).click();
+        }
+    </script>
 @endsection
 <script type="text/javascript">
-    function makePdf(){
+    function makePdf() {
         var printMe = document.getElementById('datatable-editable');
-        var wme = window.open("","","width:700,height:900");
+        var wme = window.open("", "", "width:700,height:900");
         wme.document.write(printMe.outerHTML);
         wme.document.close();
         wme.focus();
         wme.print();
-        setTimeout(() => {  wme.close(); }, 2000);
+        setTimeout(() => {
+            wme.close();
+        }, 2000);
     }
 </script>
 

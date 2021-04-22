@@ -10,7 +10,7 @@ class Official extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['name', 'last_name', 'email', 'collegium_id', 'municipality_id'];
+    protected $fillable = ['name', 'last_name', 'email', 'collegium_id', 'municipality_id', 'headship'];
 
     public function collegium()
     {
@@ -19,5 +19,19 @@ class Official extends Model
     public function municipality()
     {
         return $this->belongsTo('App\Models\Municipality');
+    }
+
+    public function isOnHeadShip()
+    {
+        if ($this->headship == true){
+            return true;
+        }
+        return false;
+
+    }
+    public function headship()
+    {
+        return $this->where('headship', true)->get();
+
     }
 }
