@@ -5,6 +5,8 @@ return [
     'All Rights Reserved' => "Të Gjitha të drejtat te rezervuara",
     'Sign In' => 'Kyçu',
     'word' => 'shqip',
+
+
     'Created Successfully' => 'U krijua me sukses',
     'Archived Successfully' => 'U arkivua me sukses',
     'Deleted Successfully' => 'U fshi me sukses',
@@ -12,6 +14,11 @@ return [
     'Returned Successfully' => 'U rikthye me sukses',
     'Mail Sent successfully' => 'E-maili u dergua me sukses',
     'Something went wrong' => 'Diqka shkoi gabimisht',
+    'This Collegium doesn\'t have any official' => 'Ky Kolegjium nuk përmban asnjë Zyrtarë',
+
+
+
+    'Phone Number' => 'Nr. i telefonit',
     'Sorry, No Record to show' => 'Na vjen keq, ska të dhëna për të shfaqur',
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',

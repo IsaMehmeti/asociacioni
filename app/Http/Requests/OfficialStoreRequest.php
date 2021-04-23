@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SendMailRequest extends FormRequest
+class OfficialStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,12 @@ class SendMailRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
             'collegium_id' => 'required',
-            'subject' => 'required',
-            'body' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9',
+            'municipality_id' => 'required',
         ];
     }
 }

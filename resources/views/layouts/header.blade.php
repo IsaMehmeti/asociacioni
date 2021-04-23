@@ -45,9 +45,9 @@
 
                         <div class="text-right">
                             @if($events->count() > 0)
-                            <a href="{{url('/calendar')}}" class="view-more">{{__('messages.View All')}}</a>
+                                <a href="{{url('/calendar')}}" class="view-more">{{__('messages.View All')}}</a>
                             @else
-                            <a href="{{url('/calendar')}}" class="view-more">{{__('messages.Add Event')}}</a>
+                                <a href="{{url('/calendar')}}" class="view-more">{{__('messages.Add Event')}}</a>
                             @endif
                         </div>
                     </div>
@@ -115,8 +115,7 @@
         <div id="userbox" class="userbox">
             <a href="#" data-toggle="dropdown" aria-expanded="false">
                 <figure class="profile-picture">
-                    <img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle"
-                         data-lock-picture="img/!logged-user.jpg">
+
                 </figure>
                 <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
                     <span class="name">{{auth()->user()->name}}</span>

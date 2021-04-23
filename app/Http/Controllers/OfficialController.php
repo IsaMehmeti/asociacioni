@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OfficialStoreRequest;
 use App\Models\Collegium;
 use App\Models\Official;
 use App\Models\Municipality;
@@ -38,14 +39,14 @@ class OfficialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OfficialStoreRequest $request)
     {
-//        dd($request->sr_municipality);
         Official::create([
             'name' => $request->name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'collegium_id' => $request->collegium_id,
+            'phone' => $request->phone,
             'municipality_id'=>$request->municipality_id,
         ]);
 

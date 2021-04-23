@@ -5,6 +5,7 @@ return [
     'All Rights Reserved' => "All Rights Reserved",
     'Sign In' => 'Sign in',
     'word' => 'english',
+    //status
     'Created Successfully' => 'Created Successfully',
     'Archived Successfully' => 'Archived Successfully',
     'Deleted Successfully' => 'Deleted Successfully',
@@ -13,6 +14,9 @@ return [
     'Sorry, No Record to show' => 'Sorry, No Record to show',
     'Mail Sent successfully' => 'Mail Sent successfully',
     'Something went wrong' => 'Something went wrong',
+    'This Collegium doesn\'t have any official' => 'This Collegium doesn\'t have any official',
+
+    'Phone Number' => 'Phone Number',
     'Want to add' => 'Want to add',
     'some?' => 'some?',
     'No description for this collegium' => 'No description for this collegium',

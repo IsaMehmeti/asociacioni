@@ -3,7 +3,12 @@
 @section('page_name', __('messages.Compose'))
 
 @section('content')
-    <section class="content-with-menu content-with-menu-has-toolbar mailbox">
+    <div class="container">
+        <div class="row">
+            <h3>asd</h3>
+        </div>
+    </div>
+    <section class=" content-with-menu-has-toolbar mailbox mt-lg">
         <div class="content-with-menu-container" data-mailbox data-mailbox-view="compose">
             <form method="POST" action="{{ route('sendmail') }}" class="col-md-12">
                 @csrf
@@ -24,9 +29,10 @@
                             <label for="to" class="control-label-invisible">{{__('Messages.To')}}:</label>
                             <div class="col-md-12 mailbox-compose-field">
                                 <input disabled id="to" type="text" class="form-control form-control-invisible" data-role="tagsinput" data-tag-class="badge badge-primary">
-                                <select class="form-control" name="user_id">
-                                    @foreach($users as $user)
-                                    <option value="{{$user->id}}">{{$user->email}}</option>
+                                <select class="form-control" name="collegium_id">
+                                    <option disabled selected> Zgjedhni...</option>
+                                    @foreach($collegiums as $collegium)
+                                    <option value="{{$collegium->id}}"> {{$collegium->title}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -51,4 +57,11 @@
             </form>
         </div>
     </section>
+@endsection
+
+@section('custom_footer')
+    <script>
+        $( document ).ready(function() {
+        });
+    </script>
 @endsection

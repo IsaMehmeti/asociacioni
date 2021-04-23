@@ -11,9 +11,12 @@ return [
     'Returned Successfully' => 'Uspešno vraćeno',
     'Mail Sent successfully' => 'Pošta uspešno poslata',
     'Something went wrong' => 'Nešto je pošlo naopako',
+    'This Collegium doesn\'t have any official' => 'Ovaj kolegijum nema nikakvog službenika',
     'Sorry, No Record to show' => 'Žao mi je, nema zapisa za prikazivanje',
     'Want to add' => 'Hoćeš da dodaš',
     'some?' => 'Neki?',
+
+    'Phone Number' => 'Telefonski broj',
     'No description for this collegium' => 'Nema opisa za ovaj kolegijum',
     'Old Password didn\'t match' => 'Stara lozinka se nije podudarala',
     'Komunat' => 'Opštine',

@@ -40,6 +40,12 @@
                                 <input type="email" class="form-control" name="email" id="w1-username" required autocomplete="email">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Phone Number')}}</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="phone" id="w1-username" required autocomplete="number">
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-first-name">{{__('messages.Municipality')}}</label>
@@ -91,14 +97,14 @@
         $( document ).ready(function() {
             var locale = '{{ config('app.locale') }}';
             var message = "This field is required."
-            var email = 'Please enter a valid email address.';
+            var email = "Please enter a valid email address.";
             if (locale == 'sq'){
                 message = "Kjo fushe nuk mund te jete e zbrazet";
-                email = 'Ju lutem shtypni nje email valide.';
+                email = "Ju lutem shtypni nje email valide.";
 
             }else if(locale == 'sr'){
                 message = "Ovo polje je obavezno.";
-                email = 'Unesite važeću e-adresu.';
+                email = "Unesite važeću e-adresu.";
             }
             $.extend($.validator.messages, {
                 required: message,

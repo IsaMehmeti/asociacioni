@@ -10,7 +10,7 @@ class Official extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['name', 'last_name', 'email', 'collegium_id', 'municipality_id', 'headship'];
+    protected $fillable = ['name', 'last_name', 'email', 'phone', 'collegium_id', 'municipality_id', 'headship'];
 
     public function collegium()
     {
