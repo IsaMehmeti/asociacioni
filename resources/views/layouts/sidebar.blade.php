@@ -73,6 +73,24 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-parent {{ Request::is('file/*') ? 'nav-expanded nav-active' : '' }}">
+                        <a class="nav-link" href="#">
+                            <i class="fab fa-google-drive"></i>
+                            <span>{{__('messages.File Storage')}}</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li class="{{ Request::is('file/') ? 'nav-active' : '' }}">
+                                <a class="nav-link" href="{{url('/file')}}">
+                                    {{__('messages.File Storage')}}
+                                </a>
+                            </li>
+                            <li class="{{ Request::is('file/create') ? 'nav-active' : '' }}">
+                                <a class="nav-link" href="{{url('/file/create')}}">
+                                    {{__('messages.Create File')}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="{{ Request::is('user/create') ? 'nav-active' : '' }}">
                         <a class="nav-link" href="{{route('user.create')}}">
                             <i class="fas fa-users"></i>

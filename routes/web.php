@@ -48,6 +48,13 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post('/action', 'CalendarController@action');
     });
 
+    //file-storage
+    Route::group(['prefix' => 'file/'], function () {
+        Route::get('/', 'FileController@index');
+        Route::get('/create', 'FileController@create');
+        Route::post('/store', 'FileController@store')->name('store.image');
+    });
+
     Route::get('/logout', 'Auth\LoginController@logout');
 });
 Auth::routes();
