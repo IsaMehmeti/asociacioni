@@ -63,7 +63,7 @@
             <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
         </div>
 
-        <h2 class="card-title">{{__('messages.Officials')}}</h2>
+        <h2 class="card-title">{{__('messages.Officials')}} - {{$officials->count()}}            <a href="{{route('official.create')}}" class="btn btn-sm btn-dark">{{__('messages.Create Official')}}   <i class="fas fa-plus"></i></a></h2>
     </header>
 
     <div class="card-body">

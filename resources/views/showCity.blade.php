@@ -20,32 +20,47 @@
                     <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                 </div>
 
-                <h2 class="card-title" style="text-transform: capitalize;">{{$city->name}}</h2>
+                <h2 class="card-title" style="text-transform: capitalize;">{{$city->name}} - {{count($city->officials)}}</h2>
+
             </header>
             <div class="card-body">
 
-                <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                    <thead>
-                    <tr>
-                        <th>{{__('Kolegjiumi')}}</th>
-                        <th>{{__('Zyrtari Komunal')}}</th>
-                        <th>{{__('Email')}}</th>
-                         <th>{{__('Actions')}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @forelse($city->officials as $official)
-                        <tr data-item-id="{{$official->id}}" role="row" class="odd">
-                        <td>{{$official->collegium->title}}</td>
-                        <td>{{$official->name}} {{$official->last_name}}</td>
-                        <td>{{$official->email}}</td>
-                        <td class="actions">
-                        </td>
-                    </tr>
-                    @empty
-                        @endforelse
-                    </tbody>
-                </table>
+                 <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+            <thead>
+            <tr>
+                <th>{{__('messages.Emri')}}</th>
+                <th>{{__('messages.Kolegjiumi')}}</th>
+                <th>{{__('messages.Qyteti')}}</th>
+                <th>{{__('messages.Phone Number')}}</th>
+                <th>{{__('messages.Actions')}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            @forelse($city->officials as $official)
+                <tr data-item-id="{{$official->id}}" role="row" class="odd">
+                    <td>{{$official->name}} {{$official->last_name}}</td>
+                    <td>@if(!$official->collegium)
+                           <p style="color:red">Null</p>
+                        @else
+                            {{$official->collegium->title}}
+                        @endif
+                    </td>
+                    <td>{{ucfirst($official->municipality->name)}} </td>
+                    <td>{{$official->phone}}</td>
+                    <td class="actions">
+                        <form id="delete-form {{$official->id}}" class="hidden" method="POST" action="{{route('official.destroy', $official->id)}}">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="hidden" id="{{$official->id}}"></button>
+                        </form>
+                        <a data-toggle="tooltip" title="" href="#" data-original-title="{{__('Arkivo Zyrëtarin')}}" onclick="archive({{$official->id}})" class="delete on-default"><i class="fa fa-archive"></i></a>
+                    </td>
+                </tr>
+            @empty
+                <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">{{__('messages.No data available in table')}}</td></tr>
+                @endforelse
+            </tbody>
+        </table>
                 <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Print')}}</button>
             </div>
 
@@ -56,8 +71,71 @@
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
+{{--    <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>--}}
+    <script>
+        (function($) {
 
+	'use strict';
+
+	var EditableTable = {
+
+		options: {
+			addButton: '#addToTable',
+			table: '#datatable-editable',
+			dialog: {
+				wrapper: '#dialog',
+				cancelButton: '#dialogCancel',
+				confirmButton: '#dialogConfirm',
+			}
+		},
+
+		initialize: function() {
+			this
+				.setVars()
+				.build()
+				.events();
+		},
+
+		setVars: function() {
+			this.$table				= $( this.options.table );
+			this.$addButton			= $( this.options.addButton );
+
+			// dialog
+			this.dialog				= {};
+			this.dialog.$wrapper	= $( this.options.dialog.wrapper );
+			this.dialog.$cancel		= $( this.options.dialog.cancelButton );
+			this.dialog.$confirm	= $( this.options.dialog.confirmButton );
+
+			return this;
+		},
+
+		build: function() {
+			this.datatable = this.$table.DataTable({
+				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>p',
+				aoColumns: [
+					null,
+					null,
+					null,
+					null,
+					{ "bSortable": false }
+				]
+			});
+
+			window.dt = this.datatable;
+
+			return this;
+		},
+	};
+
+	$(function() {
+		EditableTable.initialize();
+	});
+
+}).apply(this, [jQuery]);
+        function archive(id){
+            $("#"+id).click();
+        }
+    </script>
 @endsection
 
 

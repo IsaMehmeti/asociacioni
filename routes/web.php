@@ -53,6 +53,8 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/', 'FileController@index');
         Route::get('/create', 'FileController@create');
         Route::post('/store', 'FileController@store')->name('store.image');
+        Route::get('/{id}/download', 'FileController@download')->name('download.image');
+        Route::delete('/{id}/delete', 'FileController@destroy')->name('delete.image');
     });
 
     Route::get('/logout', 'Auth\LoginController@logout');

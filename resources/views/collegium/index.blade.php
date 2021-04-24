@@ -17,7 +17,7 @@
                     <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                 </div>
 
-                <h2 class="card-title">{{__('messages.Collegiums')}}</h2>
+                <h2 class="card-title">{{__('messages.Collegiums')}}   <a href="{{route('collegium.create')}}" class="btn btn-sm btn-dark">{{__('messages.Create Collegium')}}   <i class="fas fa-plus"></i></a></h2>
             </header>
             <div class="card-body">
                 <table class="table table-bordered table-striped mb-0" id="datatable-editable">

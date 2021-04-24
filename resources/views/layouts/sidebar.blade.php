@@ -73,13 +73,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-parent {{ Request::is('file/*') ? 'nav-expanded nav-active' : '' }}">
+                    <li class="nav-parent {{ Request::is('file*') ? 'nav-expanded nav-active' : '' }}">
                         <a class="nav-link" href="#">
                             <i class="fab fa-google-drive"></i>
                             <span>{{__('messages.File Storage')}}</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="{{ Request::is('file/') ? 'nav-active' : '' }}">
+                            <li class="{{ Request::is('file') ? 'nav-active' : '' }}">
                                 <a class="nav-link" href="{{url('/file')}}">
                                     {{__('messages.File Storage')}}
                                 </a>
