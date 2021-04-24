@@ -1,7 +1,7 @@
 <!-- start: header -->
 <header class="header">
     <div class="logo-container">
-        <a href="../3.0.0" class="logo">
+        <a href="/" class="logo">
             <img src="{{asset('img/logo.png')}}" width="204" height="44" alt="Porto Admin"/>
         </a>
         <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
