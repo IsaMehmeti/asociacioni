@@ -110,7 +110,6 @@
                 @endforelse
                 </tbody>
             </table>
-            <button onclick="makePdf()" class="btn btn-Primary">Printo Listen</button>
         </div>
 
     </section>
@@ -120,17 +119,9 @@
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.print.js')}}"></script>
+    <script src="{{asset('vendor/datatables/extras/TableTools/Buttons-1.4.2/js/dataTables.buttons.js')}}"></script>
     <script>
-
-        function archive(id){
-            $("#"+id).click();
-        }
-        function headship(id){
-            $("#h"+id).click();
-        }
-        function headshipRemove(id){
-            $("#hr"+id).click();
-        }
 
 (function($) {
 
@@ -170,7 +161,7 @@
 
 		build: function() {
 			this.datatable = this.$table.DataTable({
-				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>p',
+				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t> Bp ',
 				aoColumns: [
 					null,
 					null,
@@ -201,7 +192,9 @@
         function headshipRemove(id){
             $("#hr"+id).click();
         }
-
+        $(document).ready(function (){
+            $(".dt-button").addClass('btn btn-primary')
+        });
     </script>
 
 @endsection

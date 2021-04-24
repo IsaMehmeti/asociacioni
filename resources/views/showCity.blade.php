@@ -1,9 +1,7 @@
 
-
-
 @extends('layouts.app')
 
-@section('page_name', ucfirst($city->name))
+@section('page_name', __('messages.Officials').' '.ucfirst($city->name))
 
 @section('custom_header')
     <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}" />
@@ -20,7 +18,7 @@
                     <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                 </div>
 
-                <h2 class="card-title" style="text-transform: capitalize;">{{$city->name}} - {{count($city->officials)}}</h2>
+                <h2 class="card-title" style="text-transform: capitalize;">{{__('messages.Officials')}} {{ucfirst($city->name)}} - {{count($city->officials)}}</h2>
 
             </header>
             <div class="card-body">
@@ -61,7 +59,6 @@
                 @endforelse
             </tbody>
         </table>
-                <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Print')}}</button>
             </div>
 
         </section>
@@ -71,9 +68,11 @@
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
-{{--    <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>--}}
+ <script src="{{asset('vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.print.js')}}"></script>
+    <script src="{{asset('vendor/datatables/extras/TableTools/Buttons-1.4.2/js/dataTables.buttons.js')}}"></script>
     <script>
-        (function($) {
+
+(function($) {
 
 	'use strict';
 
@@ -111,7 +110,7 @@
 
 		build: function() {
 			this.datatable = this.$table.DataTable({
-				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>p',
+				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t> Bp ',
 				aoColumns: [
 					null,
 					null,
@@ -135,18 +134,11 @@
         function archive(id){
             $("#"+id).click();
         }
+        $(document).ready(function (){
+        $(".dt-button").addClass('btn btn-primary')
+        });
     </script>
 @endsection
 
 
-<script type="text/javascript">
-  function makePdf(){
-    var printMe = document.getElementById('datatable-editable');
-    var wme = window.open("","","width:700,height:900");
-    wme.document.write(printMe.outerHTML);
-    wme.document.close();
-    wme.focus();
-    wme.print();
-   setTimeout(() => {  wme.close(); }, 2000);
-  }
-</script>
+

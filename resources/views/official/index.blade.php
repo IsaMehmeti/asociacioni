@@ -112,7 +112,6 @@
                 @endforelse
             </tbody>
         </table>
-        <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Printo Listen')}}</button>
     </div>
 </section>
 
@@ -123,6 +122,8 @@
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/extras/TableTools/Buttons-1.4.2/js/buttons.print.js')}}"></script>
+    <script src="{{asset('vendor/datatables/extras/TableTools/Buttons-1.4.2/js/dataTables.buttons.js')}}"></script>
     <script>
 
 (function($) {
@@ -163,7 +164,7 @@
 
 		build: function() {
 			this.datatable = this.$table.DataTable({
-				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t>p',
+				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t> Bp ',
 				aoColumns: [
 					null,
 					null,
@@ -194,21 +195,11 @@
         function headshipRemove(id){
             $("#hr"+id).click();
         }
-
+        $(document).ready(function (){
+        $(".dt-button").addClass('btn btn-primary')
+        });
     </script>
 
 @endsection
-<script type="text/javascript">
-    function makePdf(){
-        var printMe = document.getElementById('datatable-editable');
-        var wme = window.open("","","width:700,height:900");
-        wme.document.write(printMe.outerHTML);
-        wme.document.close();
-        wme.focus();
-        wme.print();
-        setTimeout(() => {  wme.close(); }, 2000);
-    }
-</script>
-
 
 

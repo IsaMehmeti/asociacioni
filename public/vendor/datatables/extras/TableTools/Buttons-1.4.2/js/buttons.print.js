@@ -96,7 +96,11 @@ DataTable.ext.buttons.print = {
 			var str = '<tr>';
 
 			for ( var i=0, ien=d.length ; i<ien ; i++ ) {
-				str += '<'+tag+'>'+d[i]+'</'+tag+'>';
+			        if(d[i] == 'Aksioni'){
+				    str += '<'+tag+'>'+'Nënshkrimi'+'</'+tag+'>';
+                    }else{
+				    str += '<'+tag+'>'+d[i]+'</'+tag+'>';
+                    }
 			}
 
 			return str + '</tr>';
@@ -147,8 +151,10 @@ DataTable.ext.buttons.print = {
 			html+
 			'<div>'+(exportInfo.messageBottom || '')+'</div>';
 
+        $(win.document.body).prepend(
+                            '<img src="https://komunat-ks.net/wp-content/uploads/2018/09/AKK-Logo_50.png" style="position:relative; float: right; margin-right: 10px; margin-bottom: 10px;" />'
+                        );
 		$(win.document.body).addClass('dt-print-view');
-
 		$('img', win.document.body).each( function ( i, img ) {
 			img.setAttribute( 'src', _relToAbs( img.getAttribute('src') ) );
 		} );

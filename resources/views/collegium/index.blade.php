@@ -32,7 +32,7 @@
                     <tbody>
                     @forelse($collegiums as $collegium)
                         <tr data-item-id="{{$collegium->id}}" role="row" class="odd">
-                        <td class="sorting_1"><img src="{{asset($collegium->image)}}" width="20" height="20"</td>
+                        <td class="sorting_1"><img src="{{asset($collegium->image)}}" width="20" height="20"></td>
                         <td>{{$collegium->title}}</td>
                         <td>{{Str::limit($collegium->description, 45)}}</td>
                         <td class="actions">
@@ -50,7 +50,6 @@
                         @endforelse
                     </tbody>
                 </table>
-                <button onclick="makePdf()" class="btn btn-Primary">{{__('messages.Printo Listen')}}</button>
             </div>
 
         </section>
@@ -70,15 +69,3 @@
     </script>
 
 @endsection
-
-<script type="text/javascript">
-  function makePdf(){
-    var printMe = document.getElementById('datatable-editable');
-    var wme = window.open("","","width:700,height:900");
-    wme.document.write(printMe.outerHTML);
-    wme.document.close();
-    wme.focus();
-    wme.print();
-   setTimeout(() => {  wme.close(); }, 2000);
-  }
-</script>
