@@ -10,10 +10,14 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
-    public function index()
+    public function index($collegium_id = null)
     {
         $collegiums = Collegium::all();
-        return view('mail', compact('collegiums'));
+        if ($collegium_id != null){
+            $selectedCollegium = Collegium::findOrFail($collegium_id);
+        return view('mail', compact(['collegiums', 'collegium_id', 'selectedCollegium']));
+        }
+        return view('mail', compact(['collegiums', 'collegium_id']));
     }
     public function sendMailToOneUser(SendMailRequest $request)
     {

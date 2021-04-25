@@ -27,7 +27,7 @@ Route::get('locale/{locale}', function ($locale){
 Route::group(['middleware' => 'auth'], function(){
 
     //mail routes
-    Route::get('/mail', 'MailController@index');
+    Route::get('/mail/{collegium_id?}', 'MailController@index');
     Route::post('/sendmail', 'MailController@sendMailToOneUser')->name('sendmail');
     //zyrtaret
     Route::get('/officials/{city}', 'OfficialController@showByCity');

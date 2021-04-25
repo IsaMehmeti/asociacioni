@@ -67,7 +67,7 @@
                 <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
             </div>
 
-            <h2 class="card-title">{{__('messages.Officials')}} - {{count($collegium->officials)}}</h2>
+            <h2 class="card-title">{{__('messages.Officials')}} - {{count($collegium->officials)}}   </h2>
         </header>
         <div class="card-body">
 
@@ -110,6 +110,7 @@
                 @endforelse
                 </tbody>
             </table>
+            <a href="{{url("/mail/$collegium->id")}}" class="mb-1 mt-1 mr-1 btn btn-dark"><i class="fas fa-envelope"></i> {{__('messages.Send Email')}}</a>
         </div>
 
     </section>
@@ -194,19 +195,8 @@
         }
         $(document).ready(function (){
             $(".dt-button").addClass('btn btn-primary')
+            // $(".dt-button").css('margin-top', '20px');
         });
     </script>
 
 @endsection
-
-<script type="text/javascript">
-    function makePdf(){
-        var printMe = document.getElementById('datatable-editable');
-        var wme = window.open("","","width:700,height:900");
-        wme.document.write(printMe.outerHTML);
-        wme.document.close();
-        wme.focus();
-        wme.print();
-        setTimeout(() => {  wme.close(); }, 2000);
-    }
-</script>

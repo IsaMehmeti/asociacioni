@@ -29,12 +29,19 @@
                             <label for="to" class="control-label-invisible">{{__('Messages.To')}}:</label>
                             <div class="col-md-12 mailbox-compose-field">
                                 <input disabled id="to" type="text" class="form-control form-control-invisible" data-role="tagsinput" data-tag-class="badge badge-primary">
-                                <select class="form-control" name="collegium_id">
-                                    <option disabled selected> Zgjedhni...</option>
-                                    @foreach($collegiums as $collegium)
-                                    <option value="{{$collegium->id}}"> {{$collegium->title}}</option>
-                                    @endforeach
-                                </select>
+                                    @if($collegium_id != null)
+                                        <select class="form-control" name="collegium_id" disabled>
+                                            <option disabled selected value="{{$collegium_id}}">{{$selectedCollegium->title}}</option>
+                                        </select>
+                                        <input type="hidden" name="collegium_id" value="{{$collegium_id}}"/>
+                                    @else
+                                        <select class="form-control" name="collegium_id" >
+                                            <option disabled selected> Zgjedhni...</option>
+                                            @foreach($collegiums as $collegium)
+                                            <option value="{{$collegium->id}}"> {{$collegium->title}}</option>
+                                            @endforeach
+                                         </select>
+                                    @endif
                             </div>
                         </div>
 
@@ -60,8 +67,5 @@
 @endsection
 
 @section('custom_footer')
-    <script>
-        $( document ).ready(function() {
-        });
-    </script>
+
 @endsection
