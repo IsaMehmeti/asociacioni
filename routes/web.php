@@ -1,6 +1,9 @@
 <?php
 
+use App\Jobs\SendEmailsJob;
+use App\Mail\NewUser;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 //dashboard - home.blade.php
 
 Route::get('/', 'HomeController@index')->name('home');
-// Route::get('city', 'CityController@index');
 
 //change language
 Route::get('locale/{locale}', function ($locale){

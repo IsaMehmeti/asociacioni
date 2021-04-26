@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendMailRequest;
+use App\Jobs\SendEmailsJob;
 use App\Mail\NewUser;
 use App\Models\Collegium;
 use App\Models\Official;
@@ -29,10 +30,14 @@ class MailController extends Controller
         foreach ($collegium->officials as $user) {
         $data = ['subject' => $request->subject,
                  'from' => auth()->user()->email,
+                 'to' => $user->email,
                  'body' => $request->body,
                  'user_name' => $user->name
                 ];
-        Mail::to($user->email)->send(new NewUser($data));
+            $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
+
+            dispatch($job);
+//        Mail::to($user->email)->send(new NewUser($data));
         }
         return redirect()->back()->with('status', __('messages.Mail Sent successfully'));
         }catch (\Exception $e) {

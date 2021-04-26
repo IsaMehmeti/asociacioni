@@ -25,25 +25,25 @@
                         <div class="form-group row">
                             <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-username">{{__('messages.First Name')}}</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="name" id="w1-username" required="" value="{{ old('email') }}">
+                                <input type="text" class="form-control" name="name" id="w1-username" required="" value="{{ old('name') }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Last Name')}}</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="last_name" id="w1-username" required="">
+                                <input type="text" class="form-control" name="last_name" id="w1-username" required="" value="{{ old('last_name') }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">E-mail</label>
                             <div class="col-sm-8">
-                                <input type="email" class="form-control" name="email" id="w1-username" required autocomplete="email">
+                                <input type="email" class="form-control" name="email" id="w1-username" required autocomplete="email" value="{{ old('email') }}">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-sm-4 control-label text-sm-right pt-1" for="w1-password">{{__('messages.Phone Number')}}</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" name="phone" id="w1-username" required autocomplete="number">
+                                <input type="text" class="form-control" name="phone" id="w1-username" required autocomplete="number" value="{{ old('phone') }}">
                             </div>
                         </div>
 
