@@ -33,7 +33,8 @@
                     @forelse($collegiums as $collegium)
                         <tr data-item-id="{{$collegium->id}}" role="row" class="odd">
                         <td class="sorting_1"><img src="{{asset($collegium->image)}}" width="20" height="20"></td>
-                        <td>{{$collegium->title}}</td>
+
+                        <td><a data-toggle="tooltip" title="" href="{{route('collegium.show', $collegium->id)}}" data-original-title="{{__('messages.Seemore')}}"> {{$collegium->title}}</a></td>
                         <td>{{Str::limit($collegium->description, 45)}}</td>
                         <td class="actions">
                             <form id="delete-form {{$collegium->id}}" class="hidden" action="{{route('collegium.destroy', $collegium->id)}}" method="POST">

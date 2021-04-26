@@ -35,7 +35,7 @@ return [
     'Komunat' => 'Komunat',
     'Emri' => 'Emri',
     'Kolegjiumi' => 'Kolegjiumi',
-    'Qyteti' => 'Qyteti',
+    'Qyteti' => 'Komuna',
     'Actions' => 'Aksioni',
     'Officials' => 'Zyrëtaret',
     'No data available in table' => 'Nuk ka të dhëna për këtë tabelë',

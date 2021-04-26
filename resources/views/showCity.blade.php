@@ -27,8 +27,8 @@
             <thead>
             <tr>
                 <th>{{__('messages.Emri')}}</th>
-                <th>{{__('messages.Kolegjiumi')}}</th>
-                <th>{{__('messages.Qyteti')}}</th>
+                <th>{{__('messages.Collegium')}}</th>
+                <th>{{__('Email')}}</th>
                 <th>{{__('messages.Phone Number')}}</th>
                 <th>{{__('messages.Actions')}}</th>
             </tr>
@@ -37,13 +37,8 @@
             @forelse($city->officials as $official)
                 <tr data-item-id="{{$official->id}}" role="row" class="odd">
                     <td>{{$official->name}} {{$official->last_name}}</td>
-                    <td>@if(!$official->collegium)
-                           <p style="color:red">Null</p>
-                        @else
-                            {{$official->collegium->title}}
-                        @endif
-                    </td>
-                    <td>{{ucfirst($official->municipality->name)}} </td>
+                    <td>{{$official->collegium->title}} </td>
+                    <td>{{$official->email}}</td>
                     <td>{{$official->phone}}</td>
                     <td class="actions">
                         <form id="delete-form {{$official->id}}" class="hidden" method="POST" action="{{route('official.destroy', $official->id)}}">
@@ -117,7 +112,8 @@
 					null,
 					null,
 					{ "bSortable": false }
-				]
+				],
+
 			});
 
 			window.dt = this.datatable;

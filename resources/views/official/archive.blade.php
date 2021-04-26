@@ -25,8 +25,10 @@
                 <thead>
                 <tr>
                     <th>{{__('messages.Emri')}}</th>
-                    <th>{{__('messages.Kolegjiumi')}}</th>
                     <th>{{__('messages.Qyteti')}}</th>
+                    <th>{{__('messages.Kolegjiumi')}}</th>
+                    <th>{{__('Email')}}</th>
+                    <th>{{__('messages.Phone Number')}}</th>
                     <th>{{__('messages.Data Arkivimit')}}</th>
                 </tr>
                 </thead>
@@ -34,8 +36,10 @@
                 @forelse($officials as $official)
                     <tr id="row{{$official->id}}" data-item-id="{{$official->id}}" role="row" class="odd">
                         <td>{{$official->name}} {{$official->last_name}}</td>
-                        <td>{{$official->collegium->title}}</td>
                         <td>{{ucfirst($official->municipality->name)}}</td>
+                        <td>{{$official->collegium->title}}</td>
+                        <td>{{$official->email}}</td>
+                        <td>{{$official->phone}}</td>
                         <?php
                         $dt = new DateTime($official->deleted_at);?>
                         <td>
@@ -71,8 +75,69 @@
     <script src="{{asset('vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/datatables/media/js/dataTables.bootstrap4.min.js')}}"></script>
-    <script src="{{asset('js/examples/examples.datatables.editable.js')}}"></script>
     <script>
+
+(function($) {
+
+	'use strict';
+
+	var EditableTable = {
+
+		options: {
+			addButton: '#addToTable',
+			table: '#datatable-editable',
+			dialog: {
+				wrapper: '#dialog',
+				cancelButton: '#dialogCancel',
+				confirmButton: '#dialogConfirm',
+			}
+		},
+
+		initialize: function() {
+			this
+				.setVars()
+				.build()
+				.events();
+		},
+
+		setVars: function() {
+			this.$table				= $( this.options.table );
+			this.$addButton			= $( this.options.addButton );
+
+			// dialog
+			this.dialog				= {};
+			this.dialog.$wrapper	= $( this.options.dialog.wrapper );
+			this.dialog.$cancel		= $( this.options.dialog.cancelButton );
+			this.dialog.$confirm	= $( this.options.dialog.confirmButton );
+
+			return this;
+		},
+
+		build: function() {
+			this.datatable = this.$table.DataTable({
+				dom: '<"row"<"col-lg-6"l><"col-lg-6"f>><"table-responsive"t> Bp ',
+				aoColumns: [
+					null,
+					null,
+					null,
+					null,
+					null,
+					{ "bSortable": false }
+				]
+			});
+
+			window.dt = this.datatable;
+
+			return this;
+		},
+	};
+
+	$(function() {
+		EditableTable.initialize();
+	});
+
+}).apply(this, [jQuery]);
+
         function restore(id) {
             $("#" + id).click();
         }
