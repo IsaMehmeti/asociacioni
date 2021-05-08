@@ -61,12 +61,7 @@
             </div>
         </div>
 
-        <p class="text-center text-muted mt-3 mb-3">&copy; <span id="date"></span> @lang('messages.Copyright')  <a href="https://tagdigitals.com/en/" target="blank">TAG Digitals</a>  - @lang('messages.All Rights Reserved')</p>
-
-        <script>
-            var date = new Date().getFullYear();
-            document.getElementById('date').innerHTML = date;
-        </script>
+        <p class="text-center text-muted mt-3 mb-3">&copy; {{ date('Y') }} @lang('messages.Copyright')  <a href="https://tagdigitals.com/en/" target="blank">TAG Digitals</a>  - @lang('messages.All Rights Reserved')</p>
     </div>
 </section>
 <!-- end: page -->

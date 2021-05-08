@@ -77,6 +77,9 @@ return [
     'Dashboard' => 'Ballina',
     'Emri Mbiemri:' => 'Emri Mbiemri:',
     'Return' => 'Riktheje',
+    'Sinqerisht' => 'Sinqerisht',
+    'Pershendetje' => 'Pershendetje',
+    'Asociacioni i Komunave të Kosovës' => 'Asociacioni i Komunave të Kosovës',
 
     //sidebar translations
     'Dashboard' => 'Ballina',

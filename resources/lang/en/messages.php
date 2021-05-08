@@ -76,6 +76,9 @@ return [
     'Dashboard' => 'Dashboard',
     'Emri Mbiemri:' => 'Name and Surname:',
     'Return' => 'Restore',
+    'Sinqerisht' => 'Sincerely',
+    'Pershendetje' => 'Hello',
+    'Asociacioni i Komunave të Kosovës' => 'Association of Kosovo Municipalities',
 
     //sidebar translations
     'Dashboard' => 'Dashboard',

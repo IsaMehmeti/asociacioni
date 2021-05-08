@@ -152,8 +152,10 @@ DataTable.ext.buttons.print = {
 			'<div>'+(exportInfo.messageBottom || '')+'</div>';
 
         $(win.document.body).prepend(
-                            '<img src="https://komunat-ks.net/wp-content/uploads/2018/09/AKK-Logo_50.png" style="position:relative; float: right; margin-right: 10px; margin-bottom: 10px;" />'
+                            '<img src="https://komunat-ks.net/wp-content/uploads/2018/09/AKK-Logo_50.png" style="position:relative; float: right; margin-right: 10px; margin-bottom: 10px;" /><br><br>' +
+            '<figcaption style="position:relative; float: right; margin-top: 30px; margin-bottom: 10px;"><h3> Data: _________________________</h3></figcaption>'
                         );
+
 		$(win.document.body).addClass('dt-print-view');
 		$('img', win.document.body).each( function ( i, img ) {
 			img.setAttribute( 'src', _relToAbs( img.getAttribute('src') ) );

@@ -32,10 +32,11 @@ class MailController extends Controller
                  'from' => auth()->user()->email,
                  'to' => $user->email,
                  'body' => $request->body,
-                 'user_name' => $user->name
+                 'user_name' => $user->name,
+                 'locale' => app()->getLocale()
                 ];
-            $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
 
+            $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
             dispatch($job);
 //        Mail::to($user->email)->send(new NewUser($data));
         }

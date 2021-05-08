@@ -33,6 +33,6 @@ class SendEmailsJob implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->data['to'])->send(new NewUser($this->data));
+        Mail::to($this->data['to'])->locale($this->data['locale'])->send(new NewUser($this->data));
     }
 }

@@ -74,7 +74,9 @@ return [
     'Dashboard' => 'Kontrolnu tablu',
     'Emri Mbiemri' => 'Prezime',
     'Return' => 'Vratiti',
-
+    'Sinqerisht' => 'Iskreno',
+    'Pershendetje' => 'Zdravo',
+    'Asociacioni i Komunave të Kosovës' => 'Udruženje Kosovskih opština',
 
 
 
