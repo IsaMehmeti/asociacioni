@@ -27,6 +27,7 @@ return [
     'Zgjidh' => 'Izaberite',
     'File Storage' => 'Skladište datoteka',
     'Create File' => 'Otpremi datoteku',
+    'Attach File' => 'Priloži datoteku',
     'No description for this collegium' => 'Nema opisa za ovaj kolegijum',
     'Old Password didn\'t match' => 'Stara lozinka se nije podudarala',
     'Komunat' => 'Opštine',

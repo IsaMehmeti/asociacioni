@@ -27,6 +27,7 @@ return [
     'Zgjidh' => 'Zgjidh',
     'File Storage' => 'Menagjimi i fajllave',
     'Create File' => 'Uploado fajll',
+    'Attach File' => 'Bashkangjit fajll',
     'Sorry, No Record to show' => 'Na vjen keq, ska të dhëna për të shfaqur',
     'Want to add' => 'Dëshironi te shtoni',
     'some?' => 'disa?',

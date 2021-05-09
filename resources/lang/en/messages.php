@@ -26,6 +26,7 @@ return [
     'File Storage' => 'File Storage',
     'Zgjidh' => 'Select',
     'Create File' => 'Upload file',
+    'Attach File' => 'Attach file',
     'Phone Number' => 'Phone Number',
     'Want to add' => 'Want to add',
     'some?' => 'some?',

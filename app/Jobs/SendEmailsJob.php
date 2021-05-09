@@ -24,8 +24,6 @@ class SendEmailsJob implements ShouldQueue
     {
         $this->data = $data;
     }
-
-
     /**
      * Execute the job.
      *

@@ -28,7 +28,9 @@ class MailController extends Controller
         'file' => 'sometimes|file|max:5000',
         ]);
         try {
-        $this->storeFile($request);
+            //if request has file store file
+            (!$request->file('file')) ? : $this->storeFile($request);
+
         foreach ($request->user_ids as $user_id) {
             $user = Official::find($user_id);
                 $data = ['subject' => $request->subject,
@@ -37,11 +39,12 @@ class MailController extends Controller
                  'body' => $request->body,
                  'user_name' => $user->name,
                  'locale' => app()->getLocale(),
-                 'file' => public_path('files\\'.$request->file('file')->getClientOriginalName()),
+                 'file' => (!$request->file('file')) ? 'false' : public_path('files\\'.$request->file('file')->getClientOriginalName()),
                 ];
-            $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
-            dispatch($job);
-        $this->deleteFile($request);
+                $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
+                dispatch($job);
+
+            (!$request->file('file')) ? : $this->deleteFile($request);
         }
         return redirect()->back()->with('status', __('messages.Mail Sent successfully'));
         }catch (\Exception $e) {
@@ -58,7 +61,7 @@ class MailController extends Controller
 
     public function deleteFile($request)
     {
-        $deleteFile = (new DeleteFile($request->file('file')->getClientOriginalName()))->delay(\Carbon\Carbon::now()->addSecond(600));
+        $deleteFile = (new DeleteFile($request->file('file')->getClientOriginalName()))->delay(\Carbon\Carbon::now()->addSecond(15));
         dispatch($deleteFile);
     }
 }

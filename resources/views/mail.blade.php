@@ -30,11 +30,11 @@
                 <div class="mailbox-compose ">
                     <div class="form-horizontal form-bordered form-bordered">
                         <div class="form-group">
-                            <div class="form-group row">
-                            <label class=" col-lg-1 control-label text-lg-right pt-3 ">{{__('Messages.To')}}:</label>
+                            <div class="form-group row mr-4">
+                            <label class=" col-lg-1 control-label text-lg-right pt-3 ">{{__('Messages.To')}}<span class="required">*</span></label>
                             <div class="col-lg-6 mr-lg-4">
                                 @if($collegium_id != null)
-                                    <select name="user_ids[]" class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true }' id="ms_example5">
+                                    <select required name="user_ids[]" class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true }' id="ms_example5">
                                         <optgroup label="{{ Str::limit($selectedCollegium->title, 50 )}}">
                                             @foreach($selectedCollegium->officials as $user)
                                                 <option value="{{$user->id}}" selected>{{$user->name.' '.$user->last_name.' - '. $user->email}}</option>
@@ -42,7 +42,7 @@
                                         </optgroup>
                                     </select>
                                 @else
-                                    <select name="user_ids[]" class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true }' id="ms_example5">
+                                    <select required name="user_ids[]" class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true }' id="ms_example5">
                                         @foreach($collegiums as $collegium)
                                         <optgroup label="{{ Str::limit($collegium->title, 43 )}}">
                                             @foreach($collegium->officials as $user)
@@ -56,20 +56,20 @@
                             </div>
                         </div>
                         <div class="form-group form-group-invisible">
-                            <label for="subject" class="control-label-invisible pt-2">{{__('messages.Subject')}}:</label>
+                            <label for="subject" class="control-label-invisible pt-2">{{__('messages.Subject')}}<span class="required">*</span></label>
                             <div class="col-md-12 mailbox-compose-field">
                                 <input required id="subject" type="text" class="form-control form-control-invisible" name="subject">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="compose">
-                                <label for="Body" class="control-label-invisible">{{__('messages.Body')}}: </label>
+                                <label for="Body" class="control-label-invisible">{{__('messages.Body')}}<span class="required">*</span></label>
                                 <textarea required name="body" class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize="" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 89px;"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                           <div class="form-group row ml-2">
-                            <label class=" col-lg-1 control-label text-lg-right pt-3 ">{{__('messages.Create File')}}:</label>
+                           <div class="form-group row ml-3">
+                            <label class=" col-lg-1 control-label text-lg-right pt-3 ">{{__('messages.Attach File')}}:</label>
                             <div class="col-lg-6 mr-lg-4">
                                 <div class="fileupload fileupload-new"  data-provides="fileupload"><input type="hidden" >
                                     <div class="input-append">
@@ -88,7 +88,6 @@
                             </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </form>

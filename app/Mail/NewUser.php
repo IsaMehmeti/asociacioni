@@ -29,10 +29,17 @@ class NewUser extends Mailable
      */
     public function build()
     {
+        if ($this->data['file'] == 'false'){
+        return $this->from($this->data['from'])
+                    ->subject($this->data['subject'])
+                    ->view('auth.new-user')
+                    ->markdown('auth.new-user');
+        }
         return $this->from($this->data['from'])
                     ->subject($this->data['subject'])
                     ->attach($this->data['file'])
                     ->view('auth.new-user')
                     ->markdown('auth.new-user');
+
     }
 }
