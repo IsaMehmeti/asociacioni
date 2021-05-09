@@ -24,7 +24,7 @@ class SendMailRequest extends FormRequest
     public function rules()
     {
         return [
-            'collegium_id' => 'required',
+            'user_ids.*' => 'required',
             'subject' => 'required',
             'body' => 'required',
         ];

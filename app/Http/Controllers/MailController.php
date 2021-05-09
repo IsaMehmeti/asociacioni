@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendMailRequest;
+use App\Jobs\DeleteFile;
 use App\Jobs\SendEmailsJob;
 use App\Mail\NewUser;
 use App\Models\Collegium;
 use App\Models\Official;
+use App\User;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -22,28 +24,41 @@ class MailController extends Controller
     }
     public function sendMailToOneUser(SendMailRequest $request)
     {
-        $collegium = Collegium::findOrFail($request->collegium_id);
-        if($collegium->officials->count() == 0){
-            return redirect()->back()->with('danger', __("messages.This Collegium doesn't have any official"));
-        }
+        $request->validate([
+        'file' => 'sometimes|file|max:5000',
+        ]);
         try {
-        foreach ($collegium->officials as $user) {
-        $data = ['subject' => $request->subject,
+        $this->storeFile($request);
+        foreach ($request->user_ids as $user_id) {
+            $user = Official::find($user_id);
+                $data = ['subject' => $request->subject,
                  'from' => auth()->user()->email,
                  'to' => $user->email,
                  'body' => $request->body,
                  'user_name' => $user->name,
-                 'locale' => app()->getLocale()
+                 'locale' => app()->getLocale(),
+                 'file' => public_path('files\\'.$request->file('file')->getClientOriginalName()),
                 ];
-
             $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
             dispatch($job);
-//        Mail::to($user->email)->send(new NewUser($data));
+        $this->deleteFile($request);
         }
         return redirect()->back()->with('status', __('messages.Mail Sent successfully'));
         }catch (\Exception $e) {
             report($e);
         return redirect()->route('home')->with('danger', __('messages.Something went wrong'));
         }
+    }
+
+    public function storeFile($request)
+    {
+        $file = $request->file('file');
+        $file->move(public_path('files'), $file->getClientOriginalName());
+    }
+
+    public function deleteFile($request)
+    {
+        $deleteFile = (new DeleteFile($request->file('file')->getClientOriginalName()))->delay(\Carbon\Carbon::now()->addSecond(600));
+        dispatch($deleteFile);
     }
 }
