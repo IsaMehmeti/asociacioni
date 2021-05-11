@@ -117,9 +117,8 @@
 				var title = prompt('Shkruani titullin: ');
 
 				if(title){
-				    var start = moment(start).format('YYYY-MM-DD h:mm:ss');
-				    var end = moment(end).subtract(1, 'days');
-                    end = end.format('YYYY-MM-DD h:mm:ss');
+				    var start = moment(start).format('YYYY-MM-DD HH:mm:ss');
+                    var end = moment(end).format('YYYY-MM-DD HH:mm:ss');
 
 				    $.ajax({
                         url:'{{url('/calendar/action')}}',
@@ -146,8 +145,10 @@
 				$calendar.fullCalendar('unselect');
 			},
             eventResize: function(calEvent, event){
-                var start = moment(calEvent.start).format('YYYY-MM-DD h:mm:ss');
-                var end = moment(calEvent.end).format('YYYY-MM-DD h:mm:ss');
+                // console.log(moment(calEvent.start).format('YYYY-MM-DD HH:mm:ss'));
+                // console.log(moment(calEvent.end).format('YYYY-MM-DD HH:mm:ss'));
+                var start = moment(calEvent.start).format('YYYY-MM-DD HH:mm:ss');
+                var end = moment(calEvent.end).format('YYYY-MM-DD HH:mm:ss');
                 var id = calEvent.id;
                 var title = calEvent.title;
                 $.ajax({
@@ -165,9 +166,9 @@
                         }
                     })
             },
-            eventDrop: function(calEvent, event){
-                var start = moment(calEvent.start).format('YYYY-MM-DD h:mm:ss');
-                var end = moment(calEvent.end).format('YYYY-MM-DD h:mm:ss');
+            eventDrop: function(calEvent, event, delta){
+                var start = moment(calEvent.start).format('YYYY-MM-DD HH:mm:ss');
+                var end = moment(calEvent.end).format('YYYY-MM-DD HH:mm:ss');
                 var id = calEvent.id;
                 var title = calEvent.title;
                 $.ajax({
