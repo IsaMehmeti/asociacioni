@@ -137,6 +137,7 @@
                                 type: 'success',
                                 addclass: 'icon-nb'
                             });
+                            $(" .badge ").html(data.after_date);
 
                         }
                     })
@@ -183,6 +184,7 @@
                         },
                         success:function (data){
                             $calendar.fullCalendar('refetchEvents');
+                            $(" .badge ").html(data.after_date);
                         }
                     })
             },
@@ -231,6 +233,7 @@
                         success:function (data){
                             $('#calendar').fullCalendar('refetchEvents');
                             $("#close").click();
+                            $(" .badge ").html(data[1]);
                         }
                     })
                 }

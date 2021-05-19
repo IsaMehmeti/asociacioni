@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Event;
 
@@ -20,6 +21,7 @@ class CalendarController extends Controller
 
     public function action(Request $request)
     {
+            $today = new Carbon;
         if ($request->ajax()){
             //create event
             if ($request->type == 'add'){
@@ -27,7 +29,10 @@ class CalendarController extends Controller
                     'title' => $request->title,
                     'start' => $request->start,
                     'end' => $request->end,
+
                 ]);
+                $event = $event->toArray();
+                $event['after_date'] = Event::whereDate('start', '>=', $today->format('Y-m-d h:m:s'))->count();
                 return response()->json($event);
             }
             //update event
@@ -37,12 +42,15 @@ class CalendarController extends Controller
                     'start' => $request->start,
                     'end' => $request->end
                 ]);
+                $event = [];
+                $event['after_date'] = Event::whereDate('start', '>=', $today->format('Y-m-d h:m:s'))->count();
                 return response()->json($event);
             }
             //delete event
             if ($request->type == 'delete'){
                 $event = Event::find($request->id)->delete();
-                return response()->json($event);
+                $count = Event::whereDate('start', '>=', $today->format('Y-m-d h:m:s'))->count();
+                return response()->json([$event, $count]);
             }
         }
     }
