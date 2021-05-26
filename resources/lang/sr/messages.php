@@ -77,6 +77,7 @@ return [
     'Return' => 'Vratiti',
     'Sinqerisht' => 'Iskreno',
     'Pershendetje' => 'Zdravo',
+    'Update Official' => 'Ažuriraj zvanično',
     'Asociacioni i Komunave të Kosovës' => 'Udruženje Kosovskih opština',
 
 

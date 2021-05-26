@@ -93,6 +93,7 @@
                     <td>{{$official->email}}</td>
                     <td>{{$official->phone}}</td>
                     <td class="actions">
+                        <a data-toggle="tooltip" title="" href="{{route('official.edit', $official)}}" data-original-title="{{__('Ndrysho')}}" class="delete on-default"><i  class="fas fa-user-edit"></i></a>
                         <form id="delete-form {{$official->id}}" class="hidden" method="POST" action="{{route('official.destroy', $official->id)}}">
                             @csrf
                             @method('delete')
@@ -107,6 +108,7 @@
                         @if(!$official->isOnHeadShip())
                             <a data-toggle="tooltip" title="" href="#" data-original-title="{{__('Shto ne Kryesi')}}" onclick="headship({{$official->id}})" class="delete on-default"><i  class="fa fa-user-plus"></i></a>
                         @endif
+
                     </td>
                 </tr>
             @empty

@@ -65,9 +65,12 @@ class OfficialController extends Controller
         return view('showCity', compact('city'));
     }
 
-    public function edit($id)
+    public function edit($official)
     {
-        //
+        $official = Official::findOrFail($official);
+        $collegiums = Collegium::all();
+        $cities = Municipality::all();
+        return view('official.edit', compact(['official', 'cities', 'collegiums']));
     }
 
     public function archiveIndex()
@@ -103,5 +106,16 @@ class OfficialController extends Controller
         $official->save();
         $official->delete();
         return redirect()->back()->with(['status' => __('messages.Archived Successfully')]);
+    }
+    public function ndrysho($id, Request $request)
+    {
+        Official::findOrFail($id)->update([
+            'name' => $request->name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'collegium_id' => $request->collegium_id,
+            'phone' => $request->phone,
+            'municipality_id'=>$request->municipality_id,]);
+        return redirect()->route('official.index')->with(['status' => __('messages.Updated Successfully')]);
     }
 }

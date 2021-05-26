@@ -80,6 +80,7 @@ return [
     'Return' => 'Riktheje',
     'Sinqerisht' => 'Sinqerisht',
     'Pershendetje' => 'Pershendetje',
+    'Update Official' => 'Ndrysho Zyrëtarin',
     'Asociacioni i Komunave të Kosovës' => 'Asociacioni i Komunave të Kosovës',
 
     //sidebar translations

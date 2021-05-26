@@ -79,6 +79,7 @@ return [
     'Return' => 'Restore',
     'Sinqerisht' => 'Sincerely',
     'Pershendetje' => 'Hello',
+    'Update Official' => 'Update Official',
     'Asociacioni i Komunave të Kosovës' => 'Association of Kosovo Municipalities',
 
     //sidebar translations

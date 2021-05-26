@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/officials/{city}', 'OfficialController@showByCity');
     Route::get('/official/archive', 'OfficialController@archiveIndex')->name('archive');
     Route::resource('/official', 'OfficialController');
+    Route::patch('/official/{id}/ndrysho', 'OfficialController@ndrysho')->name('official.ndrysho');
     Route::patch('/official/{id}/headship', 'OfficialController@addToHeadShip')->name('addToHeadShip');
     Route::patch('/official/{id}/headship/remove', 'OfficialController@removeFromHeadship')->name('removeFromHeadship');
     //kolegjiumet
