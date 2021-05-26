@@ -33,12 +33,14 @@ class NewUser extends Mailable
         return $this->from($this->data['from'])
                     ->subject($this->data['subject'])
                     ->view('auth.new-user')
-                    ->markdown('auth.new-user');
+                    ->with('data',$this->data)
+                     ->markdown('auth.new-user');
         }
-        return $this->from($this->data['from'])
+        return $this->from('noreplay@kolegjiumet.komunat-ks.net')
                     ->subject($this->data['subject'])
                     ->attach($this->data['file'])
                     ->view('auth.new-user')
+                    ->with('data',$this->data)
                     ->markdown('auth.new-user');
 
     }

@@ -53,10 +53,10 @@
             </div>
         </div>
 
-        <span class="mt-3 mb-3 line-thru text-center text-uppercase">
-								<span>or</span>
-							</span>
+{{--        <span class="mt-3 mb-3 line-thru text-center text-uppercase">--}}
+{{--								<span>or</span>--}}
+{{--							</span>--}}
 
-        <p class="text-center">Don't have an account yet? <a href="/register">Register!</a></p>
+{{--        <p class="text-center">Don't have an account yet? <a href="/register">Register!</a></p>--}}
     </form>
 @endsection

@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Mail;
 */
 
 //dashboard - home.blade.php
-
-Route::get('/', 'HomeController@index')->name('home');
+//Route::group(['middleware' => 'forceSSL'], function() {
 
 //change language
 Route::get('locale/{locale}', function ($locale){
@@ -27,6 +26,7 @@ Route::get('locale/{locale}', function ($locale){
 });
 //user needs to be logged in routes
 Route::group(['middleware' => 'auth'], function(){
+    Route::get('/', 'HomeController@index')->name('home');
 
     //mail routes
     Route::get('/mail/{collegium_id?}', 'MailController@index');
@@ -61,5 +61,11 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/logout', 'Auth\LoginController@logout');
 });
+//Auth::routes(['register' => false]);
+
 Auth::routes();
 
+Route::get('/register', function (){
+   return redirect('login');
+});
+//})

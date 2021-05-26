@@ -22,7 +22,7 @@ class CollegiumController extends Controller
     public function store(CollegiumStoreRequest $request)
     {
         $img = $request->file('image');
-        $directoryName ='files/collegium';
+                $directoryName ='files/collegium';
                  if (!is_dir($directoryName)) {
                     mkdir($directoryName, 0700, true);
                  }

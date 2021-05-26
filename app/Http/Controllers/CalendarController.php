@@ -29,7 +29,6 @@ class CalendarController extends Controller
                     'title' => $request->title,
                     'start' => $request->start,
                     'end' => $request->end,
-
                 ]);
                 $event = $event->toArray();
                 $event['after_date'] = Event::whereDate('start', '>=', $today->format('Y-m-d h:m:s'))->count();

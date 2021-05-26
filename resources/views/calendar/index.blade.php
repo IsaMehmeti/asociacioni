@@ -121,7 +121,7 @@
                     var end = moment(end).format('YYYY-MM-DD HH:mm:ss');
 
 				    $.ajax({
-                        url:'{{url('/calendar/action')}}',
+                        url:'/calendar/action',
                         type:"POST",
                         data:{
                             title : title,
@@ -153,7 +153,7 @@
                 var id = calEvent.id;
                 var title = calEvent.title;
                 $.ajax({
-                        url:'{{url('/calendar/action')}}',
+                        url:'/calendar/action',
                         type:"POST",
                         data:{
                             title : title,
@@ -173,7 +173,7 @@
                 var id = calEvent.id;
                 var title = calEvent.title;
                 $.ajax({
-                        url:'{{url('/calendar/action')}}',
+                        url:'/calendar/action',
                         type:"POST",
                         data:{
                             title : title,
@@ -194,7 +194,7 @@
                 $("#modal-link"). attr("onclick","deleteEvent("+id+ ")");
 
             },
-			events: '{{url('/calendar/')}}'
+			events: '/calendar/'
 
 		});
 
@@ -224,7 +224,7 @@
         });
         function deleteEvent(id){
                     $.ajax({
-                        url:'{{url('/calendar/action')}}',
+                        url:'/calendar/action',
                         type:"POST",
                         data:{
                             type: 'delete',

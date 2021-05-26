@@ -31,7 +31,7 @@
                     <div class="form-horizontal form-bordered form-bordered">
                         <div class="form-group">
                             <div class="form-group row mr-4">
-                            <label class=" col-lg-1 control-label text-lg-right pt-3 ">{{__('Messages.To')}}<span class="required">*</span></label>
+                            <label class=" col-lg-1 control-label text-lg-right pt-3 ">{{__('messages.To')}}<span class="required">*</span></label>
                             <div class="col-lg-6 mr-lg-4">
                                 @if($collegium_id != null)
                                     <select required name="user_ids[]" class="form-control" multiple="multiple" data-plugin-multiselect data-plugin-options='{ "maxHeight": 200, "includeSelectAllOption": true }' id="ms_example5">

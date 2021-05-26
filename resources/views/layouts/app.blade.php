@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
 
     <title>@yield('page_name')</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" href="https://komunat-ks.net/wp-content/uploads/2018/09/cropped-asociacioni_komunat1-1-32x32.jpg" sizes="32x32">

@@ -34,12 +34,12 @@ class MailController extends Controller
         foreach ($request->user_ids as $user_id) {
             $user = Official::find($user_id);
                 $data = ['subject' => $request->subject,
-                 'from' => auth()->user()->email,
+                    'from' => 'noreplay@kolegjiumet.komunat-ks.net',
                  'to' => $user->email,
                  'body' => $request->body,
                  'user_name' => $user->name,
                  'locale' => app()->getLocale(),
-                 'file' => (!$request->file('file')) ? 'false' : public_path('files\\'.$request->file('file')->getClientOriginalName()),
+                 'file' => (!$request->file('file')) ? 'false' : public_path('files/'.$request->file('file')->getClientOriginalName()),
                 ];
                 $job =  (new SendEmailsJob($data))->delay(\Carbon\Carbon::now()->addSecond(3));
                 dispatch($job);

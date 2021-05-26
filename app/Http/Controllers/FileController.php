@@ -26,12 +26,12 @@ class FileController extends Controller
         ]);
          $img = $request->file('file');
          $file_name = uniqid().'-'.time().'.'.$img->getClientOriginalExtension();
-         $file_path = 'uploads\\'.$file_name;
+         $file_path = 'uploads/'.$file_name;
          $file = new File;
          $file->filename = $file_name;
          $file->filetype = $img->getClientOriginalExtension();;
          $file->filesize = $img->getSize();;
-         $file->filepath = '\uploads';
+         $file->filepath = '/uploads';
          $file->file = $file_path;
          $file->originalName = $img->getClientOriginalName();
          $file->save();
@@ -46,6 +46,7 @@ class FileController extends Controller
         $filePath = storage_path($file->file);
     	$headers = ['Content-Type: application/'. $file->filetype];
     	$fileName = $file->originalName;
+//    	dd(storage_path($file->file));
     	if (!file_exists(storage_path($file->file))) {
     	    return redirect()->back()->with(['danger' => __('messages.File doesn\'t exist')]);
     	}
