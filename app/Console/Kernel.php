@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -24,7 +25,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+//        dd(Carbon::now()->toArray());
+
         // $schedule->command('inspire')->hourly();
+        $schedule->command('queue:work --stop-when-empty')->dailyAt('17:49');
+
     }
 
     /**

@@ -9,6 +9,7 @@ use App\Mail\NewUser;
 use App\Models\Collegium;
 use App\Models\Official;
 use App\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -61,7 +62,7 @@ class MailController extends Controller
 
     public function deleteFile($request)
     {
-        $deleteFile = (new DeleteFile($request->file('file')->getClientOriginalName()))->delay(\Carbon\Carbon::now()->addSecond(15));
+        $deleteFile = (new DeleteFile($request->file('file')->getClientOriginalName()))->delay(\Carbon\Carbon::now()->addMinutes(15));
         dispatch($deleteFile);
     }
 }
